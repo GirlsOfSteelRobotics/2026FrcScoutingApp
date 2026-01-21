@@ -7,20 +7,41 @@ class TeamConfig:
     COLUMN_NAMES = [
             "Scouter Initials",
             "Match Number",
-            "Robot",
+            #"Robot",
             "Team Number",
 
             "No Show",
-            "Auto Fuel"
+
+            "Auto Fuel",
+            "Auto Climbing Status",
+            "Auto Human Player Score",
+
+            "Teleop Fuel",
+            "Teleop Human Player Score",
+            "Endgame Climbing Level"
         ]
 
     def __init__(self,
                  no_show: Optional[BooleanValue] = None,
                  auto_fuel: Optional[IntValue] = None,
+                 auto_climb_status: Optional[BooleanValue] = None,
+                 auto_hp_score: Optional[IntValue] = None,
+                 teleop_fuel: Optional[IntValue] = None,
+                 teleop_hp_score: Optional[IntValue] = None,
+                 eg_level: Optional[EnumValue] = None
+
+
                  ):
         self.fields = [
-            no_show or BooleanValue(1.1),
-            auto_fuel or IntValue(0, 8),
+            no_show or BooleanValue(.5),
+            auto_fuel or IntValue(0, 16),
+            auto_climb_status or BooleanValue(.5),
+            auto_hp_score or IntValue(0, 16),
+            teleop_fuel or IntValue(0, 200),
+            teleop_hp_score or IntValue(0, 48),
+            eg_level or EnumValue(["None", "L1", "L2", "L3"], [25, 25, 25, 25])
+            #test data
+
             #endgame_position or EnumValue(["N", "P"], [50, 50])
         ]
 
@@ -38,13 +59,13 @@ def main():
     random.seed(3504)
 
     team_configs = {
-        1: TeamConfig(),
-        2: TeamConfig(),
-        3: TeamConfig(),
-        4: TeamConfig(),
-        5: TeamConfig(),
-        6: TeamConfig(),
-        7: TeamConfig(),
+        254: TeamConfig(),
+        1678: TeamConfig(),
+        4467: TeamConfig(),
+        2056: TeamConfig(),
+        118: TeamConfig(),
+        67: TeamConfig(),
+        8393: TeamConfig(),
         3504: TeamConfig(
             auto_fuel=IntValue(min_value=5, max_value=30)
         ),
