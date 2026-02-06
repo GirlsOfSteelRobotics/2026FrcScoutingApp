@@ -1,0 +1,8 @@
+Scouter Initials,Team Number,Intake,Climbing Level (Auto),Climbing Level (Endgame),Auto Start,Piece Auto,Climb type,Over Bumper?,Under Trench?,Carrying Capacity,Preload Number,Defense Skill (0-5)
+abc,3504,Ground,1,1,right,16,in,True,False,8,8,2
+abc,8393,Depot,0,2,right,6,in,False,True,12,6,1
+abc,67,Ground,1,3,middle,3,out,True,True,6,3,4
+abc,1678,Human Player Station,0,1,left,8,out,False,True,10,4,3
+abc,118,Ground,1,1,left,0,in,True,True,10,0,5
+abc,254,Human Player Station,1,0,middle,8,out,False,True,8,8,1
+abc,2056,Depot,1,0,left,9,out,True,False,12,8,2
