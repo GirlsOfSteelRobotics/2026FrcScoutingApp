@@ -18,6 +18,7 @@ class TeamConfig:
 
             "Teleop Fuel",
             "Teleop Human Player Score",
+            "Teleop Fuel Passed",
             "Endgame Climbing Level"
         ]
 
@@ -27,6 +28,7 @@ class TeamConfig:
                  auto_climb_status: Optional[BooleanValue] = None,
                  auto_hp_score: Optional[IntValue] = None,
                  teleop_fuel: Optional[IntValue] = None,
+                 teleop_fuel_passed: Optional[IntValue] = None,
                  teleop_hp_score: Optional[IntValue] = None,
                  eg_level: Optional[EnumValue] = None
 
@@ -38,6 +40,7 @@ class TeamConfig:
             auto_climb_status or BooleanValue(.5),
             auto_hp_score or IntValue(0, 16),
             teleop_fuel or IntValue(0, 200),
+            teleop_fuel_passed or IntValue(0,200),
             teleop_hp_score or IntValue(0, 48),
             eg_level or EnumValue(["None", "L1", "L2", "L3"], [25, 25, 25, 25])
             #test data
