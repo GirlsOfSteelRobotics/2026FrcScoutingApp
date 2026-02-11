@@ -33,7 +33,7 @@ class TeamConfig:
 
                  ):
         self.fields = [
-            no_show or BooleanValue(.5),
+            no_show or BooleanValue(.10),
             auto_fuel or IntValue(0, 16),
             auto_climb_status or BooleanValue(.5),
             auto_hp_score or IntValue(0, 16),
