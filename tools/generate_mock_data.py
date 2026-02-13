@@ -14,11 +14,10 @@ class TeamConfig:
 
             "Auto Fuel",
             "Auto Climbing Status",
-            #"Auto Human Player Score",
+            "Auto Human Player Score",
 
             "Teleop Fuel",
-            #"Teleop Human Player Score",
-            "Teleop Fuel Passed",
+            "Teleop Human Player Score",
             "Endgame Climbing Level"
         ]
 
@@ -26,10 +25,9 @@ class TeamConfig:
                  no_show: Optional[BooleanValue] = None,
                  auto_fuel: Optional[IntValue] = None,
                  auto_climb_status: Optional[BooleanValue] = None,
-                # auto_hp_score: Optional[IntValue] = None,
+                 auto_hp_score: Optional[IntValue] = None,
                  teleop_fuel: Optional[IntValue] = None,
-                 teleop_fuel_passed: Optional[IntValue] = None,
-                # teleop_hp_score: Optional[IntValue] = None,
+                 teleop_hp_score: Optional[IntValue] = None,
                  eg_level: Optional[EnumValue] = None
 
 
@@ -38,10 +36,9 @@ class TeamConfig:
             no_show or BooleanValue(.10),
             auto_fuel or IntValue(0, 16),
             auto_climb_status or BooleanValue(.5),
-            #auto_hp_score or IntValue(0, 16),
+            auto_hp_score or IntValue(0, 16),
             teleop_fuel or IntValue(0, 200),
-            teleop_fuel_passed or IntValue(0,200),
-            #teleop_hp_score or IntValue(0, 48),
+            teleop_hp_score or IntValue(0, 48),
             eg_level or EnumValue(["None", "L1", "L2", "L3"], [25, 25, 25, 25])
             #test data
 
