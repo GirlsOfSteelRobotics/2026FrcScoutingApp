@@ -26,7 +26,7 @@ class TeamConfig:
                  auto_climb_status: Optional[BooleanValue] = None,
                  auto_climb_score: Optional[IntValue] = None,
                  teleop_fuel: Optional[IntValue] = None,
-                 eg_level: Optional[EnumValue] = None,
+                 eg_level: Optional[EnumValue] = None
 
 
                  ):
@@ -36,7 +36,7 @@ class TeamConfig:
             auto_climb_status or BooleanValue(.5),
             auto_climb_score or IntValue(0, 15),
             teleop_fuel or IntValue(0, 200),
-            eg_level or EnumValue(["None", "L1", "L2", "L3"], [25, 25, 25, 25]),
+            eg_level or EnumValue(["None", "L1", "L2", "L3"], [25, 25, 25, 25])
             #test data
 
             #endgame_position or EnumValue(["N", "P"], [50, 50])
