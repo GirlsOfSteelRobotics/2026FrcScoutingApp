@@ -7,25 +7,27 @@ class TeamConfig:
     COLUMN_NAMES = [
             "Scouter Initials",
             "Match Number",
+            #"Robot",
             "Team Number",
 
             "No Show",
 
             "Auto Fuel",
             "Auto Climbing Status",
-            "Auto Climbing Score"
+            "Auto Human Player Score",
 
             "Teleop Fuel",
-            "Endgame Climbing Level",
-            "Endgame Climbing Score"
+            "Teleop Human Player Score",
+            "Endgame Climbing Level"
         ]
 
     def __init__(self,
                  no_show: Optional[BooleanValue] = None,
                  auto_fuel: Optional[IntValue] = None,
                  auto_climb_status: Optional[BooleanValue] = None,
-                 auto_climb_score: Optional[IntValue] = None,
+                 auto_hp_score: Optional[IntValue] = None,
                  teleop_fuel: Optional[IntValue] = None,
+                 teleop_hp_score: Optional[IntValue] = None,
                  eg_level: Optional[EnumValue] = None
 
 
@@ -34,8 +36,9 @@ class TeamConfig:
             no_show or BooleanValue(.10),
             auto_fuel or IntValue(0, 16),
             auto_climb_status or BooleanValue(.5),
-            auto_climb_score or IntValue(0, 15),
+            auto_hp_score or IntValue(0, 16),
             teleop_fuel or IntValue(0, 200),
+            teleop_hp_score or IntValue(0, 48),
             eg_level or EnumValue(["None", "L1", "L2", "L3"], [25, 25, 25, 25])
             #test data
 
@@ -47,23 +50,6 @@ class TeamConfig:
 
         for field in self.fields:
             data.append(field.get_value())
-
-        #Calc Auto Climbing score (field index 2 is auto_climb_status)
-        auto_climb_score = 15 if data[2] == True else 0
-        data.insert(3, auto_climb_score) # Insert AFTER Auto climbing Status
-
-        #Calc Endgame climbing score (field index 5 is eg_level after insertion)
-
-        eg_level = data[5]
-        if eg_level == "L1":
-            eg_climb_score = 10
-        elif eg_level == "L2":
-            eg_climb_score = 20
-        elif eg_level == "L3":
-            eg_climb_score = 30
-        else:
-            eg_climb_score = 0
-        data.append(eg_climb_score)
 
         return data
 
@@ -104,6 +90,5 @@ def main():
 
 
 if __name__ == "__main__":
-    #python3 -m tools.generate_mock_data
+    # python3 -m tools.generate_mock_data
     main()
-
