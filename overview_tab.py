@@ -15,7 +15,12 @@ df = load_scouted_data()
 @module.ui
 def overview_tab_ui():
     return ui.page_fluid(
-        ui.card(output_widget("auto_climbing_frequency")),
+        ui.input_select(
+            "y_axis_select",
+            "Y Axis:",
+            choices = ["Auto Fuel", "Teleop Fuel", "Endgame Fuel", "Total Fuel"]
+        ),
+        #ui.card(output_widget("auto_climbing_frequency")),
         ui.card(output_widget("teleop_vs_auto_endgame")),
     )
 
@@ -49,6 +54,8 @@ def overview_tab_server(input, output, session):
         new_df["All Teleop"] = new_df["Teleop Fuel"] + new_df["Endgame Teleop Points"]
         new_df["All Endgame"] = new_df["Endgame Teleop Points"]
         new_df["Auto and Endgame"] = new_df["All Auto"] + new_df["All Endgame"]
+        new_df["Total Fuel"] = new_df["Auto Fuel"] + new_df["Teleop Fuel"]
+        new_df["Endgame Fuel"] = new_df["Endgame Teleop Points"]
 
         team_stats = new_df.groupby("Team Number").agg({
             "All Teleop": "mean",
@@ -58,28 +65,28 @@ def overview_tab_server(input, output, session):
             "Endgame Teleop Points": "mean",
             "Auto Climb Points": "mean",
             "Auto Climbing Status": "mean",
+            "Auto Fuel": "mean",
+            "Teleop Fuel": "mean",
+            "Endgame Fuel": "mean",
+            "Total Fuel": "mean",
         }).reset_index()
+
+        y_axis = str(input.y_axis_select())
 
         fig = px.scatter(
             team_stats,
-            x="All Teleop",
-            y="Auto and Endgame",
+            x = "All Teleop",
+            y = y_axis,
             title="Teleop vs. Auto + Endgame (Team Averages)",
         )
         fig.update_traces(
             hovertemplate=(
                 "<b>Team %{customdata[0]}</b><br>"
                 "All Teleop: %{x:.1f}<br>"
-                "Auto and Endgame: %{y:.1f}<br>"
-                "All Auto: %{customdata[1]:.1f}<br>"
-                "All Endgame: %{customdata[2]:.1f}<br>"
-                "Endgame Teleop Points: %{customdata[3]:.1f}<br>"
-                "Auto Climb Points: %{customdata[4]:.1f}<br>"
-                "Auto Climbing Status: %{customdata[5]:.2%}<extra></extra>"
+                f"{y_axis}: %{{y:.1f}}<br>"
+                "<extra></extra>"
             ),
-            customdata=team_stats[["Team Number", "All Auto", "All Endgame",
-                                   "Endgame Teleop Points", "Auto Climb Points",
-                                   "Auto Climbing Status"]].values
+            customdata=team_stats[["Team Number"]].values
         )
         fig.update_layout(
             xaxis_title="Average Teleop Score",
@@ -88,35 +95,5 @@ def overview_tab_server(input, output, session):
             showlegend=False
         )
         return fig
-
-   # @render_widget
-    # def auto_climbing_frequency():
-       # auto_climbing_status_df = scouted_data.groupby("Team Number")["Auto Climbing Status"].value_counts().unstack(
-        #    fill_value=0).reset_index()
-       # auto_climbing_status_df["Climb Freq"] = auto_climbing_status_df[True] / (
-        #            auto_climbing_status_df[True] + auto_climbing_status_df[False])
-       # auto_climbing_status_df["No Climb Freq"] = auto_climbing_status_df[False] / (
-        #            auto_climbing_status_df[True] + auto_climbing_status_df[False])
-       # fig = px.bar(auto_climbing_status_df, x="Team Number", y=["Climb Freq", "No Climb Freq"],
-                     #title="Auto Climbing Frequency")
-       # return fig
-
-  #  @render_widget
-  #  def six_teams_average_auto_fuel():
-      #  get_Teams_in_Match()
-     #   teams = get_Teams_in_Match()
-     #   match_data = scouted_data.loc[scouted_data["Team Number"].isin(teams)]
-     #   avg_6_teams = match_data.groupby("Team Number").mean(numeric_only=True)
-   #     fig = px.bar(avg_6_teams, y="Auto Fuel", title="Fuel in Hub (Auto) per Robot")
-     #   return fig
-
- #   @render_widget
-   # def six_teams_average_teleop_fuel():
-    #    get_Teams_in_Match()
-      #  teams = get_Teams_in_Match()
-      #  match_data = scouted_data.loc[scouted_data["Team Number"].isin(teams)]
-      #  avg_6_teams = match_data.groupby("Team Number").mean(numeric_only=True)
-      #  fig = px.bar(avg_6_teams, y="Teleop Fuel", title="Fuel in Hub (Teleop) per Robot")
-      #  return fig
 
 
