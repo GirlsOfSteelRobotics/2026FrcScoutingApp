@@ -1,21 +1,22 @@
 import os
-
 from shinywidgets import output_widget, render_widget
 from shiny import module, ui
 from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match
 import pandas as pd
 import plotly.express as px
+import numpy as np
 
 pd.set_option('display.max_columns', None)
 
 # from data_container import scouted_data
-scouted_data = load_scouted_data()
+df = load_scouted_data()
 
 
 @module.ui
 def overview_tab_ui():
     return ui.page_fluid(
-        output_widget("teleop_v_autoend")
+        ui.card(output_widget("auto_climbing_frequency")),
+        ui.card(output_widget("teleop_vs_auto_endgame")),
     )
 
 
@@ -26,7 +27,7 @@ def overview_tab_server(input, output, server):
     @render_widget
     def teleop_v_autoend():
             teams = get_Teams_in_Match()
-            match_data = scouted_data.loc[scouted_data["Team Number"].isin(teams)].reset_index()
+            match_data = df.loc[df["Team Number"].isin(teams)].reset_index()
             numeric_cols = ["Auto Fuel", "Teleop Fuel"]
             for col in numeric_cols:
                 if col in match_data.columns:

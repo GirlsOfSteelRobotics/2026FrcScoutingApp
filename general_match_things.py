@@ -54,6 +54,8 @@ def general_match_server(input, output, session):
             choices=match_numbers
         )
 
+
+
 # AUTO GRAPHS
     @render_widget
     def auto_fuel_in_hub():
@@ -76,6 +78,8 @@ def general_match_server(input, output, session):
         fig = px.bar(auto_climbing_status_df, x="Team Number", y=["Climb Freq", "No Climb Freq"],
                      title="Auto Climbing Frequency", color_discrete_sequence=custom_colors)
         return fig
+
+
 
 #TELEOP GRAPHS
     @render_widget
@@ -106,6 +110,8 @@ def general_match_server(input, output, session):
                      title="Average Teleop Fuel Passed",
                      color_discrete_sequence=custom_colors)
         return fig
+
+
 
 #ENDGAME GRAPHS
     @render_widget
