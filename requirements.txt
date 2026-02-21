@@ -4,3 +4,4 @@ plotly
 numpy
 utils
 requests
+shinywidgets
