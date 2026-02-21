@@ -18,7 +18,8 @@ def general_match_ui():
                 ui.output_ui("match_list_combobox"),
             ),
             ui.navset_tab(
-                ui.nav_panel("General Data",
+                ui.nav_panel("Teleop",
+                ui.card(output_widget("teleop_fuel_in_hub")),
                     ui.card(output_widget("teleop_fuel_passed_total")),
                     ui.card(output_widget("teleop_fuel_passed_avg")),
                 ),
@@ -33,7 +34,7 @@ def general_match_server(input, output, session):
         match_name = str(input.match_select())
         all_teams = match_schedule[match_name]
         new_df = df.loc[df["Team Number"].isin(all_teams)]
-        print(f"Match: {match_name}, Teams: {all_teams}, Rows returned: {len(new_df)}")
+        #print(f"Match: {match_name}, Teams: {all_teams}, Rows returned: {len(new_df)}")
         return new_df
 
     @render.ui
@@ -44,6 +45,15 @@ def general_match_server(input, output, session):
             "Match Number:",
             choices=match_numbers
         )
+
+    @render_widget
+    def teleop_fuel_in_hub():
+        new_df = get_teams_in_match()
+        avg_team = new_df.groupby("Team Number").mean(numeric_only=True)
+        custom_colors = ["#194f55", "#54808e", "#243454"]
+        fig = px.bar(avg_team, y="Teleop Fuel", title="Fuel in Hub (Teleop) per Robot",
+                     color_discrete_sequence=custom_colors)
+        return fig
 
     @render_widget
     def teleop_fuel_passed_total():
