@@ -4,11 +4,10 @@ import plotly.express as px
 from shiny import reactive, render, module
 from shiny import App, ui
 from shinywidgets import output_widget, render_widget
-from data_container import load_scouted_data, load_pit_data
+from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match, load_match_numbers
 
 df = load_scouted_data()
-
-match_schedule = df.groupby("Match Number")["Team Number"].apply(list).to_dict()
+match_numbers = load_match_numbers()
 
 @module.ui
 def general_match_ui():
@@ -31,15 +30,11 @@ def general_match_ui():
 def general_match_server(input, output, session):
 
     def get_teams_in_match():
-        match_name = str(input.match_select())
-        all_teams = match_schedule[match_name]
-        new_df = df.loc[df["Team Number"].isin(all_teams)]
-        #print(f"Match: {match_name}, Teams: {all_teams}, Rows returned: {len(new_df)}")
-        return new_df
+        match_number = str(input.match_select())
+        return df.loc[df["Team Number"].isin(get_Teams_in_Match(match_number))]
 
     @render.ui
     def match_list_combobox():
-        match_numbers = list(match_schedule.keys())
         return ui.input_select(
             "match_select",
             "Match Number:",
