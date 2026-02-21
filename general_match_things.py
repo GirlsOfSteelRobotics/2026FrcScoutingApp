@@ -9,6 +9,7 @@ from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match,
 df = load_scouted_data()
 match_numbers = load_match_numbers()
 
+
 @module.ui
 def general_match_ui():
     return ui.page_fluid(
@@ -38,6 +39,7 @@ def general_match_ui():
             )
         )
     )
+
 
 @module.server
 def general_match_server(input, output, session):
@@ -168,6 +170,7 @@ def general_match_server(input, output, session):
                 ['true', '1', 'yes'])
         new_df["Auto Climb Points"] = new_df["Auto Climbing Status"].apply(lambda x: 15 if x else 0)
 
+        #pls help gng put ruoxi's in
         def convert_endgame_to_points(level):
             if pd.isna(level):
                 return 0
@@ -181,5 +184,6 @@ def general_match_server(input, output, session):
         fig = px.bar(avg_df, x="Team Number", y="All Climbing Points",
                      title="Avg Climbing Points", color_discrete_sequence=custom_colors)
         return fig
+
 
 #app = App(general_match_ui("match"), lambda input, output, session: general_match_server("match", input, output, session))
