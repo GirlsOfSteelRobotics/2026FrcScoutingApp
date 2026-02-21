@@ -1,0 +1,1902 @@
+[
+    {
+        "key": "2025tnkn_qm1",
+        "match_number": 1,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    5045,
+                    5744,
+                    4630
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    21,
+                    3824,
+                    1466
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm2",
+        "match_number": 2,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4576,
+                    4306,
+                    3984
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4020,
+                    3504,
+                    3324
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm3",
+        "match_number": 3,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3843,
+                    233,
+                    4504
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3821,
+                    5847,
+                    5816
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm4",
+        "match_number": 4,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3937,
+                    9152,
+                    538
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3966,
+                    9668,
+                    1592
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm5",
+        "match_number": 5,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4265,
+                    10479,
+                    4467
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    801,
+                    7483,
+                    3140
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm6",
+        "match_number": 6,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    6517,
+                    7072,
+                    7428
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    7255,
+                    2614,
+                    8570
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm7",
+        "match_number": 7,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    10101,
+                    1708,
+                    3492
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    2393,
+                    2856,
+                    5002
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm8",
+        "match_number": 8,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    1014,
+                    4065,
+                    10269
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    5816,
+                    3139,
+                    10137
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm9",
+        "match_number": 9,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    5045,
+                    1466,
+                    9152
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3324,
+                    3843,
+                    538
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm10",
+        "match_number": 10,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3821,
+                    4576,
+                    3966
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    5744,
+                    3140,
+                    3824
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm11",
+        "match_number": 11,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    7255,
+                    4630,
+                    7483
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    233,
+                    3984,
+                    2614
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm12",
+        "match_number": 12,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    1592,
+                    4020,
+                    5002
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    2856,
+                    10479,
+                    7428
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm13",
+        "match_number": 13,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3139,
+                    4065,
+                    801
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    10101,
+                    8570,
+                    21
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm14",
+        "match_number": 14,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    9668,
+                    7072,
+                    4504
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    1708,
+                    4467,
+                    3504
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm15",
+        "match_number": 15,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    1014,
+                    3492,
+                    6517
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4306,
+                    2393,
+                    3937
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm16",
+        "match_number": 16,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4265,
+                    5847,
+                    3324
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4630,
+                    10137,
+                    10269
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm17",
+        "match_number": 17,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    2614,
+                    7483,
+                    3966
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    7255,
+                    4576,
+                    5002
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm18",
+        "match_number": 18,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3139,
+                    10479,
+                    5744
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3843,
+                    10101,
+                    5816
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm19",
+        "match_number": 19,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    2856,
+                    5045,
+                    21
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3504,
+                    8570,
+                    9152
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm20",
+        "match_number": 20,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    233,
+                    2393,
+                    4065
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    1466,
+                    3937,
+                    3140
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm21",
+        "match_number": 21,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    538,
+                    1592,
+                    3492
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    6517,
+                    5847,
+                    801
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm22",
+        "match_number": 22,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    1014,
+                    4265,
+                    3984
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    1708,
+                    3821,
+                    9668
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm23",
+        "match_number": 23,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3824,
+                    4467,
+                    10137
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4306,
+                    7428,
+                    4504
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm24",
+        "match_number": 24,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    10269,
+                    4020,
+                    5744
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    8570,
+                    4630,
+                    7072
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm25",
+        "match_number": 25,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4065,
+                    10101,
+                    2856
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    233,
+                    3324,
+                    7483
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm26",
+        "match_number": 26,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3966,
+                    7255,
+                    3140
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    21,
+                    1592,
+                    5847
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm27",
+        "match_number": 27,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    10479,
+                    2393,
+                    1014
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    5045,
+                    3984,
+                    538
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm28",
+        "match_number": 28,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    7428,
+                    4467,
+                    3843
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3937,
+                    4576,
+                    3139
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm29",
+        "match_number": 29,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    1466,
+                    3504,
+                    6517
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    10269,
+                    1708,
+                    4265
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm30",
+        "match_number": 30,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    5816,
+                    2614,
+                    4020
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    9668,
+                    3492,
+                    3824
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm31",
+        "match_number": 31,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    9152,
+                    4306,
+                    10137
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    7072,
+                    801,
+                    3821
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm32",
+        "match_number": 32,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3140,
+                    5002,
+                    10101
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4504,
+                    1014,
+                    7255
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm33",
+        "match_number": 33,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3843,
+                    3139,
+                    8570
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    233,
+                    10479,
+                    1592
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm34",
+        "match_number": 34,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3966,
+                    7428,
+                    2393
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4630,
+                    4265,
+                    3504
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm35",
+        "match_number": 35,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    2614,
+                    3324,
+                    21
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3492,
+                    3937,
+                    4467
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm36",
+        "match_number": 36,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    7483,
+                    9152,
+                    9668
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3824,
+                    6517,
+                    4306
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm37",
+        "match_number": 37,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4504,
+                    538,
+                    4576
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    2856,
+                    10269,
+                    7072
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm38",
+        "match_number": 38,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    5816,
+                    3984,
+                    5002
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    1466,
+                    10137,
+                    4020
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm39",
+        "match_number": 39,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    5744,
+                    801,
+                    1708
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    5847,
+                    4065,
+                    5045
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm40",
+        "match_number": 40,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3821,
+                    10101,
+                    1014
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4467,
+                    1592,
+                    4630
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm41",
+        "match_number": 41,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3504,
+                    3824,
+                    2614
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3140,
+                    3843,
+                    10479
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm42",
+        "match_number": 42,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4265,
+                    21,
+                    7255
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    538,
+                    4306,
+                    2856
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm43",
+        "match_number": 43,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3139,
+                    4504,
+                    1466
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3492,
+                    7483,
+                    4020
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm44",
+        "match_number": 44,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    5744,
+                    233,
+                    3966
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    10137,
+                    6517,
+                    1708
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm45",
+        "match_number": 45,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    7072,
+                    3937,
+                    5816
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    7428,
+                    5045,
+                    3821
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm46",
+        "match_number": 46,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3984,
+                    10269,
+                    5847
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    9152,
+                    5002,
+                    4065
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm47",
+        "match_number": 47,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    8570,
+                    9668,
+                    801
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3324,
+                    2393,
+                    4576
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm48",
+        "match_number": 48,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    538,
+                    4630,
+                    1014
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3843,
+                    7483,
+                    2856
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm49",
+        "match_number": 49,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3492,
+                    3504,
+                    10137
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    1592,
+                    10101,
+                    5744
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm50",
+        "match_number": 50,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3937,
+                    7255,
+                    1708
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4020,
+                    3824,
+                    3139
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm51",
+        "match_number": 51,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    6517,
+                    5002,
+                    4265
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4065,
+                    3821,
+                    21
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm52",
+        "match_number": 52,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3140,
+                    233,
+                    7072
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    9668,
+                    7428,
+                    3984
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm53",
+        "match_number": 53,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4306,
+                    1466,
+                    5847
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4576,
+                    8570,
+                    10479
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm54",
+        "match_number": 54,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4467,
+                    5816,
+                    2393
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    10269,
+                    9152,
+                    2614
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm55",
+        "match_number": 55,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    5045,
+                    801,
+                    3324
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4504,
+                    3966,
+                    4020
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm56",
+        "match_number": 56,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3821,
+                    3843,
+                    4630
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4065,
+                    7255,
+                    3492
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm57",
+        "match_number": 57,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3984,
+                    2856,
+                    3139
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    5744,
+                    6517,
+                    3937
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm58",
+        "match_number": 58,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    5847,
+                    3824,
+                    7072
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    10101,
+                    4265,
+                    1466
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm59",
+        "match_number": 59,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    5002,
+                    10137,
+                    8570
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    2614,
+                    538,
+                    4467
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm60",
+        "match_number": 60,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    2393,
+                    4504,
+                    1592
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    9668,
+                    3324,
+                    10479
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm61",
+        "match_number": 61,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3140,
+                    5816,
+                    10269
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4306,
+                    5045,
+                    3966
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm62",
+        "match_number": 62,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    801,
+                    9152,
+                    233
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3504,
+                    1014,
+                    4576
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm63",
+        "match_number": 63,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    21,
+                    1708,
+                    3843
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    7483,
+                    7428,
+                    10101
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm64",
+        "match_number": 64,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    2856,
+                    5847,
+                    8570
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3824,
+                    3821,
+                    3984
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm65",
+        "match_number": 65,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4020,
+                    4265,
+                    538
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4467,
+                    5744,
+                    4065
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm66",
+        "match_number": 66,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4630,
+                    9668,
+                    4306
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    5002,
+                    3139,
+                    5045
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm67",
+        "match_number": 67,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3492,
+                    1466,
+                    233
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    1014,
+                    3966,
+                    9152
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm68",
+        "match_number": 68,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    7428,
+                    2614,
+                    3937
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    10269,
+                    4504,
+                    801
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm69",
+        "match_number": 69,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4576,
+                    5816,
+                    1708
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    1592,
+                    3324,
+                    7255
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm70",
+        "match_number": 70,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    10479,
+                    21,
+                    7483
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    10137,
+                    7072,
+                    2393
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm71",
+        "match_number": 71,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3504,
+                    3140,
+                    3821
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3139,
+                    538,
+                    6517
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm72",
+        "match_number": 72,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3984,
+                    4020,
+                    10101
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    3843,
+                    3966,
+                    4265
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm73",
+        "match_number": 73,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    5847,
+                    5744,
+                    7428
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    2614,
+                    1014,
+                    4306
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm74",
+        "match_number": 74,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    801,
+                    1592,
+                    3824
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    5002,
+                    10269,
+                    233
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm75",
+        "match_number": 75,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    10137,
+                    2856,
+                    7255
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    2393,
+                    1466,
+                    9668
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm76",
+        "match_number": 76,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    7483,
+                    3937,
+                    3504
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    8570,
+                    3492,
+                    5816
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm77",
+        "match_number": 77,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    10479,
+                    6517,
+                    4065
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4467,
+                    4576,
+                    5045
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm78",
+        "match_number": 78,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    1708,
+                    3140,
+                    4504
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    9152,
+                    21,
+                    4630
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm79",
+        "match_number": 79,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    3324,
+                    3139,
+                    3966
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    7072,
+                    5002,
+                    3843
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm1",
+        "match_number": 1,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4467,
+                    3843,
+                    10479
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    1708,
+                    1592,
+                    3824
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm1",
+        "match_number": 1,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    10101,
+                    233,
+                    5847
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4065,
+                    21,
+                    3504
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm1",
+        "match_number": 1,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4020,
+                    8570,
+                    3492
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    2614,
+                    3937,
+                    3966
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm1",
+        "match_number": 1,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    1014,
+                    4265,
+                    6517
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    801,
+                    7428,
+                    7072
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm1",
+        "match_number": 1,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    1708,
+                    1592,
+                    3824
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4065,
+                    21,
+                    3504
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm1",
+        "match_number": 1,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4020,
+                    8570,
+                    3492
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    1014,
+                    4265,
+                    6517
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm1",
+        "match_number": 1,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4467,
+                    3843,
+                    10479
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    10101,
+                    233,
+                    5847
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm1",
+        "match_number": 1,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    2614,
+                    3937,
+                    3966
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    801,
+                    7428,
+                    7072
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm1",
+        "match_number": 1,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    10101,
+                    233,
+                    5847
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4020,
+                    8570,
+                    3492
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm1",
+        "match_number": 1,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    801,
+                    7428,
+                    7072
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4065,
+                    21,
+                    3504
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm1",
+        "match_number": 1,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4467,
+                    3843,
+                    10479
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    2614,
+                    3937,
+                    3966
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm1",
+        "match_number": 1,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    801,
+                    7428,
+                    7072
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4020,
+                    8570,
+                    3492
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm1",
+        "match_number": 1,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    2614,
+                    3937,
+                    3966
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    4020,
+                    8570,
+                    3492
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm1",
+        "match_number": 1,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4467,
+                    3843,
+                    10479
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    2614,
+                    3937,
+                    3966
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm2",
+        "match_number": 2,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4467,
+                    3843,
+                    10479
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    2614,
+                    3937,
+                    3966
+                ]
+            }
+        }
+    },
+    {
+        "key": "2025tnkn_qm3",
+        "match_number": 3,
+        "alliances": {
+            "red": {
+                "team_keys": [
+                    4467,
+                    3843,
+                    10479
+                ]
+            },
+            "blue": {
+                "team_keys": [
+                    2614,
+                    3937,
+                    3966
+                ]
+            }
+        }
+    }
+]
