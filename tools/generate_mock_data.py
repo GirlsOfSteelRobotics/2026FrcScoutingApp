@@ -1,6 +1,7 @@
 from tools.mock_data_utils import IntValue, BooleanValue, EnumValue
 from typing import Optional
 import random
+import json
 
 
 class TeamConfig:
@@ -54,10 +55,53 @@ class TeamConfig:
         return data
 
 
+def populate_tba_and_statbotics_match(tba_matches, statbotics_matches, match_number, match_teams):
+        match_key = f"2025tnkn_qm{match_number}"
+        tba_matches.append({
+            "alliances": {
+                "blue": { "team_keys": [f"frc{x}" for x in match_teams[3:]]},
+                "red": { "team_keys": [f"frc{x}" for x in match_teams[0:3]]},
+            },
+            "key": match_key,
+            "match_number": match_number
+        })
 
-def main():
-    random.seed(3504)
+        statbotics_matches.append({
+            "key": match_key,
+            "match_number": match_number,
+            "alliances": {
+                "red": { "team_keys": match_teams[0:3]},
+                "blue": { "team_keys": match_teams[3:]},
+            }
+        })
 
+
+def populate_from_previous_event():
+    teams = set()
+    matches = []
+
+    with open("data/2025tnkn/statbotics_matches.json", 'r') as f:
+        matches_json = json.load(f)
+
+    for match_json in matches_json:
+        match_number = match_json["match_number"]
+        red_teams = match_json["alliances"]["red"]["team_keys"]
+        blue_teams = match_json["alliances"]["blue"]["team_keys"]
+        teams.update(red_teams + blue_teams)
+
+        matches.append([match_number] + red_teams + blue_teams)
+
+    teams = sorted(teams)
+
+    team_configs = {}
+
+    for team in teams:
+        team_configs[team] = TeamConfig()
+
+    return team_configs, teams, matches
+
+
+def populate_randomly():
     team_configs = {
         254: TeamConfig(),
         1678: TeamConfig(),
@@ -70,23 +114,69 @@ def main():
             auto_fuel=IntValue(min_value=5, max_value=30)
         ),
     }
-
     team_numbers = list(team_configs.keys())
 
-    rows = []
-    rows.append(TeamConfig.COLUMN_NAMES)
+    matches = []
 
-    num_matches = 10
-    for match_i in range(num_matches):
+    for match_i in range(60):
         match_teams = random.sample(team_numbers, 6)
 
-        for team_i in range(6):
-            rows.append(["abc", match_i + 1, match_teams[team_i], *team_configs[match_teams[team_i]].generate_data()])
+        matches.append([match_i + 1, *match_teams])
+
+    return team_configs, team_numbers, matches
+
+
+def main():
+    random.seed(3504)
+
+    # team_configs, team_numbers, matches = populate_randomly()
+    team_configs, team_numbers, matches = populate_from_previous_event()
+
+
+
+    tba_teams = [{
+        "key": f"frc{team_number}",
+        "team_number": team_number
+    } for team_number in team_numbers]
+
+    statbotics_teams = [{
+        "team": team_number,
+    } for team_number in team_numbers]
+
+    scouted_data = []
+    scouted_data.append(TeamConfig.COLUMN_NAMES)
+
+    tba_matches = []
+    statbotics_matches = []
+
+    num_scouted_matches = 28
+    for i, match_data in enumerate(matches):
+        match_number = match_data[0]
+        teams = match_data[1:]
+
+        populate_tba_and_statbotics_match(tba_matches, statbotics_matches, match_number, teams)
+
+        if i < num_scouted_matches:
+            for team in teams:
+                scouted_data.append(["abc", match_number, team, *team_configs[team].generate_data()])
 
     with open("data/mock_data/scouted_data.csv", 'w') as f:
-        for row in rows:
+        for row in scouted_data:
             f.write(",".join(str(x) for x in row))
             f.write("\n")
+
+    with open("data/mock_data/tba_teams.json", 'w') as f:
+        json.dump(tba_teams, f, indent=4)
+
+    with open("data/mock_data/statbotics_teams.json", 'w') as f:
+        json.dump(statbotics_teams, f, indent=4)
+
+    with open("data/mock_data/tba_matches.json", 'w') as f:
+        json.dump(tba_matches, f, indent=4)
+
+    with open("data/mock_data/statbotics_matches.json", 'w') as f:
+        json.dump(statbotics_matches, f, indent=4)
+
 
 
 if __name__ == "__main__":
