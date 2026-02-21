@@ -7,17 +7,19 @@ from shiny import App, ui
 from shinywidgets import output_widget, render_widget
 from data_container import load_pit_data, load_scouted_data
 
+from overview_tab import overview_tab_server, overview_tab_ui
 
 app_ui = ui.page_navbar(
-    ui.nav_panel("A", "Page A content"),
-    ui.nav_panel("B", "Page B content"),
-    ui.nav_panel("C", "Page C content"),
-    title="App with navbar",
+    ui.nav_panel("Overview", overview_tab_ui("overview")),
+    # ui.nav_panel("Matches", "matches"),
+    title="2026FRCScoutingApp",
 )
 
 
 def server(input, output, session):
     pass
+    overview_tab_server("overview")
+    # general_match_server("matches")
 
 
 app = App(app_ui, server)
