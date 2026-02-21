@@ -21,90 +21,73 @@ def overview_tab_ui():
 
 
 @module.server
-def overview_tab_server(input, output, server):
-
+def overview_tab_server(input, output, session):
 
     @render_widget
-    def teleop_v_autoend():
-            teams = get_Teams_in_Match()
-            match_data = df.loc[df["Team Number"].isin(teams)].reset_index()
-            numeric_cols = ["Auto Fuel", "Teleop Fuel"]
-            for col in numeric_cols:
-                if col in match_data.columns:
-                    match_data[col] = pd.to_numeric(match_data[col], errors='coerce').fillna(0)
-                    match_data["Auto Climbing Status"] = match_data["Auto Climbing Status"].fillna(False)
-                if match_data["Auto Climbing Status"].dtype == 'object':
-                    match_data["Auto Climbing Status"] = match_data["Auto Climbing Status"].astype(str).str.lower().isin(
-                    ['true', '1', 'yes'])
-            def convert_endgame_to_teleop(level):
-                if pd.isna(level):
-                    return 0
-                level_str = str(level).upper().strip()
-                if level_str == "L1":
-                    return 10
-                elif level_str == "L2":
-                    return 20
-                elif level_str == "L3":
-                    return 30
-                else:
-                    return 0
+    def teleop_vs_auto_endgame():
+        new_df = df.copy()
 
+        numeric_cols = ["Auto Fuel", "Auto Human Player Score", "Teleop Fuel", "Teleop Human Player Score"]
+        for col in numeric_cols:
+            if col in new_df.columns:
+                new_df[col] = pd.to_numeric(new_df[col], errors='coerce').fillna(0)
 
-            match_data["Endgame Teleop Points"] = match_data["Endgame Climbing Level"].apply(convert_endgame_to_teleop)
-            match_data["Auto Climb Points"] = match_data["Auto Climbing Status"].apply(lambda x: 15 if x else 0)
-            match_data["All Auto"] = match_data["Auto Fuel"] + match_data["Auto Climb Points"]
-            match_data["All Teleop"] = match_data["Teleop Fuel"] + match_data["Endgame Teleop Points"]
-            match_data["All Endgame"] = match_data["Endgame Teleop Points"]
-            match_data["Auto and Endgame"] = match_data["All Auto"] + match_data["All Endgame"]
+        new_df["Auto Climbing Status"] = new_df["Auto Climbing Status"].fillna(False)
+        if new_df["Auto Climbing Status"].dtype == 'object':
+            new_df["Auto Climbing Status"] = new_df["Auto Climbing Status"].astype(str).str.lower().isin(
+                ['true', '1', 'yes'])
 
-            team_stats = match_data.groupby("Team Number").agg({
-                "All Teleop": "mean",
-                "Auto and Endgame": "mean",
-                "All Auto": "mean",
-                "All Endgame": "mean",
-                "Endgame Teleop Points": "mean",
-                "Auto Climb Points": "mean",
-                "Auto Climbing Status": "mean",
-            }).reset_index()
-            fig = px.scatter(
-                team_stats,
-                x="All Teleop",
-                y="Auto and Endgame",
-                title="Teleop vs. Auto + Endgame",
-                hover_data={
-                "Team Number": True,
-                "All Teleop": ":.1f",
-                "Auto and Endgame": ":.1f",
-                "All Auto": ":.1f",
-                "All Endgame": ":.1f",
-                "Endgame Teleop Points": ":.1f",
-                "Auto Climb Points": ":.1f",
-                "Auto Climbing Status": ":.2%",
-                }
-            )
-            fig.update_traces(
-                hovertemplate=(
-                    "<b>Team %{customdata[0]}</b><br>"
-                    "All Teleop: %{x:.1f}<br>"
-                    "Auto and Endgame: %{y:.1f}<br>"
-                    "All Auto: %{customdata[1]:.1f}<br>"
-                    "All Endgame: %{customdata[2]:.1f}<br>"
-                    "Endgame Teleop Points: %{customdata[3]:.1f}<br>"
-                    "Auto Climb Points: %{customdata[4]:.1f}<br>"
-                    "Auto Climbing Status: %{customdata[5]:.2%}<extra></extra>"
-                ),
+        def convert_endgame_to_points(level):
+            if pd.isna(level):
+                return 0
+            level_str = str(level).upper().strip()
+            return {"L1": 10, "L2": 20, "L3": 30}.get(level_str, 0)
+
+        new_df["Endgame Teleop Points"] = new_df["Endgame Climbing Level"].apply(convert_endgame_to_points)
+        new_df["Auto Climb Points"] = new_df["Auto Climbing Status"].apply(lambda x: 15 if x else 0)
+        new_df["All Auto"] = new_df["Auto Fuel"] + new_df["Auto Climb Points"]
+        new_df["All Teleop"] = new_df["Teleop Fuel"] + new_df["Endgame Teleop Points"]
+        new_df["All Endgame"] = new_df["Endgame Teleop Points"]
+        new_df["Auto and Endgame"] = new_df["All Auto"] + new_df["All Endgame"]
+
+        team_stats = new_df.groupby("Team Number").agg({
+            "All Teleop": "mean",
+            "Auto and Endgame": "mean",
+            "All Auto": "mean",
+            "All Endgame": "mean",
+            "Endgame Teleop Points": "mean",
+            "Auto Climb Points": "mean",
+            "Auto Climbing Status": "mean",
+        }).reset_index()
+
+        fig = px.scatter(
+            team_stats,
+            x="All Teleop",
+            y="Auto and Endgame",
+            title="Teleop vs. Auto + Endgame (Team Averages)",
+        )
+        fig.update_traces(
+            hovertemplate=(
+                "<b>Team %{customdata[0]}</b><br>"
+                "All Teleop: %{x:.1f}<br>"
+                "Auto and Endgame: %{y:.1f}<br>"
+                "All Auto: %{customdata[1]:.1f}<br>"
+                "All Endgame: %{customdata[2]:.1f}<br>"
+                "Endgame Teleop Points: %{customdata[3]:.1f}<br>"
+                "Auto Climb Points: %{customdata[4]:.1f}<br>"
+                "Auto Climbing Status: %{customdata[5]:.2%}<extra></extra>"
+            ),
             customdata=team_stats[["Team Number", "All Auto", "All Endgame",
-                       "Endgame Teleop Points", "Auto Climb Points",
-                       "Auto Climbing Status"]].values
-            )
-
-            fig.update_layout(
-                xaxis_title="Average Teleop Score",
-                yaxis_title="Average (Auto + Endgame) Score",
-                hovermode="closest",
-                showlegend=False
-            )
-            return fig
+                                   "Endgame Teleop Points", "Auto Climb Points",
+                                   "Auto Climbing Status"]].values
+        )
+        fig.update_layout(
+            xaxis_title="Average Teleop Score",
+            yaxis_title="Average (Auto + Endgame) Score",
+            hovermode="closest",
+            showlegend=False
+        )
+        return fig
 
    # @render_widget
     # def auto_climbing_frequency():
