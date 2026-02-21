@@ -6,6 +6,8 @@ from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match
 import pandas as pd
 import plotly.express as px
 
+from general_match_things import df
+
 pd.set_option('display.max_columns', None)
 
 # from data_container import scouted_data
@@ -26,7 +28,7 @@ def overview_tab_server(input, output, server):
     @render_widget
     def teleop_v_autoend():
             teams = get_Teams_in_Match()
-            match_data = scouted_data.loc[scouted_data["Team Number"].isin(teams)].reset_index()
+            match_data = df.loc[scouted_data["Team Number"].isin(teams)].reset_index()
             numeric_cols = ["Auto Fuel", "Teleop Fuel"]
             for col in numeric_cols:
                 if col in match_data.columns:
