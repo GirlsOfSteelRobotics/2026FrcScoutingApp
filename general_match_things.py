@@ -8,18 +8,20 @@ from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match,
 
 df = load_scouted_data()
 match_numbers = load_match_numbers()
-
+all_teams = sorted(df["Team Number"].unique().tolist())
 
 @module.ui
 def general_match_ui():
     return ui.page_fluid(
         ui.layout_sidebar(
             ui.sidebar(
-               # ui.input_radio_buttons("match_or_team", "Select Match Number or 6 Teams",
-              #                         choices=["Match Number", "Select 6 Teams"], selected="Match Number"),
-             #   ui.output_ui("our_matches_switch_ui"),
+                ui.input_radio_buttons(
+                    "selection_mode",
+                    "Select By:",
+                    choices=["Match Number", "Pick 6 Teams"],
+                    selected="Match Number"
+                ),
                 ui.output_ui("match_list_combobox"),
-
             ),
                 #AUTO
                 ui.navset_tab(
@@ -49,16 +51,33 @@ def general_match_ui():
 def general_match_server(input, output, session):
 
     def get_teams_in_match():
-        match_number = str(input.match_select())
-        return df.loc[df["Team Number"].isin(get_Teams_in_Match(match_number))]
+        if input.selection_mode() == "Match Number":
+            match_number = str(input.match_select())
+            teams = get_Teams_in_Match(match_number)
+        else:
+            teams = [
+                str(input.team1()), str(input.team2()), str(input.team3()),
+                str(input.team4()), str(input.team5()), str(input.team6()),
+            ]
+        return df.loc[df["Team Number"].isin(teams)]
 
     @render.ui
     def match_list_combobox():
-        return ui.input_select(
-            "match_select",
-            "Match Number:",
-            choices=match_numbers
-        )
+        if input.selection_mode() == "Match Number":
+            return ui.input_select(
+                "match_select",
+                "Match Number:",
+                choices=match_numbers
+            )
+        else:
+            return ui.div(
+                ui.input_select("team1", "Team 1:", choices=all_teams),
+                ui.input_select("team2", "Team 2:", choices=all_teams),
+                ui.input_select("team3", "Team 3:", choices=all_teams),
+                ui.input_select("team4", "Team 4:", choices=all_teams),
+                ui.input_select("team5", "Team 5:", choices=all_teams),
+                ui.input_select("team6", "Team 6:", choices=all_teams),
+            )
 
 
 
