@@ -77,7 +77,7 @@ def overview_tab_server(input, output, session):
             team_stats,
             x = "All Teleop",
             y = y_axis,
-            title="Teleop vs. Auto + Endgame (Team Averages)",
+            title=f"Teleop vs. {y_axis} (Team Averages)",
         )
         fig.update_traces(
             hovertemplate=(
@@ -90,7 +90,7 @@ def overview_tab_server(input, output, session):
         )
         fig.update_layout(
             xaxis_title="Average Teleop Score",
-            yaxis_title="Average (Auto + Endgame) Score",
+            yaxis_title= y_axis,
             hovermode="closest",
             showlegend=False
         )
