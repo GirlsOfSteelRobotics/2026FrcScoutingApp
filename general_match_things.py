@@ -70,7 +70,8 @@ def general_match_server(input, output, session):
 
     @render_widget
     def auto_climbing_frequency():
-        auto_climbing_status_df = df.groupby("Team Number")["Auto Climbing Status"].value_counts().unstack(
+        new_df = get_teams_in_match()
+        auto_climbing_status_df = new_df.groupby("Team Number")["Auto Climbing Status"].value_counts().unstack(
             fill_value=0).reset_index()
         auto_climbing_status_df["Climb Freq"] = auto_climbing_status_df[True] / (
                 auto_climbing_status_df[True] + auto_climbing_status_df[False])
@@ -158,7 +159,7 @@ def general_match_server(input, output, session):
         new_df["All Climbing Points"] = new_df["Auto Climb Points"] + new_df["Endgame Teleop Points"]
         custom_colors = ["#194f55", "#54808e", "#243454"]
         fig = px.bar(new_df, x="Team Number", y="All Climbing Points",
-                     title="Total Climbing Points", color_discrete_sequence=custom_colors)
+                     title="Auto + Endgame Climbing Points", color_discrete_sequence=custom_colors)
         return fig
 
     @render_widget
@@ -182,8 +183,7 @@ def general_match_server(input, output, session):
         avg_df = new_df.groupby("Team Number").mean(numeric_only=True).reset_index()
         custom_colors = ["#194f55", "#54808e", "#243454"]
         fig = px.bar(avg_df, x="Team Number", y="All Climbing Points",
-                     title="Avg Climbing Points", color_discrete_sequence=custom_colors)
+                     title="Avg Auto + Endgame Climbing Points", color_discrete_sequence=custom_colors)
         return fig
 
-
-#app = App(general_match_ui("match"), lambda input, output, session: general_match_server("match", input, output, session))
+# app = App(general_match_ui("match"), lambda input, output, session: general_match_server("match", input, output, session))

@@ -96,4 +96,6 @@ def overview_tab_server(input, output, session):
         )
         return fig
 
-
+    @render_widget
+    def statbotics_prediction(input, output, session):
+        return
