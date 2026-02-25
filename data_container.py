@@ -39,3 +39,4 @@ def load_match_numbers():
         matches_json = json.load(f)
         match_numbers = sorted(set(str(m["match_number"]) for m in matches_json), key=lambda x: int(x))
     return match_numbers
+
