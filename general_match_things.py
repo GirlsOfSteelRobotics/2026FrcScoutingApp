@@ -15,7 +15,11 @@ def general_match_ui():
     return ui.page_fluid(
         ui.layout_sidebar(
             ui.sidebar(
+               # ui.input_radio_buttons("match_or_team", "Select Match Number or 6 Teams",
+              #                         choices=["Match Number", "Select 6 Teams"], selected="Match Number"),
+             #   ui.output_ui("our_matches_switch_ui"),
                 ui.output_ui("match_list_combobox"),
+
             ),
                 #AUTO
                 ui.navset_tab(
