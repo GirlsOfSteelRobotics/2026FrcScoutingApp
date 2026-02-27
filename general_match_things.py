@@ -23,12 +23,21 @@ def general_match_ui():
                 ),
                 ui.output_ui("match_list_combobox"),
             ),
-                #AUTO
+
                 ui.navset_tab(
+                #OVERALL
+                    ui.nav_panel("Overall",
+                                 ui.card(output_widget("statbotics_prediction")),
+                                        ui.card(output_widget("avg_fuel")),
+                                        ui.card(output_widget("avg_endgame_and_auto")),
+                                        ui.card(output_widget("rp_count")),
+                                 ),
+
+                #AUTO
                     ui.nav_panel("Auto",
                                  ui.card(output_widget("auto_fuel_in_hub")),
                                         ui.card(output_widget("auto_climbing_frequency")),
-                ),
+                                 ),
                 #TELEOP
                     ui.nav_panel("Teleop",
                                  ui.card(output_widget("teleop_fuel_in_hub")),
@@ -45,7 +54,6 @@ def general_match_ui():
             )
         )
     )
-
 
 @module.server
 def general_match_server(input, output, session):
@@ -79,7 +87,45 @@ def general_match_server(input, output, session):
                 ui.input_select("team6", "Team 6:", choices=all_teams),
             )
 
+# OVERALL STATS
+    @render_widget
+    def statbotics_prediction():
+        return
 
+    @render_widget
+    def avg_fuel():
+        new_df = get_teams_in_match()
+        avg_team = new_df.groupby("Team Number").mean(numeric_only=True).reset_index()
+
+        # Calculate total fuel
+        avg_team["Total Fuel"] = avg_team["Auto Fuel"] + avg_team["Teleop Fuel"]
+
+        # Sort by total fuel for better visualization
+        avg_team = avg_team.sort_values("Total Fuel", ascending=True)
+
+        # Create horizontal bar chart
+        fig = px.bar(
+            avg_team,
+            y="Team Number",  # Teams on y-axis
+            x="Total Fuel",  # Values on x-axis
+            title="Average Fuel by Team (Sorted)",
+            labels={"Total Fuel": "Average Fuel Score", "Team Number": "Team Number"},
+            orientation='h',  # Horizontal bars
+            text="Total Fuel"  # Show values
+        )
+
+        fig.update_traces(textposition='outside')
+        fig.update_layout(height=500)
+
+        return fig
+
+    @render_widget
+    def avg_endgame_and_auto():
+        return
+
+    @render_widget
+    def rp_count():
+        return
 
 # AUTO GRAPHS
     @render_widget
