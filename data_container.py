@@ -6,6 +6,9 @@ import json
 
 
 script_directory = pathlib.Path(__file__).resolve().parent
+with open(script_directory / 'data/mock_data/statbotics_matches.json', 'r') as f:
+    data = json.load(f)
+print(data[0])
 
 EVENT_CODE = "mock_data"
 

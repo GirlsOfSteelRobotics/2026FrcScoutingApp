@@ -48,8 +48,8 @@ def pit_overview_tab_ui():
         ui.input_select(
             "y_axis_select",
             "Metric:",
-            choices=["Endgame scored points", "Total fuel", "Average fuel"],
-            selected="Total fuel",
+            choices=["Endgame Scored Points", "Total Fuel", "Average Fuel"],
+            selected="Total Fuel",
         ),
         ui.card(output_widget("team_trend_graph")),
     )
@@ -98,18 +98,17 @@ def pit_overview_tab_server(input, output, session):
         team_df["Match Number"] = pd.to_numeric(team_df["Match Number"], errors="coerce")
         team_df = team_df.dropna(subset=["Match Number"]).sort_values("Match Number")
 
-        team_df["Auto Fuel"] = pd.to_numeric(team_df.get("Auto Fuel", 0), errors="coerce").fillna(0)
-        team_df["Teleop Fuel"] = pd.to_numeric(team_df.get("Teleop Fuel", 0), errors="coerce").fillna(0)
+        team_df["Auto Fuel"] = pd.to_numeric(team_df["Auto Fuel"], errors="coerce").fillna(0)
+        team_df["Teleop Fuel"] = pd.to_numeric(team_df["Teleop Fuel"], errors="coerce").fillna(0)
 
         def convert_endgame(level):
             if pd.isna(level):
                 return 0
-            s = str(level).upper().strip()
-            return {"L1": 10, "L2": 20, "L3": 30}.get(s, 0)
+            return {"L1": 10, "L2": 20, "L3": 30}.get(str(level).upper().strip(), 0)
 
-        team_df["Endgame scored points"] = team_df["Endgame Climbing Level"].apply(convert_endgame)
-        team_df["Total fuel"] = team_df["Auto Fuel"] + team_df["Teleop Fuel"]
-        team_df["Average fuel"] = team_df["Total fuel"].expanding().mean()
+        team_df["Endgame Scored Points"] = team_df["Endgame Climbing Level"].apply(convert_endgame)
+        team_df["Total Fuel"] = team_df["Auto Fuel"] + team_df["Teleop Fuel"]
+        team_df["Average Fuel"] = team_df["Total Fuel"].expanding().mean()
 
         fig = px.scatter(team_df, x="Match Number", y=y_axis,
                          title=f"Team {team}: {y_axis} by Match")
