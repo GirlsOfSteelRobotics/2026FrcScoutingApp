@@ -27,7 +27,8 @@ def general_match_ui():
                 ui.navset_tab(
                 #OVERALL
                     ui.nav_panel("Overall",
-                                 ui.card(output_widget("statbotics_prediction")),
+                                  ui.card(output_widget("red_statbotics_prediction")),
+                                        ui.card(output_widget("blue_statbotics_prediction")),
                                         ui.card(output_widget("avg_fuel")),
                                         ui.card(output_widget("avg_endgame_and_auto")),
                                         ui.card(output_widget("rp_count")),
@@ -88,9 +89,29 @@ def general_match_server(input, output, session):
             )
 
 # OVERALL STATS
-    @render_widget
-    def statbotics_prediction():
-        return
+    @render.text
+    def red_statbotics_prediction():
+        match_num = int(input.match_select())
+        statbotics_data_filtered = df.loc[
+            (df["match_numbers"] == match_num )
+            & (df["comp_level"] == "qm")
+        ]
+        return ui.value_box(
+            title="Prediction RED",
+            value=str(statbotics_data_filtered["pred.red_score"].sum())
+        )
+
+    @render.text
+    def blue_statbotics_prediction():
+        match_num = int(input.match_select())
+        statbotics_data_filtered = df.loc[
+            (df["match_numbers"] == match_num)
+            & (df["comp_level"] == "qm")
+        ]
+        return ui.value_box(
+            title="Prediction BLUE",
+            value=str(statbotics_data_filtered["pred.blue_score"].sum())
+        )
 
     @render_widget
     def avg_fuel():
@@ -106,8 +127,8 @@ def general_match_server(input, output, session):
         # Create horizontal bar chart
         fig = px.bar(
             avg_team,
-            y="Team Number",  # Teams on y-axis
-            x="Total Fuel",  # Values on x-axis
+            x="Team Number",  # Teams on x-axis
+            y="Total Fuel",  # Values on y-axis
             title="Average Fuel by Team (Sorted)",
             labels={"Total Fuel": "Average Fuel Score", "Team Number": "Team Number"},
             orientation='h',  # Horizontal bars
