@@ -5,6 +5,7 @@ from shiny import reactive, render, module
 from shiny import App, ui
 from shinywidgets import output_widget, render_widget
 from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match, load_match_numbers
+from download_external_data import download_external_data
 
 df = load_scouted_data()
 match_numbers = load_match_numbers()
