@@ -6,9 +6,8 @@ import json
 
 
 script_directory = pathlib.Path(__file__).resolve().parent
-with open(script_directory / 'data/mock_data/statbotics_matches.json', 'r') as f:
-    data = json.load(f)
-print(data[0])
+
+
 
 EVENT_CODE = "mock_data"
 
@@ -42,4 +41,10 @@ def load_match_numbers():
         matches_json = json.load(f)
         match_numbers = sorted(set(str(m["match_number"]) for m in matches_json), key=lambda x: int(x))
     return match_numbers
+
+if __name__ == "__main__":
+    pit = load_pit_data()
+    scouted = load_scouted_data()
+    print("Pit teams:", sorted(pit["Team Number"].unique().tolist()))
+    print("Scouted teams:", sorted(scouted["Team Number"].unique().tolist()))
 
