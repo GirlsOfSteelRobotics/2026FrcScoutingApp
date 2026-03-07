@@ -181,7 +181,7 @@ def general_match_server(input, output, session):
         new_df = get_teams_in_match()
         avg_team = new_df.groupby("Team Number").mean(numeric_only=True)
         custom_colors = ["#194f55", "#54808e", "#243454"]
-        fig = px.bar(avg_team, y="Teleop Fuel", title="Fuel in Hub (Teleop) per Robot",
+        fig = px.bar(avg_team, y="Teleop Fuel", title="Average Fuel in Hub (Teleop) per Robot",
                      color_discrete_sequence=custom_colors)
         return fig
 
