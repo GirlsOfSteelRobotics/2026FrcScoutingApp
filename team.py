@@ -43,12 +43,28 @@ def pit_overview_tab_ui():
                 ui.card_header("Climbing Levels"),
                 ui.output_text("climb_value"),
             ),
+            ui.card(
+                ui.card_header("Go Under Trench?"),
+                ui.output_text("under_trench"),
+            ),
+            ui.card(
+                ui.card_header("Go Over Bump?"),
+                ui.output_text("over_bump"),
+            ),
+            ui.card(
+                ui.card_header("Climbing Type (In/Out)"),
+                ui.output_text("climb_type"),
+            ),
+            ui.card(
+                ui.card_header("Preload Number"),
+                ui.output_text("preload_number"),
+            ),
             col_widths=[6, 6],
         ),
         ui.input_select(
             "y_axis_select",
             "Metric:",
-            choices=["Endgame Scored Points", "Total Fuel", "Average Fuel"],
+            choices=["Endgame Scored Points", "Total Fuel", "Average Fuel", "Auto Fuel", "Teleop Fuel"],
             selected="Total Fuel",
         ),
         ui.card(output_widget("team_trend_graph")),
@@ -83,6 +99,44 @@ def pit_overview_tab_server(input, output, session):
         auto = "N/A" if pd.isna(auto) else str(auto).strip()
         endg = "N/A" if pd.isna(endg) else str(endg).strip()
         return f"Auto: {auto} | Endgame: {endg}"
+
+    @render.text
+    def under_trench():
+        team = input.team_select()
+        row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        trench = row.get("Under Trench?", "N/A")
+        return trench
+
+
+    @render.text
+    def over_bump():
+        team = input.team_select()
+        row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        bump = row.get("Over Bump?", "N/A")
+        return bump
+
+    @render.text
+    def climb_type():
+        team = input.team_select()
+        row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        type = row.get ("Climb type", "N/A")
+        return type
+
+    @render.text
+    def preload_number():
+        team = input.team_select()
+        row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        preload = row.get ("Preload Number", "")
+        preload = "" if pd.isna(preload) else str(preload).strip()
+        return preload if preload else "N/A"
 
     @render_widget
     def team_trend_graph():
