@@ -6,6 +6,7 @@ from shiny import App, ui
 from shinywidgets import output_widget, render_widget
 from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match, load_match_numbers
 
+
 df = load_scouted_data()
 match_numbers = load_match_numbers()
 all_teams = sorted(df["Team Number"].unique().tolist())
@@ -23,12 +24,22 @@ def general_match_ui():
                 ),
                 ui.output_ui("match_list_combobox"),
             ),
-                #AUTO
+
                 ui.navset_tab(
+                #OVERALL
+                    ui.nav_panel("Overall",
+                                  ui.card(output_widget("red_statbotics_prediction")),
+                                        ui.card(output_widget("blue_statbotics_prediction")),
+                                        ui.card(output_widget("avg_fuel")),
+                                        ui.card(output_widget("avg_endgame_and_auto")),
+                                        ui.card(output_widget("rp_count")),
+                                 ),
+
+                #AUTO
                     ui.nav_panel("Auto",
                                  ui.card(output_widget("auto_fuel_in_hub")),
                                         ui.card(output_widget("auto_climbing_frequency")),
-                ),
+                                 ),
                 #TELEOP
                     ui.nav_panel("Teleop",
                                  ui.card(output_widget("teleop_fuel_in_hub")),
@@ -45,7 +56,6 @@ def general_match_ui():
             )
         )
     )
-
 
 @module.server
 def general_match_server(input, output, session):
@@ -79,7 +89,65 @@ def general_match_server(input, output, session):
                 ui.input_select("team6", "Team 6:", choices=all_teams),
             )
 
+# OVERALL STATS
+    @render.text
+    def red_statbotics_prediction():
+        match_num = int(input.match_select())
+        statbotics_data_filtered = df.loc[
+            (df["match_numbers"] == match_num )
+            & (df["comp_level"] == "qm")
+        ]
+        return ui.value_box(
+            title="Prediction RED",
+            value=str(statbotics_data_filtered["pred.red_score"].sum())
+        )
 
+    @render.text
+    def blue_statbotics_prediction():
+        match_num = int(input.match_select())
+        statbotics_data_filtered = df.loc[
+            (df["match_numbers"] == match_num)
+            & (df["comp_level"] == "qm")
+        ]
+        return ui.value_box(
+            title="Prediction BLUE",
+            value=str(statbotics_data_filtered["pred.blue_score"].sum())
+        )
+
+    @render_widget
+    def avg_fuel():
+        new_df = get_teams_in_match()
+        avg_team = new_df.groupby("Team Number").mean(numeric_only=True).reset_index()
+
+        # Calculate total fuel
+        avg_team["Total Fuel"] = avg_team["Auto Fuel"] + avg_team["Teleop Fuel"]
+
+        # Sort by total fuel for better visualization
+        avg_team = avg_team.sort_values("Total Fuel", ascending=True)
+
+        # Create horizontal bar chart
+        fig = px.bar(
+            avg_team,
+            x="Team Number",  # Teams on x-axis
+            y="Total Fuel",  # Values on y-axis
+            title="Average Fuel by Team (Sorted)",
+            labels={"Total Fuel": "Average Fuel Score", "Team Number": "Team Number"},
+            orientation='h',  # Horizontal bars
+            text="Total Fuel"  # Show values
+        )
+
+        fig.update_traces(textposition='outside')
+        fig.update_layout(height=500)
+
+        return fig
+
+    @render_widget
+    def avg_endgame_and_auto():
+        return
+
+    @render_widget
+    def rp_count():
+        return
 
 # AUTO GRAPHS
     @render_widget

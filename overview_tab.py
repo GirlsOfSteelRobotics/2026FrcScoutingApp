@@ -75,9 +75,9 @@ def overview_tab_server(input, output, session):
 
         fig = px.scatter(
             team_stats,
-            x = "All Teleop",
+            x = "Team Number",
             y = y_axis,
-            title=f"Teleop vs. {y_axis} (Team Averages)",
+            title=f"{y_axis} (Averages) by Team",
         )
         fig.update_traces(
             hovertemplate=(
@@ -89,13 +89,9 @@ def overview_tab_server(input, output, session):
             customdata=team_stats[["Team Number"]].values
         )
         fig.update_layout(
-            xaxis_title="Average Teleop Score",
+            xaxis_title="Team Number",
             yaxis_title= y_axis,
             hovermode="closest",
             showlegend=False
         )
         return fig
-
-    @render_widget
-    def statbotics_prediction(input, output, session):
-        return
