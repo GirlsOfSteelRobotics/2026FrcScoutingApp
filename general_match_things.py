@@ -8,13 +8,19 @@ from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match,
 
 df = load_scouted_data()
 match_numbers = load_match_numbers()
-
+all_teams = sorted(df["Team Number"].unique().tolist())
 
 @module.ui
 def general_match_ui():
     return ui.page_fluid(
         ui.layout_sidebar(
             ui.sidebar(
+                ui.input_radio_buttons(
+                    "selection_mode",
+                    "Select By:",
+                    choices=["Match Number", "Pick 6 Teams"],
+                    selected="Match Number"
+                ),
                 ui.output_ui("match_list_combobox"),
             ),
                 #AUTO
@@ -45,16 +51,33 @@ def general_match_ui():
 def general_match_server(input, output, session):
 
     def get_teams_in_match():
-        match_number = str(input.match_select())
-        return df.loc[df["Team Number"].isin(get_Teams_in_Match(match_number))]
+        if input.selection_mode() == "Match Number":
+            match_number = str(input.match_select())
+            teams = get_Teams_in_Match(match_number)
+        else:
+            teams = [
+                str(input.team1()), str(input.team2()), str(input.team3()),
+                str(input.team4()), str(input.team5()), str(input.team6()),
+            ]
+        return df.loc[df["Team Number"].isin(teams)]
 
     @render.ui
     def match_list_combobox():
-        return ui.input_select(
-            "match_select",
-            "Match Number:",
-            choices=match_numbers
-        )
+        if input.selection_mode() == "Match Number":
+            return ui.input_select(
+                "match_select",
+                "Match Number:",
+                choices=match_numbers
+            )
+        else:
+            return ui.div(
+                ui.input_select("team1", "Team 1:", choices=all_teams),
+                ui.input_select("team2", "Team 2:", choices=all_teams),
+                ui.input_select("team3", "Team 3:", choices=all_teams),
+                ui.input_select("team4", "Team 4:", choices=all_teams),
+                ui.input_select("team5", "Team 5:", choices=all_teams),
+                ui.input_select("team6", "Team 6:", choices=all_teams),
+            )
 
 
 
@@ -70,7 +93,8 @@ def general_match_server(input, output, session):
 
     @render_widget
     def auto_climbing_frequency():
-        auto_climbing_status_df = df.groupby("Team Number")["Auto Climbing Status"].value_counts().unstack(
+        new_df = get_teams_in_match()
+        auto_climbing_status_df = new_df.groupby("Team Number")["Auto Climbing Status"].value_counts().unstack(
             fill_value=0).reset_index()
         auto_climbing_status_df["Climb Freq"] = auto_climbing_status_df[True] / (
                 auto_climbing_status_df[True] + auto_climbing_status_df[False])
@@ -158,7 +182,7 @@ def general_match_server(input, output, session):
         new_df["All Climbing Points"] = new_df["Auto Climb Points"] + new_df["Endgame Teleop Points"]
         custom_colors = ["#194f55", "#54808e", "#243454"]
         fig = px.bar(new_df, x="Team Number", y="All Climbing Points",
-                     title="Total Climbing Points", color_discrete_sequence=custom_colors)
+                     title="Auto + Endgame Climbing Points", color_discrete_sequence=custom_colors)
         return fig
 
     @render_widget
@@ -182,8 +206,7 @@ def general_match_server(input, output, session):
         avg_df = new_df.groupby("Team Number").mean(numeric_only=True).reset_index()
         custom_colors = ["#194f55", "#54808e", "#243454"]
         fig = px.bar(avg_df, x="Team Number", y="All Climbing Points",
-                     title="Avg Climbing Points", color_discrete_sequence=custom_colors)
+                     title="Avg Auto + Endgame Climbing Points", color_discrete_sequence=custom_colors)
         return fig
 
-
-#app = App(general_match_ui("match"), lambda input, output, session: general_match_server("match", input, output, session))
+# app = App(general_match_ui("match"), lambda input, output, session: general_match_server("match", input, output, session))
