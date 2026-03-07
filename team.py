@@ -51,6 +51,14 @@ def pit_overview_tab_ui():
                 ui.card_header("Go Over Bump?"),
                 ui.output_text("over_bump"),
             ),
+            ui.card(
+                ui.card_header("Climbing Type (In/Out)"),
+                ui.output_text("climb_type"),
+            ),
+            ui.card(
+                ui.card_header("Preload Number"),
+                ui.output_text("preload_number"),
+            ),
             col_widths=[6, 6],
         ),
         ui.input_select(
@@ -110,6 +118,25 @@ def pit_overview_tab_server(input, output, session):
             return "N/A"
         bump = row.get("Over Bump?", "N/A")
         return bump
+
+    @render.text
+    def climb_type():
+        team = input.team_select()
+        row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        type = row.get ("Climb type", "N/A")
+        return type
+
+    @render.text
+    def preload_number():
+        team = input.team_select()
+        row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        preload = row.get ("Preload Number", "")
+        preload = "" if pd.isna(preload) else str(preload).strip()
+        return preload if preload else "N/A"
 
     @render_widget
     def team_trend_graph():
