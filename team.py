@@ -59,6 +59,22 @@ def pit_overview_tab_ui():
                 ui.card_header("Preload Number"),
                 ui.output_text("preload_number"),
             ),
+            ui.card(
+                ui.card_header("Carrying Capacity"),
+                ui.output_text("carrying_capacity"),
+            ),
+            ui.card(
+                ui.card_header("__-Piece Auto"),
+                ui.output_text("piece_auto"),
+            ),
+            ui.card(
+                ui.card_header("Auto Start Position"),
+                ui.output_text("auto_start"),
+            ),
+            ui.card(
+                ui.card_header("Defensive Skill (0-5)"),
+                ui.output_text("defensive_skill"),
+            ),
             col_widths=[6, 6],
         ),
         ui.input_select(
@@ -71,6 +87,7 @@ def pit_overview_tab_ui():
     )
 
 
+#Pit Scouting Cards
 @module.server
 def pit_overview_tab_server(input, output, session):
 
@@ -137,6 +154,46 @@ def pit_overview_tab_server(input, output, session):
         preload = row.get ("Preload Number", "")
         preload = "" if pd.isna(preload) else str(preload).strip()
         return preload if preload else "N/A"
+
+    @render.text
+    def carrying_capacity():
+        team = input.team_select()
+        row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        capacity = row.get ("Carrying Capacity", "")
+        capacity = "" if pd.isna(capacity) else str(capacity).strip()
+        return capacity if capacity else "N/A"
+
+    @render.text
+    def piece_auto():
+        team = input.team_select()
+        row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        piece = row.get ("Piece Auto", "")
+        piece = "" if pd.isna(piece) else str(piece).strip()
+        return piece if piece else "N/A"
+
+    @render.text
+    def auto_start():
+        team = input.team_select()
+        row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        start = row.get ("Auto Start", "Other/Varies")
+        return start if start else "N/A"
+
+    @render.text
+    def defensive_skill():
+        team = input.team_select()
+        row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        defense = row.get ("Defense Skill (0-5)", "")
+        defense = "" if pd.isna(defense) else str(defense).strip()
+        return defense if defense else "N/A"
+
 
     @render_widget
     def team_trend_graph():
