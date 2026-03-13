@@ -48,3 +48,18 @@ if __name__ == "__main__":
     print("Pit teams:", sorted(pit["Team Number"].unique().tolist()))
     print("Scouted teams:", sorted(scouted["Team Number"].unique().tolist()))
 
+def load_statbotics_matches(match_number):
+    with open(script_directory / f'data/{EVENT_CODE}/statbotics_matches.json', 'r') as f:
+        matches_json = json.load(f)
+        for match in matches_json:
+            if str(match["match_number"]) == str(match_number):
+                red_teams = [str(t) for t in match["alliances"]["red"]["team_keys"]]
+                blue_teams = [str(t) for t in match["alliances"]["blue"]["team_keys"]]
+                return {
+                    "match_number": match["match_number"],
+                    "red_teams": red_teams,
+                    "blue_teams": blue_teams,
+                    "pred_red_score": match.get("pred_red_score"),
+                    "pred_blue_score": match.get("pred_blue_score"),
+                }
+    return None

@@ -4,7 +4,7 @@ import plotly.express as px
 from shiny import reactive, render, module
 from shiny import App, ui
 from shinywidgets import output_widget, render_widget
-from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match, load_match_numbers
+from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match, load_match_numbers, load_statbotics_matches
 
 
 df = load_scouted_data()
@@ -28,8 +28,24 @@ def general_match_ui():
                 ui.navset_tab(
                 #OVERALL
                     ui.nav_panel("Overall",
-                                  ui.card(output_widget("red_statbotics_prediction")),
-                                        ui.card(output_widget("blue_statbotics_prediction")),
+                                 ui.layout_column_wrap(
+                                     ui.card(
+                                         ui.output_ui("red_statbotics_prediction")
+                                     ),
+                                     ui.card(
+                                         ui.output_ui("blue_statbotics_prediction")
+                                     )
+                                 ),
+                                 ui.layout_column_wrap(
+                                     ui.card(
+                                         ui.output_ui("rp_energized")
+                                     ),
+                                     ui.output_ui("rp_supercharged")
+                                 ),
+                                     ui.card(
+                                         ui.output_ui("rp_climbing")
+                                     )
+                                 ),
                                         ui.card(output_widget("avg_fuel")),
                                         ui.card(output_widget("avg_endgame_and_auto")),
                                         ui.card(output_widget("rp_count")),
@@ -71,6 +87,22 @@ def general_match_server(input, output, session):
             ]
         return df.loc[df["Team Number"].isin(teams)]
 
+    def blue_df():
+        if input.selection_mode() == "Match Number":
+            match_number = str(input.match_select())
+            teams = get_Teams_in_Match(match_number)[:3]  # blue is first 3 in your get_Teams_in_Match
+        else:
+            teams = [str(input.team1()), str(input.team2()), str(input.team3())]
+        return df.loc[df["Team Number"].isin(teams)]
+
+    def red_df():
+        if input.selection_mode() == "Match Number":
+            match_number = str(input.match_select())
+            teams = get_Teams_in_Match(match_number)[3:]  # red is last 3
+        else:
+            teams = [str(input.team4()), str(input.team5()), str(input.team6())]
+        return df.loc[df["Team Number"].isin(teams)]
+
     @render.ui
     def match_list_combobox():
         if input.selection_mode() == "Match Number":
@@ -90,28 +122,24 @@ def general_match_server(input, output, session):
             )
 
 # OVERALL STATS
-    @render.text
+    @render.ui
     def red_statbotics_prediction():
         match_num = int(input.match_select())
-        statbotics_data_filtered = df.loc[
-            (df["match_numbers"] == match_num )
-            & (df["comp_level"] == "qm")
-        ]
+        statbotics_matches = load_statbotics_matches(match_num)
+        print(statbotics_matches)
         return ui.value_box(
-            title="Prediction RED",
-            value=str(statbotics_data_filtered["pred.red_score"].sum())
-        )
+                title="Prediction RED",
+                value=str(statbotics_matches["pred_red_score"])
+            )
 
-    @render.text
+    @render.ui
     def blue_statbotics_prediction():
         match_num = int(input.match_select())
-        statbotics_data_filtered = df.loc[
-            (df["match_numbers"] == match_num)
-            & (df["comp_level"] == "qm")
-        ]
+        statbotics_matches = load_statbotics_matches(match_num)
+        print(statbotics_matches)
         return ui.value_box(
             title="Prediction BLUE",
-            value=str(statbotics_data_filtered["pred.blue_score"].sum())
+            value=str(statbotics_matches["pred_blue_score"])
         )
 
     @render_widget
@@ -132,7 +160,7 @@ def general_match_server(input, output, session):
             y="Total Fuel",  # Values on y-axis
             title="Average Fuel by Team (Sorted)",
             labels={"Total Fuel": "Average Fuel Score", "Team Number": "Team Number"},
-            orientation='h',  # Horizontal bars
+            orientation='v',  # Horizontal bars
             text="Total Fuel"  # Show values
         )
 
