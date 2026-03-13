@@ -37,20 +37,12 @@ def general_match_ui():
                                      )
                                  ),
                                  ui.layout_column_wrap(
-                                     ui.card(
-                                         ui.output_ui("rp_energized")
-                                     ),
-                                     ui.output_ui("rp_supercharged")
+                                     ui.card(ui.output_ui("rp_energized"), height="490px"),
+                                     ui.card(ui.output_ui("rp_supercharged"), height="490px"),
+                                     ui.card(ui.output_ui("rp_climbing"), height="490px"),
+                                     width=1 / 3,
                                  ),
-                                     ui.card(
-                                         ui.output_ui("rp_climbing")
-                                     )
                                  ),
-                                        ui.card(output_widget("avg_fuel")),
-                                        ui.card(output_widget("avg_endgame_and_auto")),
-                                        ui.card(output_widget("rp_count")),
-                                 ),
-
                 #AUTO
                     ui.nav_panel("Auto",
                                  ui.card(output_widget("auto_fuel_in_hub")),
@@ -169,13 +161,73 @@ def general_match_server(input, output, session):
 
         return fig
 
-    @render_widget
-    def avg_endgame_and_auto():
-        return
+    @render.ui
+    def rp_climbing():
+        red = red_df().copy()
+        blue = blue_df().copy()
 
-    @render_widget
-    def rp_count():
-        return
+        def calc_climbing_points(alliance_df):
+            alliance_df["Auto Climbing Status"] = alliance_df["Auto Climbing Status"].fillna(False)
+            if alliance_df["Auto Climbing Status"].dtype == 'object':
+                alliance_df["Auto Climbing Status"] = alliance_df["Auto Climbing Status"].astype(str).str.lower().isin(
+                    ['true', '1', 'yes'])
+            alliance_df["Auto Climb Points"] = alliance_df["Auto Climbing Status"].apply(lambda x: 15 if x else 0)
+
+            def endgame_points(level):
+                if pd.isna(level): return 0
+                return {"L1": 10, "L2": 20, "L3": 30}.get(str(level).upper().strip(), 0)
+
+            alliance_df["Endgame Points"] = alliance_df["Endgame Climbing Level"].apply(endgame_points)
+            alliance_df["Total Climb Points"] = alliance_df["Auto Climb Points"] + alliance_df["Endgame Points"]
+            return alliance_df.groupby("Team Number")["Total Climb Points"].mean().sum()
+
+        red_climb = calc_climbing_points(red)
+        blue_climb = calc_climbing_points(blue)
+
+        def climb_status(total):
+            status = "Traversal RP Likely" if total >= 50 else "Traversal RP Unlikely"
+            return f"{total:.0f} pts - {status}"
+
+        return ui.div(
+            ui.value_box(title="RED Climbing RP Prediction", value=climb_status(red_climb), height="200px", showcase=None),
+            ui.value_box(title="BLUE Climbing RP Prediction", value=climb_status(blue_climb), height="200px", showcase=None),
+        )
+
+    @render.ui
+    def rp_energized():
+        red = red_df().copy()
+        blue = blue_df().copy()
+
+        red_avg_fuel = (red["Auto Fuel"] + red["Teleop Fuel"]).mean() * 3
+        blue_avg_fuel = (blue["Auto Fuel"] + blue["Teleop Fuel"]).mean() * 3
+
+        def energized_status(avg):
+            status = "Energized RP Likely" if avg >= 100 else "Energized RP Unlikely"
+            return f"{avg:.0f} fuel - {status}"
+
+        return ui.div(
+            ui.value_box(title="RED Energized RP Prediction", value=energized_status(red_avg_fuel), height="200px", showcase=None),
+            ui.value_box(title="BLUE Energized RP Prediction", value=energized_status(blue_avg_fuel), height="200px", showcase=None),
+        )
+
+    @render.ui
+    def rp_supercharged():
+        red = red_df().copy()
+        blue = blue_df().copy()
+
+        red_avg_fuel = (red["Auto Fuel"] + red["Teleop Fuel"]).mean() * 3
+        blue_avg_fuel = (blue["Auto Fuel"] + blue["Teleop Fuel"]).mean() * 3
+
+        def supercharged_status(avg):
+            status = "Supercharged RP Likely" if avg >= 360 else "Supercharged RP Unlikely"
+            return f"{avg:.0f} fuel - {status}"
+
+        return ui.div(
+            ui.value_box(title="RED Supercharged RP Prediction", value=supercharged_status(red_avg_fuel),
+                         height="200px", showcase=None),
+            ui.value_box(title="BLUE Supercharged RP Prediction", value=supercharged_status(blue_avg_fuel),
+                         height="200px", showcase=None),
+        )
 
 # AUTO GRAPHS
     @render_widget
