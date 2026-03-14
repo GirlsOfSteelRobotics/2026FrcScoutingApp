@@ -8,28 +8,28 @@ from metadata import CURRENT_EVENT
 
 script_directory = pathlib.Path(__file__).resolve().parent
 
-df = pd.read_csv("data/2026nyro/match_scouting.csv")
-
 def load_scouted_data():
-    scouted_data = pd.read_csv(script_directory / f'data/{CURRENT_EVENT}/match_scouting.csv')
-    scouted_data["team_key"] = scouted_data["team_key"].str[3:]
+    scouted_data = pd.read_csv(script_directory / f'data/{CURRENT_EVENT}/scouted_data.csv')
 
-    scouted_data.rename(columns={
-        "team_key": "Team Number",
-        "match_number": "Match Number",
-        "totalAutofuelscored": "Auto Fuel",
-        "totalTeleopfuelscored": "Teleop Fuel",
-        "TotalAutofuelPassed": "Auto Fuel Passed",
-        "TotalTeleopfuelPassed": "Teleop Fuel Passed",
-        "totalfuelscored": "Total Fuel",
-        "Totalfuelpassed": "Total Fuel Passed",
-        "totalAutoPoints": "Total Auto Points",
-        "totalTeleopPoints": "Total Teleop Points",
-        "totalEndgamePoints": "Endgame Points",
-        "contributedPoints": "Contributed Points",
-        "AutoClimb": "Auto Climbing Status",
-        "Climb": "Endgame Climbing Level"
-    }, inplace=True)
+    if "team_key" in scouted_data:
+        scouted_data["team_key"] = scouted_data["team_key"].str[3:]
+
+        scouted_data.rename(columns={
+            "team_key": "Team Number",
+            "match_number": "Match Number",
+            "totalAutofuelscored": "Auto Fuel",
+            "totalTeleopfuelscored": "Teleop Fuel",
+            "TotalAutofuelPassed": "Auto Fuel Passed",
+            "TotalTeleopfuelPassed": "Teleop Fuel Passed",
+            "totalfuelscored": "Total Fuel",
+            "Totalfuelpassed": "Total Fuel Passed",
+            "totalAutoPoints": "Total Auto Points",
+            "totalTeleopPoints": "Total Teleop Points",
+            "totalEndgamePoints": "Endgame Points",
+            "contributedPoints": "Contributed Points",
+            "AutoClimb": "Auto Climbing Status",
+            "Climb": "Endgame Climbing Level"
+        }, inplace=True)
     scouted_data[["Team Number", "Match Number"]] = scouted_data[["Team Number", "Match Number"]].astype("string")
 
 

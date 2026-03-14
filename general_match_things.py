@@ -223,7 +223,7 @@ def general_match_server(input, output, session):
     def auto_fuel_in_hub():
         new_df = get_teams_in_match()
         avg_team = new_df.groupby("Team Number").mean(numeric_only=True)
-        custom_colors = ["#194f55", "#54808e", "#243454"]
+        custom_colors = ["#CBB9A4", "#E6DAC8", "8A6C5F"]
         fig = px.bar(avg_team, y="Auto Fuel", title="Fuel in Hub (Auto) per Robot",
                      color_discrete_sequence=custom_colors)
         return fig
