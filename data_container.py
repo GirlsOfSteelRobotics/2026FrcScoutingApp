@@ -15,6 +15,27 @@ def load_scouted_data():
     scouted_data = pd.read_csv(script_directory / f'data/{EVENT_CODE}/scouted_data.csv')
     scouted_data[['Team Number', 'Match Number']] = scouted_data[['Team Number', 'Match Number']].astype("string")
 
+    def convert_endgame_to_points(level):
+        if pd.isna(level):
+            return 0
+        level_str = str(level).upper().strip()
+        return {"L1": 10, "L2": 20, "L3": 30}.get(level_str, 0)
+
+    if scouted_data["Auto Climbing Status"].dtype == 'object':
+        scouted_data["Auto Climbing Status"] = scouted_data["Auto Climbing Status"].astype(str).str.lower().isin(
+            ['true', '1', 'yes'])
+    scouted_data["Auto Climb Points"] = scouted_data["Auto Climbing Status"].apply(lambda x: 15 if x else 0)
+
+    scouted_data["Endgame Teleop Points"] = scouted_data["Endgame Climbing Level"].apply(convert_endgame_to_points)
+    scouted_data["Auto Climb Points"] = scouted_data["Auto Climbing Status"].apply(lambda x: 15 if x else 0)
+    scouted_data["All Auto"] = scouted_data["Auto Fuel"] + scouted_data["Auto Climb Points"]
+    scouted_data["All Teleop"] = scouted_data["Teleop Fuel"] + scouted_data["Endgame Teleop Points"]
+    scouted_data["All Endgame"] = scouted_data["Endgame Teleop Points"]
+    scouted_data["Auto and Endgame"] = scouted_data["All Auto"] + scouted_data["All Endgame"]
+    scouted_data["Total Fuel"] = scouted_data["Auto Fuel"] + scouted_data["Teleop Fuel"]
+    scouted_data["Endgame Fuel"] = scouted_data["Endgame Teleop Points"]
+    scouted_data["Total Climb Points"] = scouted_data["Auto Climb Points"] + scouted_data["Endgame Teleop Points"]
+
     return scouted_data
 
 def load_pit_data():
