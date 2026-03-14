@@ -20,6 +20,12 @@ def overview_tab_ui():
             "Y Axis:",
             choices = ["Auto Fuel", "Teleop Fuel", "Endgame Fuel", "Total Fuel"]
         ),
+        ui.input_radio_buttons(
+            "selection_mode",
+            "Select By:",
+            choices=["Team Number", "Stat"],
+            selected="Team Number",
+        ),
         #ui.card(output_widget("auto_climbing_frequency")),
         ui.card(output_widget("teleop_vs_auto_endgame")),
     )
@@ -42,43 +48,26 @@ def overview_tab_server(input, output, session):
             new_df["Auto Climbing Status"] = new_df["Auto Climbing Status"].astype(str).str.lower().isin(
                 ['true', '1', 'yes'])
 
-        def convert_endgame_to_points(level):
-            if pd.isna(level):
-                return 0
-            level_str = str(level).upper().strip()
-            return {"L1": 10, "L2": 20, "L3": 30}.get(level_str, 0)
-
-        new_df["Endgame Teleop Points"] = new_df["Endgame Climbing Level"].apply(convert_endgame_to_points)
-        new_df["Auto Climb Points"] = new_df["Auto Climbing Status"].apply(lambda x: 15 if x else 0)
-        new_df["All Auto"] = new_df["Auto Fuel"] + new_df["Auto Climb Points"]
-        new_df["All Teleop"] = new_df["Teleop Fuel"] + new_df["Endgame Teleop Points"]
-        new_df["All Endgame"] = new_df["Endgame Teleop Points"]
-        new_df["Auto and Endgame"] = new_df["All Auto"] + new_df["All Endgame"]
-        new_df["Total Fuel"] = new_df["Auto Fuel"] + new_df["Teleop Fuel"]
-        new_df["Endgame Fuel"] = new_df["Endgame Teleop Points"]
-
-        team_stats = new_df.groupby("Team Number").agg({
-            "All Teleop": "mean",
-            "Auto and Endgame": "mean",
-            "All Auto": "mean",
-            "All Endgame": "mean",
-            "Endgame Teleop Points": "mean",
-            "Auto Climb Points": "mean",
-            "Auto Climbing Status": "mean",
-            "Auto Fuel": "mean",
-            "Teleop Fuel": "mean",
-            "Endgame Fuel": "mean",
-            "Total Fuel": "mean",
-        }).reset_index()
+        team_stats = (new_df.groupby("Team Number").mean(numeric_only=True)).reset_index()
 
         y_axis = str(input.y_axis_select())
 
-        fig = px.scatter(
-            team_stats,
-            x = "Team Number",
+        if input.selection_mode() == "Team Number":
+            sorted_df = team_stats.sort_values(by='Team Number', key=lambda x: x.astype(int))
+        else:
+            sorted_df = team_stats.sort_values(by=y_axis, ascending=False)
+
+        fig = px.bar(
+            sorted_df,
+            x = sorted_df["Team Number"],
             y = y_axis,
             title=f"{y_axis} (Averages) by Team",
         )
+        # sorted_df,
+        #     x=sorted_df["Team Number"],
+        #     y=sorted_df[y_axis],
+        #     title=f"{y_axis} (Averages) by Team",
+        # )
         fig.update_traces(
             hovertemplate=(
                 "<b>Team %{customdata[0]}</b><br>"

@@ -168,17 +168,13 @@ def general_match_server(input, output, session):
 
         def calc_climbing_points(alliance_df):
             alliance_df["Auto Climbing Status"] = alliance_df["Auto Climbing Status"].fillna(False)
-            if alliance_df["Auto Climbing Status"].dtype == 'object':
-                alliance_df["Auto Climbing Status"] = alliance_df["Auto Climbing Status"].astype(str).str.lower().isin(
-                    ['true', '1', 'yes'])
-            alliance_df["Auto Climb Points"] = alliance_df["Auto Climbing Status"].apply(lambda x: 15 if x else 0)
-
-            def endgame_points(level):
-                if pd.isna(level): return 0
-                return {"L1": 10, "L2": 20, "L3": 30}.get(str(level).upper().strip(), 0)
-
-            alliance_df["Endgame Points"] = alliance_df["Endgame Climbing Level"].apply(endgame_points)
-            alliance_df["Total Climb Points"] = alliance_df["Auto Climb Points"] + alliance_df["Endgame Points"]
+            #
+            # def endgame_points(level):
+            #     if pd.isna(level): return 0
+            #     return {"L1": 10, "L2": 20, "L3": 30}.get(str(level).upper().strip(), 0)
+            #
+            # alliance_df["Endgame Points"] = alliance_df["Endgame Climbing Level"].apply(endgame_points)
+            # alliance_df["Total Climb Points"] = alliance_df["Auto Climb Points"] + alliance_df["Endgame Points"]
             return alliance_df.groupby("Team Number")["Total Climb Points"].mean().sum()
 
         red_climb = calc_climbing_points(red)
