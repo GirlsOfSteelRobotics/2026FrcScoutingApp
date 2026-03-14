@@ -1,7 +1,7 @@
 import pandas as pd
 from shiny import module, ui, render
 from shinywidgets import output_widget, render_widget
-import plotly.express as px
+import plotly.express as pxgit pu
 from data_container import load_pit_data, load_scouted_data
 
 pd.set_option("display.max_columns", None)
