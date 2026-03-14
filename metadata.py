@@ -26,4 +26,4 @@
 # Finger Lakes Regional
 OUR_TEAM_NUMBER = 4467
 SCOUT_RADIOZ_ORG = "steelcity"
-CURRENT_EVENT = "mock_data"
+CURRENT_EVENT = "2026nyro"

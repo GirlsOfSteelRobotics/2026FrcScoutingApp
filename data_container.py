@@ -81,11 +81,6 @@ def load_match_numbers():
         match_numbers = sorted(set(str(m["match_number"]) for m in matches_json), key=lambda x: int(x))
     return match_numbers
 
-if __name__ == "__main__":
-    pit = load_pit_data()
-    scouted = load_scouted_data()
-    print("Pit teams:", sorted(pit["Team Number"].unique().tolist()))
-    print("Scouted teams:", sorted(scouted["Team Number"].unique().tolist()))
 
 def load_statbotics_matches(match_number):
     with open(script_directory / f'data/{CURRENT_EVENT}/statbotics_matches.json', 'r') as f:
