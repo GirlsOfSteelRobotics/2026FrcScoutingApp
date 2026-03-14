@@ -25,6 +25,7 @@ match_df["Team Number"] = (
 
 @module.ui
 def pit_overview_tab_ui():
+    print(match_df)
     teams = sorted(match_df["Team Number"].unique().tolist(), key=lambda x: int(x))
 
     return ui.page_fluid(
