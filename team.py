@@ -7,20 +7,7 @@ from data_container import load_pit_data, load_scouted_data
 pd.set_option("display.max_columns", None)
 
 pit_df = load_pit_data().copy()
-pit_df["Team Number"] = (
-    pd.to_numeric(pit_df["Team Number"], errors="coerce")
-    .dropna()
-    .astype(int)
-    .astype(str)
-)
-
 match_df = load_scouted_data().copy()
-match_df["Team Number"] = (
-    pd.to_numeric(match_df["Team Number"], errors="coerce")
-    .dropna()
-    .astype(int)
-    .astype(str)
-)
 
 
 @module.ui
