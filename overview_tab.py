@@ -63,11 +63,6 @@ def overview_tab_server(input, output, session):
             y = y_axis,
             title=f"{y_axis} (Averages) by Team",
         )
-        # sorted_df,
-        #     x=sorted_df["Team Number"],
-        #     y=sorted_df[y_axis],
-        #     title=f"{y_axis} (Averages) by Team",
-        # )
         fig.update_traces(
             hovertemplate=(
                 "<b>Team %{customdata[0]}</b><br>"

@@ -4,8 +4,8 @@ import plotly.express as px
 from shiny import reactive, render, module
 from shiny import App, ui
 from shinywidgets import output_widget, render_widget
-from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match, load_match_numbers, load_statbotics_matches
-
+from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match, load_match_numbers, \
+    load_statbotics_matches
 
 df = load_scouted_data()
 match_numbers = load_match_numbers()
@@ -168,13 +168,6 @@ def general_match_server(input, output, session):
 
         def calc_climbing_points(alliance_df):
             alliance_df["Auto Climbing Status"] = alliance_df["Auto Climbing Status"].fillna(False)
-            #
-            # def endgame_points(level):
-            #     if pd.isna(level): return 0
-            #     return {"L1": 10, "L2": 20, "L3": 30}.get(str(level).upper().strip(), 0)
-            #
-            # alliance_df["Endgame Points"] = alliance_df["Endgame Climbing Level"].apply(endgame_points)
-            # alliance_df["Total Climb Points"] = alliance_df["Auto Climb Points"] + alliance_df["Endgame Points"]
             return alliance_df.groupby("Team Number")["Total Climb Points"].mean().sum()
 
         red_climb = calc_climbing_points(red)
@@ -310,46 +303,17 @@ def general_match_server(input, output, session):
     @render_widget
     def total_climbing_points():
         new_df = get_teams_in_match().copy()
-        new_df["Auto Climbing Status"] = new_df["Auto Climbing Status"].fillna(False)
-        if new_df["Auto Climbing Status"].dtype == 'object':
-            new_df["Auto Climbing Status"] = new_df["Auto Climbing Status"].astype(str).str.lower().isin(
-                ['true', '1', 'yes'])
-        new_df["Auto Climb Points"] = new_df["Auto Climbing Status"].apply(lambda x: 15 if x else 0)
-
-        def convert_endgame_to_points(level):
-            if pd.isna(level):
-                return 0
-            level_str = str(level).upper().strip()
-            return {"L1": 10, "L2": 20, "L3": 30}.get(level_str, 0)
-
-        new_df["Endgame Teleop Points"] = new_df["Endgame Climbing Level"].apply(convert_endgame_to_points)
-        new_df["All Climbing Points"] = new_df["Auto Climb Points"] + new_df["Endgame Teleop Points"]
         custom_colors = ["#194f55", "#54808e", "#243454"]
-        fig = px.bar(new_df, x="Team Number", y="All Climbing Points",
+        fig = px.bar(new_df, x="Team Number", y="Total Climb Points",
                      title="Auto + Endgame Climbing Points", color_discrete_sequence=custom_colors)
         return fig
 
     @render_widget
     def avg_climbing_points():
         new_df = get_teams_in_match().copy()
-        new_df["Auto Climbing Status"] = new_df["Auto Climbing Status"].fillna(False)
-        if new_df["Auto Climbing Status"].dtype == 'object':
-            new_df["Auto Climbing Status"] = new_df["Auto Climbing Status"].astype(str).str.lower().isin(
-                ['true', '1', 'yes'])
-        new_df["Auto Climb Points"] = new_df["Auto Climbing Status"].apply(lambda x: 15 if x else 0)
-
-        #pls help gng put ruoxi's in
-        def convert_endgame_to_points(level):
-            if pd.isna(level):
-                return 0
-            level_str = str(level).upper().strip()
-            return {"L1": 10, "L2": 20, "L3": 30}.get(level_str, 0)
-
-        new_df["Endgame Teleop Points"] = new_df["Endgame Climbing Level"].apply(convert_endgame_to_points)
-        new_df["All Climbing Points"] = new_df["Auto Climb Points"] + new_df["Endgame Teleop Points"]
         avg_df = new_df.groupby("Team Number").mean(numeric_only=True).reset_index()
         custom_colors = ["#194f55", "#54808e", "#243454"]
-        fig = px.bar(avg_df, x="Team Number", y="All Climbing Points",
+        fig = px.bar(avg_df, x="Team Number", y="Total Climb Points",
                      title="Avg Auto + Endgame Climbing Points", color_discrete_sequence=custom_colors)
         return fig
 
