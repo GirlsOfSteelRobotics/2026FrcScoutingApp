@@ -230,18 +230,25 @@ def general_match_server(input, output, session):
                          height="200px", showcase=None),
         )
 
-# AUTO GRAPHS
-    @render_widget
-    def auto_fuel_in_hub():
+    def get_box_plot_colors():
         teams =  get_teams_in_match()
         blue_teams = teams[0:3]
         red_teams = teams[3:6]
-        new_df = get_teams_in_match_data()
-       # color_map = {str(team): "#FF5733" for team in red_teams}  # Red teams
-      #  color_map.update({str(team): "#1F77B4" for team in blue_teams})  # Blue teams
+
+        color_map = {str(team): "#FF5733" for team in blue_teams}
+        color_map.update({str(team): "#1F77B4" for team in red_teams})
+        return dict(
+            color = "Team Number",
+            color_discrete_map=color_map,
+        )
+
+# AUTO GRAPHS
+    @render_widget
+    def auto_fuel_in_hub():
+        teams_data = get_teams_in_match_data()
       #  print(color_map)
-        fig = px.box(new_df, x="Team Number", y="Auto Fuel", title="Fuel in Hub (Auto) per Robot",
-                     )
+
+        fig = px.box(teams_data, x="Team Number", y="Auto Fuel", title="Fuel in Hub (Auto) per Robot", **get_box_plot_colors() )
         return fig
 
     @render_widget
@@ -257,7 +264,7 @@ def general_match_server(input, output, session):
                 auto_climbing_status_df[True] + auto_climbing_status_df[False])
 
         fig = px.bar(auto_climbing_status_df, x="Team Number", y=["Climb Freq", "No Climb Freq"],
-                     title="Auto Climbing Frequency", color_discrete_sequence=custom_colors)
+                     title="Auto Climbing Frequency", **get_box_plot_colors())
         return fig
 
 
@@ -268,7 +275,7 @@ def general_match_server(input, output, session):
         new_df = get_teams_in_match_data()
         avg_team = new_df.groupby("Team Number").mean(numeric_only=True)
         fig = px.bar(avg_team, y="Teleop Fuel", title="Average Fuel in Hub (Teleop) per Robot",
-                     color_discrete_sequence=custom_colors)
+                     **get_box_plot_colors())
         return fig
 
     @render_widget
@@ -277,16 +284,16 @@ def general_match_server(input, output, session):
         total_df = new_df.groupby("Team Number")["Teleop Fuel Passed"].sum().reset_index()
         fig = px.bar(total_df, x="Team Number", y="Teleop Fuel Passed",
                      title="Total Teleop Fuel Passed",
-                     color_discrete_sequence=custom_colors)
+                     **get_box_plot_colors())
         return fig
 
     @render_widget
     def teleop_fuel_passed_avg():
         new_df = get_teams_in_match_data()
         avg_df = new_df.groupby("Team Number")["Teleop Fuel Passed"].mean().reset_index()
-        fig = px.bar(avg_df, x="Team Number", y="Teleop Fuel Passed",
+        fig = px.box(avg_df, x="Team Number", y="Teleop Fuel Passed",
                      title="Average Teleop Fuel Passed",
-                     color_discrete_sequence=custom_colors)
+                     **get_box_plot_colors())
         return fig
 
 
@@ -298,7 +305,7 @@ def general_match_server(input, output, session):
         endgame_df = new_df.groupby("Team Number")["Endgame Climbing Level"].value_counts().unstack(
             fill_value=0).reset_index()
         fig = px.box(endgame_df, x="Team Number", y=["L1", "L2", "L3"],
-                     title="Endgame Positions by Instance", color_discrete_sequence=custom_colors)
+                     title="Endgame Positions by Instance", **get_box_plot_colors())
         return fig
 
     @render_widget
@@ -310,23 +317,23 @@ def general_match_server(input, output, session):
         endgame_df["L2 Points"] = endgame_df["L2"] * 20
         endgame_df["L3 Points"] = endgame_df["L3"] * 30
         fig = px.box(endgame_df, x="Team Number", y=["L1 Points", "L2 Points", "L3 Points"],
-                     title="Endgame Positions by Points", color_discrete_sequence=custom_colors)
+                     title="Endgame Positions by Points", **get_box_plot_colors())
         return fig
 
     @render_widget
     def total_climbing_points():
         new_df = get_teams_in_match_data().copy()
         fig = px.box(new_df, x="Team Number", y="Total Climb Points",
-                     title="Auto + Endgame Climbing Points", color_discrete_sequence=custom_colors)
+                     title="Auto + Endgame Climbing Points", **get_box_plot_colors())
         return fig
 
     @render_widget
     def avg_climbing_points():
         new_df = get_teams_in_match_data().copy()
         avg_df = new_df.groupby("Team Number").mean(numeric_only=True).reset_index()
-
+        print(avg_df)
         fig = px.box(avg_df, x="Team Number", y="Total Climb Points",
-                     title="Avg Auto + Endgame Climbing Points", color_discrete_sequence=custom_colors)
+                     title="Avg Auto + Endgame Climbing Points", **get_box_plot_colors())
         return fig
 
 # app = App(general_match_ui("match"), lambda input, output, session: general_match_server("match", input, output, session))
