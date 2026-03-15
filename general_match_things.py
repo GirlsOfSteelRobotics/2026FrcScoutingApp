@@ -28,6 +28,7 @@ def general_match_ui():
                 ui.navset_tab(
                 #OVERALL
                     ui.nav_panel("Overall",
+                                 ui.card(output_widget("teleop_vs_auto_scatter")),
                                  ui.layout_column_wrap(
                                      ui.card(
                                          ui.output_ui("red_statbotics_prediction")
@@ -51,7 +52,6 @@ def general_match_ui():
                 #TELEOP
                     ui.nav_panel("Teleop",
                                  ui.card(output_widget("teleop_fuel_in_hub")),
-                                 ui.card(output_widget("teleop_fuel_passed_total")),
                                  ui.card(output_widget("teleop_fuel_passed_avg")),
                                  ),
                 #ENDGAME
@@ -118,7 +118,15 @@ def general_match_server(input, output, session):
                 ui.input_select("team6", "Team 6:", choices=all_teams),
             )
 
-# OVERALL STATS
+# OVERALL STATS/GRAPHS
+
+    @render.ui
+    def teleop_vs_auto_scatter():
+        new_df = get_teams_in_match()
+        fig = px.scatter(new_df, x="All Teleop", y="Auto and Endgame", title="Teleop vs. Auto + Endgame Points")
+        return fig
+
+
     @render.ui
     def red_statbotics_prediction():
         match_num = int(input.match_select())
@@ -181,6 +189,13 @@ def general_match_server(input, output, session):
         def climb_status(total):
             status = "Traversal RP Likely" if total >= 50 else "Traversal RP Unlikely"
             return f"{total:.0f} pts - {status}"
+
+        return ui.div(
+            ui.value_box(title="RED Climbing RP Prediction", value=climb_status(red_climb), height="200px",
+                         showcase=None),
+            ui.value_box(title="BLUE Climbing RP Prediction", value=climb_status(blue_climb), height="200px",
+                         showcase=None),
+        )
 
     @render.ui
     def rp_energized():
@@ -263,7 +278,7 @@ def general_match_server(input, output, session):
         auto_climbing_status_df["No Climb Freq"] = auto_climbing_status_df[False] / (
                 auto_climbing_status_df[True] + auto_climbing_status_df[False])
 
-        fig = px.bar(auto_climbing_status_df, x="Team Number", y=["Climb Freq", "No Climb Freq"],
+        fig = px.box(auto_climbing_status_df, x="Team Number", y=["Climb Freq", "No Climb Freq"],
                      title="Auto Climbing Frequency", **get_box_plot_colors())
         return fig
 
@@ -273,16 +288,15 @@ def general_match_server(input, output, session):
     @render_widget
     def teleop_fuel_in_hub():
         new_df = get_teams_in_match_data()
-        avg_team = new_df.groupby("Team Number").mean(numeric_only=True)
-        fig = px.bar(avg_team, y="Teleop Fuel", title="Average Fuel in Hub (Teleop) per Robot",
+        fig = px.box(new_df, y="Teleop Fuel", title="Average Fuel in Hub (Teleop) per Robot",
                      **get_box_plot_colors())
         return fig
 
-    @render_widget
-    def teleop_fuel_passed_total():
-        new_df = get_teams_in_match_data()
-        total_df = new_df.groupby("Team Number")["Teleop Fuel Passed"].sum().reset_index()
-        fig = px.bar(total_df, x="Team Number", y="Teleop Fuel Passed",
+#    @render_widget
+  #  def teleop_fuel_passed_total():
+   #     new_df = get_teams_in_match_data()
+    #    total_df = new_df.groupby("Team Number")["Teleop Fuel Passed"].sum().reset_index()
+        fig = px.box(total_df, x="Team Number", y="Teleop Fuel Passed",
                      title="Total Teleop Fuel Passed",
                      **get_box_plot_colors())
         return fig
@@ -290,8 +304,7 @@ def general_match_server(input, output, session):
     @render_widget
     def teleop_fuel_passed_avg():
         new_df = get_teams_in_match_data()
-        avg_df = new_df.groupby("Team Number")["Teleop Fuel Passed"].mean().reset_index()
-        fig = px.box(avg_df, x="Team Number", y="Teleop Fuel Passed",
+        fig = px.box(new_df, x="Team Number", y="Teleop Fuel Passed",
                      title="Average Teleop Fuel Passed",
                      **get_box_plot_colors())
         return fig
@@ -330,9 +343,7 @@ def general_match_server(input, output, session):
     @render_widget
     def avg_climbing_points():
         new_df = get_teams_in_match_data().copy()
-        avg_df = new_df.groupby("Team Number").mean(numeric_only=True).reset_index()
-        print(avg_df)
-        fig = px.box(avg_df, x="Team Number", y="Total Climb Points",
+        fig = px.box(new_df, x="Team Number", y="Total Climb Points",
                      title="Avg Auto + Endgame Climbing Points", **get_box_plot_colors())
         return fig
 
