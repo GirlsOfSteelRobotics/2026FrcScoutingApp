@@ -237,8 +237,8 @@ def general_match_server(input, output, session):
         blue_teams = teams[0:3]
         red_teams = teams[3:6]
         new_df = get_teams_in_match_data()
-       # color_map = {str(team): "#FF5733" for team in blue_teams}  # Red teams
-      #  color_map.update({str(team): "#1F77B4" for team in red_teams})  # Blue teams
+       # color_map = {str(team): "#FF5733" for team in red_teams}  # Red teams
+      #  color_map.update({str(team): "#1F77B4" for team in blue_teams})  # Blue teams
       #  print(color_map)
         fig = px.box(new_df, x="Team Number", y="Auto Fuel", title="Fuel in Hub (Auto) per Robot",
                      )
