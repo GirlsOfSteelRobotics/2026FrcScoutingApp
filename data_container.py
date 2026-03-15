@@ -5,6 +5,7 @@ import pathlib
 import json
 from metadata import CURRENT_EVENT
 
+custom_colors = ["#A07761", "#6C4E3E", "#D6BFA6"]
 
 script_directory = pathlib.Path(__file__).resolve().parent
 
