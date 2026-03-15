@@ -230,18 +230,25 @@ def general_match_server(input, output, session):
                          height="200px", showcase=None),
         )
 
-# AUTO GRAPHS
-    @render_widget
-    def auto_fuel_in_hub():
+    def get_box_plot_colors():
         teams =  get_teams_in_match()
         blue_teams = teams[0:3]
         red_teams = teams[3:6]
-        new_df = get_teams_in_match_data()
-       # color_map = {str(team): "#FF5733" for team in blue_teams}  # Red teams
-      #  color_map.update({str(team): "#1F77B4" for team in red_teams})  # Blue teams
+
+        color_map = {str(team): "#FF5733" for team in blue_teams}
+        color_map.update({str(team): "#1F77B4" for team in red_teams})
+        return dict(
+            color = "Team Number",
+            color_discrete_map=color_map,
+        )
+
+# AUTO GRAPHS
+    @render_widget
+    def auto_fuel_in_hub():
+        teams_data = get_teams_in_match_data()
       #  print(color_map)
-        fig = px.box(new_df, x="Team Number", y="Auto Fuel", title="Fuel in Hub (Auto) per Robot",
-                     )
+
+        fig = px.box(teams_data, x="Team Number", y="Auto Fuel", title="Fuel in Hub (Auto) per Robot", **get_box_plot_colors() )
         return fig
 
     @render_widget
