@@ -65,13 +65,12 @@ def overview_tab_server(input, output, session):
         )
         fig.update_traces(
             hovertemplate=(
-                "<b>Team %{customdata[0]}</b><br>"
-                "All Teleop: %{x:.1f}<br>"
+                "<b>Team %{x}</b><br>"
                 f"{y_axis}: %{{y:.1f}}<br>"
                 "<extra></extra>"
             ),
-            customdata=team_stats[["Team Number"]].values
         )
+
         fig.update_layout(
             xaxis_title="Team Number",
             yaxis_title= y_axis,

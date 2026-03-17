@@ -24,9 +24,9 @@ def download_external_data(event):
 
     #Download ScoutRadioz data
     download_scout_radioz_match_scouting(
-        SCOUT_RADIOZ_ORG, event, data_directory / "match_scouting.csv")
+        SCOUT_RADIOZ_ORG, event, data_directory / "scouted_data.csv")
     download_scout_radioz_pit_scouting(
-        SCOUT_RADIOZ_ORG, event, data_directory / "pit_scouting.csv")
+        SCOUT_RADIOZ_ORG, event, data_directory / "pit_data.csv")
 
     # Download TBA data
     download_tba_event_matches(event, data_directory / "tba_matches.json")
