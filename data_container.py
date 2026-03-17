@@ -3,28 +3,68 @@ import pandas as pd
 import numpy as np
 import pathlib
 import json
+from metadata import CURRENT_EVENT
 
+custom_colors = ["#A07761", "#6C4E3E", "#D6BFA6"]
 
 script_directory = pathlib.Path(__file__).resolve().parent
 
-
-
-EVENT_CODE = "mock_data"
-
 def load_scouted_data():
-    scouted_data = pd.read_csv(script_directory / f'data/{EVENT_CODE}/scouted_data.csv')
-    scouted_data[['Team Number', 'Match Number']] = scouted_data[['Team Number', 'Match Number']].astype("string")
+    scouted_data = pd.read_csv(script_directory / f'data/{CURRENT_EVENT}/scouted_data.csv')
+
+    if "team_key" in scouted_data:
+        scouted_data["team_key"] = scouted_data["team_key"].str[3:]
+
+        scouted_data.rename(columns={
+            "team_key": "Team Number",
+            "match_number": "Match Number",
+            "totalAutofuelscored": "Auto Fuel",
+            "totalTeleopfuelscored": "Teleop Fuel",
+            "TotalAutofuelPassed": "Auto Fuel Passed",
+            "TotalTeleopfuelPassed": "Teleop Fuel Passed",
+            "totalfuelscored": "Total Fuel",
+            "Totalfuelpassed": "Total Fuel Passed",
+            "totalAutoPoints": "Total Auto Points",
+            "totalTeleopPoints": "Total Teleop Points",
+            "totalEndgamePoints": "Endgame Points",
+            "contributedPoints": "Contributed Points",
+            "AutoClimb": "Auto Climbing Status",
+            "Climb": "Endgame Climbing Level"
+        }, inplace=True)
+    scouted_data[["Team Number", "Match Number"]] = scouted_data[["Team Number", "Match Number"]].astype("string")
+
+
+    def convert_endgame_to_points(level):
+        if pd.isna(level):
+            return 0
+        level_str = str(level).upper().strip()
+        return {"L1": 10, "L2": 20, "L3": 30}.get(level_str, 0)
+
+    if scouted_data["Auto Climbing Status"].dtype == 'object':
+        scouted_data["Auto Climbing Status"] = scouted_data["Auto Climbing Status"].astype(str).str.lower().isin(
+            ['true', '1', 'yes'])
+    scouted_data["Auto Climb Points"] = scouted_data["Auto Climbing Status"].apply(lambda x: 15 if x else 0)
+
+    scouted_data["Endgame Teleop Points"] = scouted_data["Endgame Climbing Level"].apply(convert_endgame_to_points)
+    scouted_data["Auto Climb Points"] = scouted_data["Auto Climbing Status"].apply(lambda x: 15 if x else 0)
+    scouted_data["All Auto"] = scouted_data["Auto Fuel"] + scouted_data["Auto Climb Points"]
+    scouted_data["All Teleop"] = scouted_data["Teleop Fuel"] + scouted_data["Endgame Teleop Points"]
+    scouted_data["All Endgame"] = scouted_data["Endgame Teleop Points"]
+    scouted_data["Auto and Endgame"] = scouted_data["All Auto"] + scouted_data["All Endgame"]
+    scouted_data["Total Fuel"] = scouted_data["Auto Fuel"] + scouted_data["Teleop Fuel"]
+    scouted_data["Endgame Fuel"] = scouted_data["Endgame Teleop Points"]
+    scouted_data["Total Climb Points"] = scouted_data["Auto Climb Points"] + scouted_data["Endgame Teleop Points"]
 
     return scouted_data
 
 def load_pit_data():
-    pit_data = pd.read_csv(script_directory / f'data/{EVENT_CODE}/pit_data.csv')
+    pit_data = pd.read_csv(script_directory / f'data/{CURRENT_EVENT}/pit_data.csv')
     pit_data['Team Number'] = pit_data['Team Number'].astype("string")
 
     return pit_data
 
 def get_Teams_in_Match(match_number):
-    with open(script_directory / f'data/{EVENT_CODE}/tba_matches.json', 'r') as f:
+    with open(script_directory / f'data/{CURRENT_EVENT}/tba_matches.json', 'r') as f:
         matches_json = json.load(f)
         for match in matches_json:
             if str(match["match_number"]) == str(match_number):
@@ -37,14 +77,24 @@ def get_Teams_in_Match(match_number):
     return []
 
 def load_match_numbers():
-    with open(script_directory / f'data/{EVENT_CODE}/tba_matches.json', 'r') as f:
+    with open(script_directory / f'data/{CURRENT_EVENT}/tba_matches.json', 'r') as f:
         matches_json = json.load(f)
         match_numbers = sorted(set(str(m["match_number"]) for m in matches_json), key=lambda x: int(x))
     return match_numbers
 
-if __name__ == "__main__":
-    pit = load_pit_data()
-    scouted = load_scouted_data()
-    print("Pit teams:", sorted(pit["Team Number"].unique().tolist()))
-    print("Scouted teams:", sorted(scouted["Team Number"].unique().tolist()))
 
+def load_statbotics_matches(match_number):
+    with open(script_directory / f'data/{CURRENT_EVENT}/statbotics_matches.json', 'r') as f:
+        matches_json = json.load(f)
+        for match in matches_json:
+            if str(match["match_number"]) == str(match_number):
+                red_teams = [str(t) for t in match["alliances"]["red"]["team_keys"]]
+                blue_teams = [str(t) for t in match["alliances"]["blue"]["team_keys"]]
+                return {
+                    "match_number": match["match_number"],
+                    "red_teams": red_teams,
+                    "blue_teams": blue_teams,
+                    "pred_red_score": match.get("pred_red_score"),
+                    "pred_blue_score": match.get("pred_blue_score"),
+                }
+    return None

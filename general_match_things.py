@@ -4,8 +4,8 @@ import plotly.express as px
 from shiny import reactive, render, module
 from shiny import App, ui
 from shinywidgets import output_widget, render_widget
-from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match, load_match_numbers
-
+from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match, load_match_numbers, \
+    load_statbotics_matches, custom_colors
 
 df = load_scouted_data()
 match_numbers = load_match_numbers()
@@ -28,13 +28,22 @@ def general_match_ui():
                 ui.navset_tab(
                 #OVERALL
                     ui.nav_panel("Overall",
-                                  ui.card(output_widget("red_statbotics_prediction")),
-                                        ui.card(output_widget("blue_statbotics_prediction")),
-                                        ui.card(output_widget("avg_fuel")),
-                                        ui.card(output_widget("avg_endgame_and_auto")),
-                                        ui.card(output_widget("rp_count")),
+                                 ui.card(output_widget("teleop_vs_auto_scatter")),
+                                 ui.layout_column_wrap(
+                                     ui.card(
+                                         ui.output_ui("red_statbotics_prediction")
+                                     ),
+                                     ui.card(
+                                         ui.output_ui("blue_statbotics_prediction")
+                                     )
                                  ),
-
+                                 ui.layout_column_wrap(
+                                     ui.card(ui.output_ui("rp_energized"), height="490px"),
+                                     ui.card(ui.output_ui("rp_supercharged"), height="490px"),
+                                     ui.card(ui.output_ui("rp_climbing"), height="490px"),
+                                     width=1 / 3,
+                                 ),
+                                 ),
                 #AUTO
                     ui.nav_panel("Auto",
                                  ui.card(output_widget("auto_fuel_in_hub")),
@@ -43,7 +52,6 @@ def general_match_ui():
                 #TELEOP
                     ui.nav_panel("Teleop",
                                  ui.card(output_widget("teleop_fuel_in_hub")),
-                                 ui.card(output_widget("teleop_fuel_passed_total")),
                                  ui.card(output_widget("teleop_fuel_passed_avg")),
                                  ),
                 #ENDGAME
@@ -69,6 +77,27 @@ def general_match_server(input, output, session):
                 str(input.team1()), str(input.team2()), str(input.team3()),
                 str(input.team4()), str(input.team5()), str(input.team6()),
             ]
+
+        return teams
+
+    def get_teams_in_match_data():
+        teams = get_teams_in_match()
+        return df.loc[df["Team Number"].isin(teams)]
+
+    def blue_df():
+        if input.selection_mode() == "Match Number":
+            match_number = str(input.match_select())
+            teams = get_Teams_in_Match(match_number)[:3]  # blue is first 3 in your get_Teams_in_Match
+        else:
+            teams = [str(input.team1()), str(input.team2()), str(input.team3())]
+        return df.loc[df["Team Number"].isin(teams)]
+
+    def red_df():
+        if input.selection_mode() == "Match Number":
+            match_number = str(input.match_select())
+            teams = get_Teams_in_Match(match_number)[3:]  # red is last 3
+        else:
+            teams = [str(input.team4()), str(input.team5()), str(input.team6())]
         return df.loc[df["Team Number"].isin(teams)]
 
     @render.ui
@@ -89,34 +118,38 @@ def general_match_server(input, output, session):
                 ui.input_select("team6", "Team 6:", choices=all_teams),
             )
 
-# OVERALL STATS
-    @render.text
+# OVERALL STATS/GRAPHS
+
+    @render.ui
+    def teleop_vs_auto_scatter():
+        new_df = get_teams_in_match()
+        fig = px.scatter(new_df, x="All Teleop", y="Auto and Endgame", title="Teleop vs. Auto + Endgame Points")
+        return fig
+
+
+    @render.ui
     def red_statbotics_prediction():
         match_num = int(input.match_select())
-        statbotics_data_filtered = df.loc[
-            (df["match_numbers"] == match_num )
-            & (df["comp_level"] == "qm")
-        ]
+        statbotics_matches = load_statbotics_matches(match_num)
+        print(statbotics_matches)
         return ui.value_box(
-            title="Prediction RED",
-            value=str(statbotics_data_filtered["pred.red_score"].sum())
-        )
+                title="Prediction RED",
+                value=str(statbotics_matches["pred_red_score"])
+            )
 
-    @render.text
+    @render.ui
     def blue_statbotics_prediction():
         match_num = int(input.match_select())
-        statbotics_data_filtered = df.loc[
-            (df["match_numbers"] == match_num)
-            & (df["comp_level"] == "qm")
-        ]
+        statbotics_matches = load_statbotics_matches(match_num)
+        print(statbotics_matches)
         return ui.value_box(
             title="Prediction BLUE",
-            value=str(statbotics_data_filtered["pred.blue_score"].sum())
+            value=str(statbotics_matches["pred_blue_score"])
         )
 
     @render_widget
     def avg_fuel():
-        new_df = get_teams_in_match()
+        new_df = get_teams_in_match_data()
         avg_team = new_df.groupby("Team Number").mean(numeric_only=True).reset_index()
 
         # Calculate total fuel
@@ -132,7 +165,7 @@ def general_match_server(input, output, session):
             y="Total Fuel",  # Values on y-axis
             title="Average Fuel by Team (Sorted)",
             labels={"Total Fuel": "Average Fuel Score", "Team Number": "Team Number"},
-            orientation='h',  # Horizontal bars
+            orientation='v',  # Horizontal bars
             text="Total Fuel"  # Show values
         )
 
@@ -141,36 +174,112 @@ def general_match_server(input, output, session):
 
         return fig
 
-    @render_widget
-    def avg_endgame_and_auto():
-        return
+    @render.ui
+    def rp_climbing():
+        red = red_df().copy()
+        blue = blue_df().copy()
 
-    @render_widget
-    def rp_count():
-        return
+        def calc_climbing_points(alliance_df):
+            alliance_df["Auto Climbing Status"] = alliance_df["Auto Climbing Status"].fillna(False)
+            return alliance_df.groupby("Team Number")["Total Climb Points"].mean().sum()
+
+        red_climb = calc_climbing_points(red)
+        blue_climb = calc_climbing_points(blue)
+
+        def climb_status(total):
+            status = "Traversal RP Likely" if total >= 50 else "Traversal RP Unlikely"
+            return f"{total:.0f} pts - {status}"
+
+        return ui.div(
+            ui.value_box(title="RED Climbing RP Prediction", value=climb_status(red_climb), height="200px",
+                         showcase=None),
+            ui.value_box(title="BLUE Climbing RP Prediction", value=climb_status(blue_climb), height="200px",
+                         showcase=None),
+        )
+
+    @render.ui
+    def rp_energized():
+        red = red_df().copy()
+        blue = blue_df().copy()
+
+        red_avg_fuel = (red["Auto Fuel"] + red["Teleop Fuel"]).mean() * 3
+        blue_avg_fuel = (blue["Auto Fuel"] + blue["Teleop Fuel"]).mean() * 3
+
+        def energized_status(avg):
+            status = "Energized RP Likely" if avg >= 100 else "Energized RP Unlikely"
+            return f"{avg:.0f} fuel - {status}"
+
+        return ui.div(
+            ui.value_box(
+                title="RED Energized RP Prediction",
+                value=energized_status(red_avg_fuel),
+                height="200px",
+                showcase=None,
+
+            ),
+            ui.value_box(
+                title="BLUE Energized RP Prediction",
+                value=energized_status(blue_avg_fuel),
+                height="200px",
+                showcase=None,
+
+            ),
+        )
+
+    @render.ui
+    def rp_supercharged():
+        red = red_df().copy()
+        blue = blue_df().copy()
+
+        red_avg_fuel = (red["Auto Fuel"] + red["Teleop Fuel"]).mean() * 3
+        blue_avg_fuel = (blue["Auto Fuel"] + blue["Teleop Fuel"]).mean() * 3
+
+        def supercharged_status(avg):
+            status = "Supercharged RP Likely" if avg >= 360 else "Supercharged RP Unlikely"
+            return f"{avg:.0f} fuel - {status}"
+
+        return ui.div(
+            ui.value_box(title="RED Supercharged RP Prediction", value=supercharged_status(red_avg_fuel),
+                         height="200px", showcase=None),
+            ui.value_box(title="BLUE Supercharged RP Prediction", value=supercharged_status(blue_avg_fuel),
+                         height="200px", showcase=None),
+        )
+
+    def get_box_plot_colors():
+        teams =  get_teams_in_match()
+        blue_teams = teams[0:3]
+        red_teams = teams[3:6]
+
+        color_map = {str(team): "#FF5733" for team in blue_teams}
+        color_map.update({str(team): "#1F77B4" for team in red_teams})
+        return dict(
+            color = "Team Number",
+            color_discrete_map=color_map,
+        )
 
 # AUTO GRAPHS
     @render_widget
     def auto_fuel_in_hub():
-        new_df = get_teams_in_match()
-        avg_team = new_df.groupby("Team Number").mean(numeric_only=True)
-        custom_colors = ["#FF3A12", "#54808e", "#12FF51"]
-        fig = px.bar(avg_team, y="Auto Fuel", title="Fuel in Hub (Auto) per Robot",
-                     color_discrete_sequence=custom_colors)
+        teams_data = get_teams_in_match_data()
+      #  print(color_map)
+
+        fig = px.box(teams_data, x="Team Number", y="Auto Fuel", title="Fuel in Hub (Auto) per Robot", **get_box_plot_colors() )
         return fig
 
     @render_widget
     def auto_climbing_frequency():
-        new_df = get_teams_in_match()
+        new_df = get_teams_in_match_data().copy()
+
         auto_climbing_status_df = new_df.groupby("Team Number")["Auto Climbing Status"].value_counts().unstack(
-            fill_value=0).reset_index()
+            fill_value=0).reindex(columns=[False, True], fill_value=0).reset_index()
+
         auto_climbing_status_df["Climb Freq"] = auto_climbing_status_df[True] / (
                 auto_climbing_status_df[True] + auto_climbing_status_df[False])
         auto_climbing_status_df["No Climb Freq"] = auto_climbing_status_df[False] / (
                 auto_climbing_status_df[True] + auto_climbing_status_df[False])
-        custom_colors = ["#FF3A12", "#54808e", "#12FF51"]
-        fig = px.bar(auto_climbing_status_df, x="Team Number", y=["Climb Freq", "No Climb Freq"],
-                     title="Auto Climbing Frequency", color_discrete_sequence=custom_colors)
+
+        fig = px.box(auto_climbing_status_df, x="Team Number", y=["Climb Freq", "No Climb Freq"],
+                     title="Auto Climbing Frequency", **get_box_plot_colors())
         return fig
 
 
@@ -178,31 +287,26 @@ def general_match_server(input, output, session):
 #TELEOP GRAPHS
     @render_widget
     def teleop_fuel_in_hub():
-        new_df = get_teams_in_match()
-        avg_team = new_df.groupby("Team Number").mean(numeric_only=True)
-        custom_colors = ["#FF3A12", "#54808e", "#12FF51"]
-        fig = px.bar(avg_team, y="Teleop Fuel", title="Fuel in Hub (Teleop) per Robot",
-                     color_discrete_sequence=custom_colors)
+        new_df = get_teams_in_match_data()
+        fig = px.box(new_df, y="Teleop Fuel", title="Average Fuel in Hub (Teleop) per Robot",
+                     **get_box_plot_colors())
         return fig
 
-    @render_widget
-    def teleop_fuel_passed_total():
-        new_df = get_teams_in_match()
-        total_df = new_df.groupby("Team Number")["Teleop Fuel Passed"].sum().reset_index()
-        custom_colors = ["#FF3A12", "#54808e", "#12FF51"]
-        fig = px.bar(total_df, x="Team Number", y="Teleop Fuel Passed",
+#    @render_widget
+  #  def teleop_fuel_passed_total():
+   #     new_df = get_teams_in_match_data()
+    #    total_df = new_df.groupby("Team Number")["Teleop Fuel Passed"].sum().reset_index()
+        fig = px.box(total_df, x="Team Number", y="Teleop Fuel Passed",
                      title="Total Teleop Fuel Passed",
-                     color_discrete_sequence=custom_colors)
+                     **get_box_plot_colors())
         return fig
 
     @render_widget
     def teleop_fuel_passed_avg():
-        new_df = get_teams_in_match()
-        avg_df = new_df.groupby("Team Number")["Teleop Fuel Passed"].mean().reset_index()
-        custom_colors = ["#FF3A12", "#54808e", "#12FF51"]
-        fig = px.bar(avg_df, x="Team Number", y="Teleop Fuel Passed",
+        new_df = get_teams_in_match_data()
+        fig = px.box(new_df, x="Team Number", y="Teleop Fuel Passed",
                      title="Average Teleop Fuel Passed",
-                     color_discrete_sequence=custom_colors)
+                     **get_box_plot_colors())
         return fig
 
 
@@ -210,71 +314,37 @@ def general_match_server(input, output, session):
 #ENDGAME GRAPHS
     @render_widget
     def endgame_positions_by_instance():
-        new_df = get_teams_in_match()
+        new_df = get_teams_in_match_data()
         endgame_df = new_df.groupby("Team Number")["Endgame Climbing Level"].value_counts().unstack(
             fill_value=0).reset_index()
-        custom_colors = ["#FF3A12", "#54808e", "#12FF51"]
-        fig = px.bar(endgame_df, x="Team Number", y=["L1", "L2", "L3"],
-                     title="Endgame Positions by Instance", color_discrete_sequence=custom_colors)
+        fig = px.box(endgame_df, x="Team Number", y=["L1", "L2", "L3"],
+                     title="Endgame Positions by Instance", **get_box_plot_colors())
         return fig
 
     @render_widget
     def endgame_positions_by_points():
-        new_df = get_teams_in_match()
+        new_df = get_teams_in_match_data()
         endgame_df = new_df.groupby("Team Number")["Endgame Climbing Level"].value_counts().unstack(
             fill_value=0).reset_index()
         endgame_df["L1 Points"] = endgame_df["L1"] * 10
         endgame_df["L2 Points"] = endgame_df["L2"] * 20
         endgame_df["L3 Points"] = endgame_df["L3"] * 30
-        custom_colors = ["#FF3A12", "#54808e", "#12FF51"]
-        fig = px.bar(endgame_df, x="Team Number", y=["L1 Points", "L2 Points", "L3 Points"],
-                     title="Endgame Positions by Points", color_discrete_sequence=custom_colors)
+        fig = px.box(endgame_df, x="Team Number", y=["L1 Points", "L2 Points", "L3 Points"],
+                     title="Endgame Positions by Points", **get_box_plot_colors())
         return fig
 
     @render_widget
     def total_climbing_points():
-        new_df = get_teams_in_match().copy()
-        new_df["Auto Climbing Status"] = new_df["Auto Climbing Status"].fillna(False)
-        if new_df["Auto Climbing Status"].dtype == 'object':
-            new_df["Auto Climbing Status"] = new_df["Auto Climbing Status"].astype(str).str.lower().isin(
-                ['true', '1', 'yes'])
-        new_df["Auto Climb Points"] = new_df["Auto Climbing Status"].apply(lambda x: 15 if x else 0)
-
-        def convert_endgame_to_points(level):
-            if pd.isna(level):
-                return 0
-            level_str = str(level).upper().strip()
-            return {"L1": 10, "L2": 20, "L3": 30}.get(level_str, 0)
-
-        new_df["Endgame Teleop Points"] = new_df["Endgame Climbing Level"].apply(convert_endgame_to_points)
-        new_df["All Climbing Points"] = new_df["Auto Climb Points"] + new_df["Endgame Teleop Points"]
-        custom_colors = ["#FF3A12", "#54808e", "#12FF51"]
-        fig = px.bar(new_df, x="Team Number", y="All Climbing Points",
-                     title="Auto + Endgame Climbing Points", color_discrete_sequence=custom_colors)
+        new_df = get_teams_in_match_data().copy()
+        fig = px.box(new_df, x="Team Number", y="Total Climb Points",
+                     title="Auto + Endgame Climbing Points", **get_box_plot_colors())
         return fig
 
     @render_widget
     def avg_climbing_points():
-        new_df = get_teams_in_match().copy()
-        new_df["Auto Climbing Status"] = new_df["Auto Climbing Status"].fillna(False)
-        if new_df["Auto Climbing Status"].dtype == 'object':
-            new_df["Auto Climbing Status"] = new_df["Auto Climbing Status"].astype(str).str.lower().isin(
-                ['true', '1', 'yes'])
-        new_df["Auto Climb Points"] = new_df["Auto Climbing Status"].apply(lambda x: 15 if x else 0)
-
-        #pls help gng put ruoxi's in
-        def convert_endgame_to_points(level):
-            if pd.isna(level):
-                return 0
-            level_str = str(level).upper().strip()
-            return {"L1": 10, "L2": 20, "L3": 30}.get(level_str, 0)
-
-        new_df["Endgame Teleop Points"] = new_df["Endgame Climbing Level"].apply(convert_endgame_to_points)
-        new_df["All Climbing Points"] = new_df["Auto Climb Points"] + new_df["Endgame Teleop Points"]
-        avg_df = new_df.groupby("Team Number").mean(numeric_only=True).reset_index()
-        custom_colors = ["#FF3A12", "#54808e", "#12FF51"]
-        fig = px.bar(avg_df, x="Team Number", y="All Climbing Points",
-                     title="Avg Auto + Endgame Climbing Points", color_discrete_sequence=custom_colors)
+        new_df = get_teams_in_match_data().copy()
+        fig = px.box(new_df, x="Team Number", y="Total Climb Points",
+                     title="Avg Auto + Endgame Climbing Points", **get_box_plot_colors())
         return fig
 
 # app = App(general_match_ui("match"), lambda input, output, session: general_match_server("match", input, output, session))

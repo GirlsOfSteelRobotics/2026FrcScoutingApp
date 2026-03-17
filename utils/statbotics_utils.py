@@ -9,20 +9,14 @@ from typing import Dict, Any
 ############################################
 
 def download_statbotics_matches(event: str, output_path: Path, quals_only=True):
-    """
-    :param event: The event key (i.e. 2025casj)
-    :param output_path: The path to save the json to
-    :param quals_only: If true, only data from qualification matches will be saved
-    """
-    import statbotics
-    sb = statbotics.Statbotics()
-    elims = False if quals_only else None
-    try:
-        data = sb.get_matches(event=event, elims=elims)
-        with open(output_path, "w") as f:
-            json.dump(data, f, indent=4)
-    except UserWarning:
-        print("Could not load statbotics match data")
+    import requests
+    url = f"https://api.statbotics.io/v3/matches?event={event}"
+    response = requests.get(url)
+    data = response.json()
+    if quals_only:
+        data = [m for m in data if m.get("comp_level") == "qm"]
+    with open(output_path, "w") as f:
+        json.dump(data, f, indent=4)
 
 
 def load_statbotics_matches(filename: Path) -> pd.DataFrame:
