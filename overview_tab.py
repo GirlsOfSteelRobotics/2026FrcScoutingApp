@@ -62,6 +62,7 @@ def overview_tab_server(input, output, session):
             x = sorted_df["Team Number"],
             y = y_axis,
             title=f"{y_axis} (Averages) by Team",
+            color_discrete_sequence=["#BFAEDC"]
         )
         fig.update_traces(
             hovertemplate=(

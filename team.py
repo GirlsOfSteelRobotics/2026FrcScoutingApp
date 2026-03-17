@@ -210,7 +210,7 @@ def pit_overview_tab_server(input, output, session):
         team_df["Average Fuel"] = team_df["Total Fuel"].expanding().mean()
 
         fig = px.scatter(team_df, x="Match Number", y=y_axis,
-                         title=f"Team {team}: {y_axis} by Match")
+                         title=f"Team {team}: {y_axis} by Match", color_discrete_sequence=["#BFAEDC"])
         fig.update_traces(mode="markers+lines")
         fig.update_layout(xaxis_title="Match", yaxis_title=y_axis, showlegend=False)
         return fig
