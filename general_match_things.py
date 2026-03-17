@@ -223,7 +223,7 @@ def general_match_server(input, output, session):
     def auto_fuel_in_hub():
         new_df = get_teams_in_match()
         avg_team = new_df.groupby("Team Number").mean(numeric_only=True)
-        custom_colors = ["#CBB9A4", "#E6DAC8", "8A6C5F"]
+        custom_colors = ["#A07761", "#6C4E3E", "#D6BFA6"]
         fig = px.bar(avg_team, y="Auto Fuel", title="Fuel in Hub (Auto) per Robot",
                      color_discrete_sequence=custom_colors)
         return fig
@@ -237,7 +237,7 @@ def general_match_server(input, output, session):
                 auto_climbing_status_df[True] + auto_climbing_status_df[False])
         auto_climbing_status_df["No Climb Freq"] = auto_climbing_status_df[False] / (
                 auto_climbing_status_df[True] + auto_climbing_status_df[False])
-        custom_colors = ["#194f55", "#54808e", "#243454"]
+        custom_colors = ["#A07761", "#6C4E3E", "#D6BFA6"]
         fig = px.bar(auto_climbing_status_df, x="Team Number", y=["Climb Freq", "No Climb Freq"],
                      title="Auto Climbing Frequency", color_discrete_sequence=custom_colors)
         return fig
@@ -249,7 +249,7 @@ def general_match_server(input, output, session):
     def teleop_fuel_in_hub():
         new_df = get_teams_in_match()
         avg_team = new_df.groupby("Team Number").mean(numeric_only=True)
-        custom_colors = ["#194f55", "#54808e", "#243454"]
+        custom_colors = ["#A07761", "#6C4E3E", "#D6BFA6"]
         fig = px.bar(avg_team, y="Teleop Fuel", title="Average Fuel in Hub (Teleop) per Robot",
                      color_discrete_sequence=custom_colors)
         return fig
@@ -258,7 +258,7 @@ def general_match_server(input, output, session):
     def teleop_fuel_passed_total():
         new_df = get_teams_in_match()
         total_df = new_df.groupby("Team Number")["Teleop Fuel Passed"].sum().reset_index()
-        custom_colors = ["#194f55", "#54808e", "#243454"]
+        custom_colors = ["#A07761", "#6C4E3E", "#D6BFA6"]
         fig = px.bar(total_df, x="Team Number", y="Teleop Fuel Passed",
                      title="Total Teleop Fuel Passed",
                      color_discrete_sequence=custom_colors)
@@ -268,7 +268,7 @@ def general_match_server(input, output, session):
     def teleop_fuel_passed_avg():
         new_df = get_teams_in_match()
         avg_df = new_df.groupby("Team Number")["Teleop Fuel Passed"].mean().reset_index()
-        custom_colors = ["#194f55", "#54808e", "#243454"]
+        custom_colors = ["#A07761", "#6C4E3E", "#D6BFA6"]
         fig = px.bar(avg_df, x="Team Number", y="Teleop Fuel Passed",
                      title="Average Teleop Fuel Passed",
                      color_discrete_sequence=custom_colors)
@@ -282,7 +282,7 @@ def general_match_server(input, output, session):
         new_df = get_teams_in_match()
         endgame_df = new_df.groupby("Team Number")["Endgame Climbing Level"].value_counts().unstack(
             fill_value=0).reset_index()
-        custom_colors = ["#194f55", "#54808e", "#243454"]
+        custom_colors = ["#A07761", "#6C4E3E", "#D6BFA6"]
         fig = px.bar(endgame_df, x="Team Number", y=["L1", "L2", "L3"],
                      title="Endgame Positions by Instance", color_discrete_sequence=custom_colors)
         return fig
@@ -295,7 +295,7 @@ def general_match_server(input, output, session):
         endgame_df["L1 Points"] = endgame_df["L1"] * 10
         endgame_df["L2 Points"] = endgame_df["L2"] * 20
         endgame_df["L3 Points"] = endgame_df["L3"] * 30
-        custom_colors = ["#194f55", "#54808e", "#243454"]
+        custom_colors = ["#A07761", "#6C4E3E", "#D6BFA6"]
         fig = px.bar(endgame_df, x="Team Number", y=["L1 Points", "L2 Points", "L3 Points"],
                      title="Endgame Positions by Points", color_discrete_sequence=custom_colors)
         return fig
@@ -303,7 +303,7 @@ def general_match_server(input, output, session):
     @render_widget
     def total_climbing_points():
         new_df = get_teams_in_match().copy()
-        custom_colors = ["#194f55", "#54808e", "#243454"]
+        custom_colors = ["#A07761", "#6C4E3E", "#D6BFA6"]
         fig = px.bar(new_df, x="Team Number", y="Total Climb Points",
                      title="Auto + Endgame Climbing Points", color_discrete_sequence=custom_colors)
         return fig
@@ -312,7 +312,7 @@ def general_match_server(input, output, session):
     def avg_climbing_points():
         new_df = get_teams_in_match().copy()
         avg_df = new_df.groupby("Team Number").mean(numeric_only=True).reset_index()
-        custom_colors = ["#194f55", "#54808e", "#243454"]
+        custom_colors = ["#A07761", "#6C4E3E", "#D6BFA6"]
         fig = px.bar(avg_df, x="Team Number", y="Total Climb Points",
                      title="Avg Auto + Endgame Climbing Points", color_discrete_sequence=custom_colors)
         return fig
