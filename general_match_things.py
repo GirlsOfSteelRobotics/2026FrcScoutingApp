@@ -120,12 +120,11 @@ def general_match_server(input, output, session):
 
 # OVERALL STATS/GRAPHS
 
-    @render.ui
+    @render_widget
     def teleop_vs_auto_scatter():
-        new_df = get_teams_in_match()
-        fig = px.scatter(new_df, x="All Teleop", y="Auto and Endgame", title="Teleop vs. Auto + Endgame Points")
+        new_df = get_teams_in_match_data()
+        fig = px.scatter(new_df, x = "All Teleop", y = "Auto and Endgame", title ="Teleop vs. Auto + Endgame Points")
         return fig
-
 
     @render.ui
     def red_statbotics_prediction():
@@ -288,7 +287,7 @@ def general_match_server(input, output, session):
     @render_widget
     def teleop_fuel_in_hub():
         new_df = get_teams_in_match_data()
-        fig = px.box(new_df, y="Teleop Fuel", title="Average Fuel in Hub (Teleop) per Robot",
+        fig = px.box(new_df, x= "Team Number", y="Teleop Fuel", title="Average Fuel in Hub (Teleop) per Robot",
                      **get_box_plot_colors())
         return fig
 
