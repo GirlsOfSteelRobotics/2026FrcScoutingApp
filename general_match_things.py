@@ -55,11 +55,11 @@ def general_match_ui():
                                  ui.card(output_widget("teleop_fuel_passed_avg")),
                                  ),
                 #ENDGAME
-                ui.nav_panel("Endgame",
-                ui.card(output_widget("endgame_positions_by_instance")),
-                    ui.card(output_widget("endgame_positions_by_points")),
-                    ui.card(output_widget("total_climbing_points")),
-                    ui.card(output_widget("avg_climbing_points")),
+                    ui.nav_panel("Endgame",
+                ui.card(output_widget("total_climbing_points")),
+                        ui.card(output_widget("endgame_positions_by_instance")),
+                        ui.card(output_widget("endgame_positions_by_points")),
+                        ui.card(output_widget("avg_climbing_points")),
                              )
             )
         )
@@ -118,12 +118,57 @@ def general_match_server(input, output, session):
                 ui.input_select("team6", "Team 6:", choices=all_teams),
             )
 
+    def get_box_plot_colors():
+        teams =  get_teams_in_match()
+        blue_teams = teams[0:3]
+        red_teams = teams[3:6]
+
+        color_map = {str(team): "#FF5733" for team in blue_teams}
+        color_map.update({str(team): "#1F77B4" for team in red_teams})
+        return dict(
+            color = "Team Number",
+            color_discrete_map=color_map,
+        )
+
+
 # OVERALL STATS/GRAPHS
 
     @render_widget
     def teleop_vs_auto_scatter():
         new_df = get_teams_in_match_data()
-        fig = px.scatter(new_df, x = "All Teleop", y = "Auto and Endgame", title ="Teleop vs. Auto + Endgame Points")
+
+        # Calculate total points
+        new_df['Total'] = new_df["All Teleop"] + new_df["Auto and Endgame"]
+
+        fig = px.scatter(new_df,
+                         x="All Teleop",
+                         y="Auto and Endgame",
+                         color="Team Number",
+                         title="Teleop vs. Auto + Endgame Points",
+                         hover_name="Team Number",
+                         hover_data={
+                             "All Teleop": ":.1f",
+                             "Auto and Endgame": ":.1f",
+                             "Total": ":.1f",
+                             "Team Number": False  # Hide since it's in hover_name
+                         },
+                         labels={
+                             "All Teleop": "Teleop Points",
+                             "Auto and Endgame": "Auto + Endgame Points",
+                             "Team Number": "Team",
+                             "Total": "Total Points"
+                         },
+                         **get_box_plot_colors()
+                         )
+
+        # Optional: Customize the hover template further for better formatting
+        fig.update_traces(
+            hovertemplate="<b>Team %{hovertext}</b><br><br>" +
+                          "Teleop: %{x:.1f}<br>" +
+                          "Auto+Endgame: %{y:.1f}<br>" +
+                          "<extra></extra>"
+        )
+
         return fig
 
     @render.ui
@@ -244,17 +289,7 @@ def general_match_server(input, output, session):
                          height="200px", showcase=None),
         )
 
-    def get_box_plot_colors():
-        teams =  get_teams_in_match()
-        blue_teams = teams[0:3]
-        red_teams = teams[3:6]
 
-        color_map = {str(team): "#FF5733" for team in blue_teams}
-        color_map.update({str(team): "#1F77B4" for team in red_teams})
-        return dict(
-            color = "Team Number",
-            color_discrete_map=color_map,
-        )
 
 # AUTO GRAPHS
     @render_widget
@@ -312,24 +347,24 @@ def general_match_server(input, output, session):
 
 #ENDGAME GRAPHS
     @render_widget
-    def endgame_positions_by_instance():
+    def endgame_climb_level_distribution():
         new_df = get_teams_in_match_data()
         endgame_df = new_df.groupby("Team Number")["Endgame Climbing Level"].value_counts().unstack(
             fill_value=0).reset_index()
-        fig = px.box(endgame_df, x="Team Number", y=["L1", "L2", "L3"],
-                     title="Endgame Positions by Instance", **get_box_plot_colors())
+        fig = px.bar(endgame_df, x="Team Number", y=["L1", "L2", "L3"],
+                     title="Endgame Climb Level Distribution by Team", **get_box_plot_colors())
         return fig
 
     @render_widget
-    def endgame_positions_by_points():
+    def points_earned_per_climb_level():
         new_df = get_teams_in_match_data()
         endgame_df = new_df.groupby("Team Number")["Endgame Climbing Level"].value_counts().unstack(
             fill_value=0).reset_index()
         endgame_df["L1 Points"] = endgame_df["L1"] * 10
         endgame_df["L2 Points"] = endgame_df["L2"] * 20
         endgame_df["L3 Points"] = endgame_df["L3"] * 30
-        fig = px.box(endgame_df, x="Team Number", y=["L1 Points", "L2 Points", "L3 Points"],
-                     title="Endgame Positions by Points", **get_box_plot_colors())
+        fig = px.bar(endgame_df, x="Team Number", y=["L1 Points", "L2 Points", "L3 Points"],
+                     title= "Points Earned per Climb Level by Team", **get_box_plot_colors())
         return fig
 
     @render_widget
