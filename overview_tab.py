@@ -34,6 +34,47 @@ def overview_tab_ui():
 
 @module.server
 def overview_tab_server(input, output, session):
+    @render_widget
+    def teleop_vs_auto_scatter_all():
+        new_df = df.copy()
+        new_df['Total'] = new_df["All Teleop"] + new_df["Auto and Endgame"]
+
+        fig = px.scatter(new_df,
+                         x="All Teleop",
+                         y="Auto and Endgame",
+                         color="Total",
+                         color_continuous_scale="Plasma",
+                         title="Teleop vs. Auto + Endgame Points",
+                         hover_name="Team Number",
+                         hover_data={
+                             "All Teleop": ":.1f",
+                             "Auto and Endgame": ":.1f",
+                             "Total": ":.1f",
+                             "Team Number": False
+                         },
+                         labels={
+                             "All Teleop": "Teleop Points",
+                             "Auto and Endgame": "Auto + Endgame Points",
+                             "Team Number": "Team",
+                             "Total": "Total Points"
+                         },
+                         )
+
+        fig.update_traces(
+            marker=dict(size=8),
+            hovertemplate="<b>Team %{hovertext}</b><br><br>" +
+                          "Teleop: %{x:.1f}<br>" +
+                          "Auto+Endgame: %{y:.1f}<br>" +
+                          "Total: %{marker.color:.1f}<br>" +
+                          "<extra></extra>"
+        )
+
+        fig.update_layout(
+            coloraxis_colorbar=dict(title="Total Points")
+        )
+
+        return fig
+
 
     @render_widget
     def teleop_vs_auto_endgame():
@@ -81,43 +122,3 @@ def overview_tab_server(input, output, session):
         )
         return fig
 
-    @render_widget
-    def teleop_vs_auto_scatter_all():
-        new_df = df.copy()
-        new_df['Total'] = new_df["All Teleop"] + new_df["Auto and Endgame"]
-
-        fig = px.scatter(new_df,
-                         x="All Teleop",
-                         y="Auto and Endgame",
-                         color="Total",
-                         color_continuous_scale="Plasma",
-                         title="Teleop vs. Auto + Endgame Points",
-                         hover_name="Team Number",
-                         hover_data={
-                             "All Teleop": ":.1f",
-                             "Auto and Endgame": ":.1f",
-                             "Total": ":.1f",
-                             "Team Number": False
-                         },
-                         labels={
-                             "All Teleop": "Teleop Points",
-                             "Auto and Endgame": "Auto + Endgame Points",
-                             "Team Number": "Team",
-                             "Total": "Total Points"
-                         },
-                         )
-
-        fig.update_traces(
-            marker=dict(size=8),
-            hovertemplate="<b>Team %{hovertext}</b><br><br>" +
-                          "Teleop: %{x:.1f}<br>" +
-                          "Auto+Endgame: %{y:.1f}<br>" +
-                          "Total: %{marker.color:.1f}<br>" +
-                          "<extra></extra>"
-        )
-
-        fig.update_layout(
-            coloraxis_colorbar=dict(title="Total Points")
-        )
-
-        return fig
