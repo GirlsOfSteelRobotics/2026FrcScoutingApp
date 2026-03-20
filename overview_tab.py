@@ -38,6 +38,7 @@ def overview_tab_server(input, output, session):
     def teleop_vs_auto_scatter_all():
         new_df = df.copy()
         new_df['Total'] = new_df["All Teleop"] + new_df["Auto and Endgame"]
+        new_df = new_df.groupby("Team Number")[["All Teleop", "Auto and Endgame", "Total"]].mean().reset_index()
 
         fig = px.scatter(new_df,
                          x="All Teleop",
