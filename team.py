@@ -220,7 +220,6 @@ def pit_overview_tab_server(input, output, session):
         program_language = "" if pd.isna(program_language) else str(program_language).strip()
         return program_language if program_language else "N/A"
 
-    @render.text
     def drivetrain_quality():
         team = input.team_select()
         row = get_team_row(team)
