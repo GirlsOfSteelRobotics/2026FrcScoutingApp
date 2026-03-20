@@ -13,8 +13,10 @@ match_df = load_scouted_data().copy()
 @module.ui
 def pit_overview_tab_ui():
     print(match_df)
-    teams = sorted(match_df["Team Number"].unique().tolist(), key=lambda x: int(x))
-
+    teams = sorted(
+        [x for x in match_df["Team Number"].unique().tolist() if x is not None and str(x) != '<NA>'],
+        key=lambda x: int(x)
+    )
     return ui.page_fluid(
         ui.input_select(
             "team_select",
