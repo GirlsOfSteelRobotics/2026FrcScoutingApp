@@ -3,14 +3,14 @@ import pandas as pd
 import numpy as np
 import pathlib
 import json
-from metadata import CURRENT_EVENT
+from metadata import "2026paca"
 
 custom_colors = ["#A07761", "#6C4E3E", "#D6BFA6"]
 
 script_directory = pathlib.Path(__file__).resolve().parent
 
 def load_scouted_data():
-    scouted_data = pd.read_csv(script_directory / f'data/{CURRENT_EVENT}/scouted_data.csv')
+    scouted_data = pd.read_csv(script_directory / f'data/{"2026paca"}/scouted_data.csv')
 
     if "team_key" in scouted_data:
         scouted_data["team_key"] = scouted_data["team_key"].str[3:]
@@ -58,13 +58,13 @@ def load_scouted_data():
     return scouted_data
 
 def load_pit_data():
-    pit_data = pd.read_csv(script_directory / f'data/{CURRENT_EVENT}/pit_data.csv')
+    pit_data = pd.read_csv(script_directory / f'data/{"2026paca"}/pit_data.csv')
     pit_data['Team Number'] = pit_data['Team Number'].astype("string")
 
     return pit_data
 
 def get_Teams_in_Match(match_number):
-    with open(script_directory / f'data/{CURRENT_EVENT}/tba_matches.json', 'r') as f:
+    with open(script_directory / f'data/{"2026paca"}/tba_matches.json', 'r') as f:
         matches_json = json.load(f)
         for match in matches_json:
             if str(match["match_number"]) == str(match_number):
@@ -77,14 +77,14 @@ def get_Teams_in_Match(match_number):
     return []
 
 def load_match_numbers():
-    with open(script_directory / f'data/{CURRENT_EVENT}/tba_matches.json', 'r') as f:
+    with open(script_directory / f'data/{"2026paca"}/tba_matches.json', 'r') as f:
         matches_json = json.load(f)
         match_numbers = sorted(set(str(m["match_number"]) for m in matches_json), key=lambda x: int(x))
     return match_numbers
 
 
 def load_statbotics_matches(match_number):
-    with open(script_directory / f'data/{CURRENT_EVENT}/statbotics_matches.json', 'r') as f:
+    with open(script_directory / f'data/{"2026paca"}/statbotics_matches.json', 'r') as f:
         matches_json = json.load(f)
         for match in matches_json:
             if str(match["match_number"]) == str(match_number):

@@ -10,4 +10,4 @@ shiny run app.py --reload
 https://girlsofsteelrobotics.github.io/2026FrcScoutingApp/
 
 ## Downloading External Data
-python-3 download_external_data.py
+python3 download_external_data.py
