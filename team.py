@@ -50,6 +50,22 @@ def pit_overview_tab_ui():
                 ui.output_text("preload_number"),
             ),
             ui.card(
+                ui.card_header("Mechanical Quality"),
+                ui.output_text("mechanical_quality"),
+            ),
+            ui.card(
+                ui.card_header("Electrical Wiring Quality"),
+                ui.output_text("elec_wiring_quality"),
+            ),
+            ui.card(
+                ui.card_header("Drivetrain Quality"),
+                ui.output_text("drivetrain_quality"),
+            ),
+            ui.card(
+                ui.card_header("Programming Language"),
+                ui.output_text("program_language"),
+            ),
+            ui.card(
                 ui.card_header("Carrying Capacity"),
                 ui.output_text("carrying_capacity"),
             ),
@@ -204,7 +220,6 @@ def pit_overview_tab_server(input, output, session):
         program_language = "" if pd.isna(program_language) else str(program_language).strip()
         return program_language if program_language else "N/A"
 
-    @render.text
     def drivetrain_quality():
         team = input.team_select()
         row = get_team_row(team)
@@ -235,16 +250,6 @@ def pit_overview_tab_server(input, output, session):
         mech_quality = row.get ("Mechanical Quality", "")
         mech_quality = "" if pd.isna(mech_quality) else str(mech_quality).strip()
         return mech_quality if mech_quality else "N/A"
-
-    @render.text
-    def elec_wiring_quality():
-        team = input.team_select()
-        row = get_team_row(team)
-        if row is None:
-            return "N/A"
-        elec_wiring_quality = row.get("Electrical Wiring Quality", "")
-        elec_wiring_quality = "" if pd.isna(elec_wiring_quality) else str(elec_wiring_quality).strip()
-        return elec_wiring_quality if elec_wiring_quality else "N/A"
 
     @render_widget
     def team_trend_graph():
