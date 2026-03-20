@@ -39,4 +39,4 @@ def download_external_data(event):
 
 if __name__ == "__main__":
         # python3 -m download_external_data
-        download_external_data(CURRENT_EVENT)
+        download_external_data("2026paca")
