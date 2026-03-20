@@ -24,9 +24,9 @@
 #CURRENT_EVENT = "2025mil"
 
 # Finger Lakes Regional
-OUR_TEAM_NUMBER = 4467
-SCOUT_RADIOZ_ORG = "steelcity"
-CURRENT_EVENT = "mock_data"
+#OUR_TEAM_NUMBER = 4467
+#SCOUT_RADIOZ_ORG = "steelcity"
+#CURRENT_EVENT = "mock_data"
 
 #gpr 26
 OUR_TEAM_NUMBER = 3504
