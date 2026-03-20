@@ -12,6 +12,9 @@ def download_statbotics_matches(event: str, output_path: Path, quals_only=True):
     import requests
     url = f"https://api.statbotics.io/v3/matches?event={event}"
     response = requests.get(url)
+    if response.status_code == 500:
+        print("Server rejected request", url)
+        return
     data = response.json()
     if quals_only:
         data = [m for m in data if m.get("comp_level") == "qm"]
@@ -53,6 +56,9 @@ def download_statbotics_event_teams(event: str, output_path: Path):
     import requests
     url = f"https://api.statbotics.io/v3/team_events?event={event}"
     response = requests.get(url)
+    if response.status_code == 500:
+        print("Server rejected request", url)
+        return
     with open(output_path, "w") as f:
         as_json = response.json()
         json.dump(as_json, f, indent=4)

@@ -83,7 +83,17 @@ def load_pit_data():
     pit_data = pd.read_csv(script_directory / f'data/{EVENT_KEY}/pit_data.csv')
     pit_data.columns = pit_data.columns.str.strip()
     pit_data["team_key"] = pit_data["team_key"].str.replace("frc", "", regex=False)
-    pit_data.rename(columns={"team_key": "Team Number"}, inplace=True)
+    pit_data.rename(columns={
+        "team_key": "Team Number",
+        "canDriveUnderTrench": "Under Trench?",
+        "canDrive Bump": "Over Bump?",
+        "HopperCapacity": "Carrying Capacity",
+        "mechanicalQuality": "Mechanical Quality",
+        "electricalWiring": "Electrical Wiring Quality",
+        "ProgrammingLanguage": "Programming Language",
+        "DrivetrainQuality": "Drivetrain Quality",
+                             },
+                inplace=True)
     pit_data['Team Number'] = pit_data['Team Number'].astype("string")
     return pit_data
 
