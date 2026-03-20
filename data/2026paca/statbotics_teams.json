@@ -1,0 +1,4302 @@
+[
+    {
+        "team": 63,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "McDowell Robotics Team 63",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 42.68,
+                "sd": 8.48
+            },
+            "unitless": 1496.0,
+            "norm": 1531.0,
+            "conf": [
+                -1.36,
+                1.18
+            ],
+            "breakdown": {
+                "total_points": 42.68,
+                "auto_points": 10.97,
+                "teleop_points": 18.05,
+                "endgame_points": 13.66,
+                "energized_rp": 0.0669,
+                "supercharged_rp": -0.2194,
+                "traversal_rp": -0.3342,
+                "tiebreaker_points": 42.68,
+                "auto_fuel": 9.12,
+                "auto_tower": 1.85,
+                "transition_fuel": 0.92,
+                "first_shift_fuel": 10.42,
+                "second_shift_fuel": 6.71,
+                "teleop_fuel": 18.05,
+                "endgame_fuel": 10.63,
+                "endgame_tower": 3.03,
+                "total_fuel": 37.8,
+                "total_tower": 4.88,
+                "rp_1": 0.0669,
+                "rp_2": -0.2194,
+                "rp_3": -0.3342
+            },
+            "stats": {
+                "start": 44.14,
+                "pre_elim": 42.68,
+                "mean": 44.02,
+                "max": 48.73
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 4,
+                "rps_per_match": 2.0,
+                "rank": 21,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 117,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Steel Dragons",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 59.51,
+                "sd": 17.29
+            },
+            "unitless": 1541.0,
+            "norm": 1582.0,
+            "conf": [
+                -0.92,
+                1.64
+            ],
+            "breakdown": {
+                "total_points": 59.51,
+                "auto_points": 10.8,
+                "teleop_points": 28.77,
+                "endgame_points": 19.93,
+                "energized_rp": 0.1984,
+                "supercharged_rp": -0.2188,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 59.51,
+                "auto_fuel": 10.81,
+                "auto_tower": -0.01,
+                "transition_fuel": 0.43,
+                "first_shift_fuel": 9.34,
+                "second_shift_fuel": 18.99,
+                "teleop_fuel": 28.77,
+                "endgame_fuel": 19.85,
+                "endgame_tower": 0.08,
+                "total_fuel": 59.43,
+                "total_tower": 0.07,
+                "rp_1": 0.1984,
+                "rp_2": -0.2188,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 44.45,
+                "pre_elim": 59.51,
+                "mean": 56.18,
+                "max": 59.51
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0,
+                "rps": 2,
+                "rps_per_match": 1.0,
+                "rank": 36,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 340,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "G.R.R. (Greater Rochester Robotics)",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": false,
+        "epa": {
+            "total_points": {
+                "mean": 117.12,
+                "sd": 22.12
+            },
+            "unitless": 1695.0,
+            "norm": 1719.0,
+            "conf": [
+                -0.86,
+                1.19
+            ],
+            "breakdown": {
+                "total_points": 117.12,
+                "auto_points": 29.77,
+                "teleop_points": 63.92,
+                "endgame_points": 23.43,
+                "energized_rp": 0.5819,
+                "supercharged_rp": -0.2254,
+                "traversal_rp": -0.3361,
+                "tiebreaker_points": 117.12,
+                "auto_fuel": 29.66,
+                "auto_tower": 0.11,
+                "transition_fuel": 7.06,
+                "first_shift_fuel": 30.3,
+                "second_shift_fuel": 26.55,
+                "teleop_fuel": 63.92,
+                "endgame_fuel": 22.47,
+                "endgame_tower": 0.96,
+                "total_fuel": 116.05,
+                "total_tower": 1.08,
+                "rp_1": 0.5819,
+                "rp_2": -0.2254,
+                "rp_3": -0.3361
+            },
+            "stats": {
+                "start": 103.39,
+                "pre_elim": 117.12,
+                "mean": 114.44,
+                "max": 117.12
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0,
+                "rps": 8,
+                "rps_per_match": 4.0,
+                "rank": 4,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 451,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Cat Attack Robotics",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 31.16,
+                "sd": 8.13
+            },
+            "unitless": 1466.0,
+            "norm": 1493.0,
+            "conf": [
+                -1.58,
+                1.07
+            ],
+            "breakdown": {
+                "total_points": 31.16,
+                "auto_points": 6.9,
+                "teleop_points": 15.49,
+                "endgame_points": 8.77,
+                "energized_rp": 0.0455,
+                "supercharged_rp": -0.2187,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 31.16,
+                "auto_fuel": 6.74,
+                "auto_tower": 0.16,
+                "transition_fuel": 1.13,
+                "first_shift_fuel": 7.01,
+                "second_shift_fuel": 7.35,
+                "teleop_fuel": 15.49,
+                "endgame_fuel": 8.48,
+                "endgame_tower": 0.29,
+                "total_fuel": 30.71,
+                "total_tower": 0.45,
+                "rp_1": 0.0455,
+                "rp_2": -0.2187,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 39.16,
+                "pre_elim": 31.16,
+                "mean": 32.49,
+                "max": 39.16
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0,
+                "rps": 0,
+                "rps_per_match": 0.0,
+                "rank": 43,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 709,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Femme Tech Fatale",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": false,
+        "epa": {
+            "total_points": {
+                "mean": 23.04,
+                "sd": 14.17
+            },
+            "unitless": 1444.0,
+            "norm": 1461.0,
+            "conf": [
+                -0.66,
+                1.16
+            ],
+            "breakdown": {
+                "total_points": 23.04,
+                "auto_points": 8.73,
+                "teleop_points": -0.19,
+                "endgame_points": 14.49,
+                "energized_rp": 0.003,
+                "supercharged_rp": -0.2306,
+                "traversal_rp": -0.3366,
+                "tiebreaker_points": 23.04,
+                "auto_fuel": 5.97,
+                "auto_tower": 2.76,
+                "transition_fuel": -0.31,
+                "first_shift_fuel": -5.0,
+                "second_shift_fuel": 5.12,
+                "teleop_fuel": -0.19,
+                "endgame_fuel": 3.53,
+                "endgame_tower": 10.97,
+                "total_fuel": 9.31,
+                "total_tower": 13.73,
+                "rp_1": 0.003,
+                "rp_2": -0.2306,
+                "rp_3": -0.3366
+            },
+            "stats": {
+                "start": 17.88,
+                "pre_elim": 23.04,
+                "mean": 21.61,
+                "max": 23.04
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0,
+                "rps": 7,
+                "rps_per_match": 3.5,
+                "rank": 8,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 1317,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Digital Fusion",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 18.5,
+                "sd": 7.42
+            },
+            "unitless": 1432.0,
+            "norm": 1440.0,
+            "conf": [
+                -1.55,
+                1.13
+            ],
+            "breakdown": {
+                "total_points": 18.5,
+                "auto_points": 4.56,
+                "teleop_points": 10.52,
+                "endgame_points": 3.42,
+                "energized_rp": 0.1175,
+                "supercharged_rp": -0.2198,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 18.5,
+                "auto_fuel": 4.64,
+                "auto_tower": -0.09,
+                "transition_fuel": 1.96,
+                "first_shift_fuel": 3.91,
+                "second_shift_fuel": 4.65,
+                "teleop_fuel": 10.52,
+                "endgame_fuel": 3.6,
+                "endgame_tower": -0.17,
+                "total_fuel": 18.77,
+                "total_tower": -0.26,
+                "rp_1": 0.1175,
+                "rp_2": -0.2198,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 25.12,
+                "pre_elim": 18.5,
+                "mean": 19.49,
+                "max": 25.12
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 4,
+                "rps_per_match": 2.0,
+                "rank": 32,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 1511,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Rolling Thunder",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": false,
+        "epa": {
+            "total_points": {
+                "mean": 76.11,
+                "sd": 18.88
+            },
+            "unitless": 1586.0,
+            "norm": 1631.0,
+            "conf": [
+                -0.71,
+                1.26
+            ],
+            "breakdown": {
+                "total_points": 76.11,
+                "auto_points": 5.3,
+                "teleop_points": 40.71,
+                "endgame_points": 30.1,
+                "energized_rp": 0.3654,
+                "supercharged_rp": -0.2269,
+                "traversal_rp": -0.3361,
+                "tiebreaker_points": 76.11,
+                "auto_fuel": 5.89,
+                "auto_tower": -0.59,
+                "transition_fuel": 4.51,
+                "first_shift_fuel": 12.93,
+                "second_shift_fuel": 23.28,
+                "teleop_fuel": 40.71,
+                "endgame_fuel": 28.78,
+                "endgame_tower": 1.32,
+                "total_fuel": 75.38,
+                "total_tower": 0.73,
+                "rp_1": 0.3654,
+                "rp_2": -0.2269,
+                "rp_3": -0.3361
+            },
+            "stats": {
+                "start": 69.57,
+                "pre_elim": 76.11,
+                "mean": 74.23,
+                "max": 76.11
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 5,
+                "rps_per_match": 2.5,
+                "rank": 17,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 1601,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Quantum Samurai",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 15.3,
+                "sd": 6.93
+            },
+            "unitless": 1423.0,
+            "norm": 1424.0,
+            "conf": [
+                -1.54,
+                1.15
+            ],
+            "breakdown": {
+                "total_points": 15.3,
+                "auto_points": 3.91,
+                "teleop_points": 8.12,
+                "endgame_points": 3.26,
+                "energized_rp": -0.0019,
+                "supercharged_rp": -0.2201,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 15.3,
+                "auto_fuel": 3.88,
+                "auto_tower": 0.03,
+                "transition_fuel": 0.4,
+                "first_shift_fuel": 2.76,
+                "second_shift_fuel": 4.95,
+                "teleop_fuel": 8.12,
+                "endgame_fuel": 3.28,
+                "endgame_tower": -0.02,
+                "total_fuel": 15.28,
+                "total_tower": 0.01,
+                "rp_1": -0.0019,
+                "rp_2": -0.2201,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 21.54,
+                "pre_elim": 15.3,
+                "mean": 16.27,
+                "max": 21.54
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 3,
+                "rps_per_match": 1.5,
+                "rank": 35,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 1708,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "AMP'D Robotics",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 39.59,
+                "sd": 15.51
+            },
+            "unitless": 1488.0,
+            "norm": 1521.0,
+            "conf": [
+                -1.54,
+                1.14
+            ],
+            "breakdown": {
+                "total_points": 39.59,
+                "auto_points": 7.9,
+                "teleop_points": 23.42,
+                "endgame_points": 8.27,
+                "energized_rp": 0.1243,
+                "supercharged_rp": -0.218,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 39.59,
+                "auto_fuel": 7.79,
+                "auto_tower": 0.11,
+                "transition_fuel": 1.63,
+                "first_shift_fuel": 10.24,
+                "second_shift_fuel": 11.55,
+                "teleop_fuel": 23.42,
+                "endgame_fuel": 8.06,
+                "endgame_tower": 0.21,
+                "total_fuel": 39.27,
+                "total_tower": 0.32,
+                "rp_1": 0.1243,
+                "rp_2": -0.218,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 48.41,
+                "pre_elim": 39.59,
+                "mean": 40.26,
+                "max": 48.41
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0,
+                "rps": 1,
+                "rps_per_match": 0.5,
+                "rank": 39,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 1816,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "\"The Green Machine\"",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 50.12,
+                "sd": 5.43
+            },
+            "unitless": 1516.0,
+            "norm": 1554.0,
+            "conf": [
+                -1.51,
+                1.18
+            ],
+            "breakdown": {
+                "total_points": 50.12,
+                "auto_points": 10.48,
+                "teleop_points": 26.27,
+                "endgame_points": 13.37,
+                "energized_rp": 0.1923,
+                "supercharged_rp": -0.2176,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 50.12,
+                "auto_fuel": 10.23,
+                "auto_tower": 0.25,
+                "transition_fuel": 2.0,
+                "first_shift_fuel": 11.69,
+                "second_shift_fuel": 12.57,
+                "teleop_fuel": 26.27,
+                "endgame_fuel": 12.92,
+                "endgame_tower": 0.45,
+                "total_fuel": 49.42,
+                "total_tower": 0.7,
+                "rp_1": 0.1923,
+                "rp_2": -0.2176,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 53.79,
+                "pre_elim": 50.12,
+                "mean": 50.91,
+                "max": 53.79
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 4,
+                "rps_per_match": 2.0,
+                "rank": 29,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 2010,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "The Lightning Bots",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 53.98,
+                "sd": 18.53
+            },
+            "unitless": 1527.0,
+            "norm": 1566.0,
+            "conf": [
+                -1.32,
+                1.38
+            ],
+            "breakdown": {
+                "total_points": 53.98,
+                "auto_points": 14.06,
+                "teleop_points": 26.1,
+                "endgame_points": 13.81,
+                "energized_rp": 0.1567,
+                "supercharged_rp": -0.2176,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 53.98,
+                "auto_fuel": 14.16,
+                "auto_tower": -0.1,
+                "transition_fuel": 0.92,
+                "first_shift_fuel": 10.8,
+                "second_shift_fuel": 14.39,
+                "teleop_fuel": 26.1,
+                "endgame_fuel": 12.27,
+                "endgame_tower": 1.55,
+                "total_fuel": 52.53,
+                "total_tower": 1.44,
+                "rp_1": 0.1567,
+                "rp_2": -0.2176,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 52.58,
+                "pre_elim": 53.98,
+                "mean": 52.5,
+                "max": 53.98
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 4,
+                "rps_per_match": 2.0,
+                "rank": 22,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 2095,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Direct Current",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": false,
+        "epa": {
+            "total_points": {
+                "mean": 8.77,
+                "sd": 11.66
+            },
+            "unitless": 1406.0,
+            "norm": 1388.0,
+            "conf": [
+                -0.96,
+                0.96
+            ],
+            "breakdown": {
+                "total_points": 8.77,
+                "auto_points": 4.49,
+                "teleop_points": 3.45,
+                "endgame_points": 0.84,
+                "energized_rp": -0.0357,
+                "supercharged_rp": -0.2305,
+                "traversal_rp": -0.3366,
+                "tiebreaker_points": 8.77,
+                "auto_fuel": 4.77,
+                "auto_tower": -0.29,
+                "transition_fuel": 1.75,
+                "first_shift_fuel": 2.01,
+                "second_shift_fuel": -0.31,
+                "teleop_fuel": 3.45,
+                "endgame_fuel": 0.01,
+                "endgame_tower": 0.83,
+                "total_fuel": 8.23,
+                "total_tower": 0.54,
+                "rp_1": -0.0357,
+                "rp_2": -0.2305,
+                "rp_3": -0.3366
+            },
+            "stats": {
+                "start": 7.73,
+                "pre_elim": 8.77,
+                "mean": 8.14,
+                "max": 8.77
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 4,
+                "rps_per_match": 2.0,
+                "rank": 27,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 2234,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Alternating Current",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": false,
+        "epa": {
+            "total_points": {
+                "mean": 18.66,
+                "sd": 17.42
+            },
+            "unitless": 1432.0,
+            "norm": 1441.0,
+            "conf": [
+                -0.75,
+                1.13
+            ],
+            "breakdown": {
+                "total_points": 18.66,
+                "auto_points": 4.06,
+                "teleop_points": 8.68,
+                "endgame_points": 5.92,
+                "energized_rp": 0.0558,
+                "supercharged_rp": -0.2312,
+                "traversal_rp": -0.3366,
+                "tiebreaker_points": 18.66,
+                "auto_fuel": 4.41,
+                "auto_tower": -0.36,
+                "transition_fuel": 1.23,
+                "first_shift_fuel": 1.51,
+                "second_shift_fuel": 5.94,
+                "teleop_fuel": 8.68,
+                "endgame_fuel": 5.65,
+                "endgame_tower": 0.28,
+                "total_fuel": 18.74,
+                "total_tower": -0.08,
+                "rp_1": 0.0558,
+                "rp_2": -0.2312,
+                "rp_3": -0.3366
+            },
+            "stats": {
+                "start": 7.95,
+                "pre_elim": 18.66,
+                "mean": 17.15,
+                "max": 18.66
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 5,
+                "rps_per_match": 2.5,
+                "rank": 19,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 2614,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Mountaineer Area RoboticS (MARS)",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 48.11,
+                "sd": 17.1
+            },
+            "unitless": 1511.0,
+            "norm": 1548.0,
+            "conf": [
+                -1.6,
+                1.02
+            ],
+            "breakdown": {
+                "total_points": 48.11,
+                "auto_points": 11.11,
+                "teleop_points": 28.33,
+                "endgame_points": 8.67,
+                "energized_rp": 0.0799,
+                "supercharged_rp": -0.2166,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 48.11,
+                "auto_fuel": 10.87,
+                "auto_tower": 0.24,
+                "transition_fuel": 2.17,
+                "first_shift_fuel": 15.16,
+                "second_shift_fuel": 11.0,
+                "teleop_fuel": 28.33,
+                "endgame_fuel": 8.35,
+                "endgame_tower": 0.32,
+                "total_fuel": 47.55,
+                "total_tower": 0.56,
+                "rp_1": 0.0799,
+                "rp_2": -0.2166,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 66.6,
+                "pre_elim": 48.11,
+                "mean": 51.19,
+                "max": 66.6
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 0,
+                "losses": 1,
+                "ties": 0,
+                "count": 1,
+                "winrate": 0.0,
+                "rps": 0,
+                "rps_per_match": 0.0,
+                "rank": 47,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 0,
+                "losses": 1,
+                "ties": 0,
+                "count": 1,
+                "winrate": 0.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 2641,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Pittsburgh Central Catholic Robotics",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 27.77,
+                "sd": 8.61
+            },
+            "unitless": 1457.0,
+            "norm": 1480.0,
+            "conf": [
+                -1.55,
+                1.13
+            ],
+            "breakdown": {
+                "total_points": 27.77,
+                "auto_points": 7.49,
+                "teleop_points": 16.47,
+                "endgame_points": 3.81,
+                "energized_rp": 0.0881,
+                "supercharged_rp": -0.2199,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 27.77,
+                "auto_fuel": 7.61,
+                "auto_tower": -0.12,
+                "transition_fuel": 1.84,
+                "first_shift_fuel": 6.72,
+                "second_shift_fuel": 7.92,
+                "teleop_fuel": 16.47,
+                "endgame_fuel": 3.68,
+                "endgame_tower": 0.13,
+                "total_fuel": 27.76,
+                "total_tower": 0.01,
+                "rp_1": 0.0881,
+                "rp_2": -0.2199,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 30.36,
+                "pre_elim": 27.77,
+                "mean": 28.73,
+                "max": 32.87
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 4,
+                "rps_per_match": 2.0,
+                "rank": 25,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 2656,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Quasics",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 50.65,
+                "sd": 32.3
+            },
+            "unitless": 1518.0,
+            "norm": 1556.0,
+            "conf": [
+                -0.92,
+                1.64
+            ],
+            "breakdown": {
+                "total_points": 50.65,
+                "auto_points": 11.02,
+                "teleop_points": 26.0,
+                "endgame_points": 13.63,
+                "energized_rp": 0.1559,
+                "supercharged_rp": -0.1088,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 50.65,
+                "auto_fuel": 10.84,
+                "auto_tower": 0.18,
+                "transition_fuel": 3.66,
+                "first_shift_fuel": 12.39,
+                "second_shift_fuel": 9.95,
+                "teleop_fuel": 26.0,
+                "endgame_fuel": 13.73,
+                "endgame_tower": -0.11,
+                "total_fuel": 50.58,
+                "total_tower": 0.07,
+                "rp_1": 0.1559,
+                "rp_2": -0.1088,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 30.52,
+                "pre_elim": 50.65,
+                "mean": 45.31,
+                "max": 50.65
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0,
+                "rps": 9,
+                "rps_per_match": 4.5,
+                "rank": 3,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 3015,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Ranger Robotics",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": false,
+        "epa": {
+            "total_points": {
+                "mean": 168.61,
+                "sd": 36.96
+            },
+            "unitless": 1832.0,
+            "norm": 1832.0,
+            "conf": [
+                -0.7,
+                1.25
+            ],
+            "breakdown": {
+                "total_points": 168.61,
+                "auto_points": 50.58,
+                "teleop_points": 93.74,
+                "endgame_points": 24.28,
+                "energized_rp": 0.5503,
+                "supercharged_rp": -0.0355,
+                "traversal_rp": -0.3361,
+                "tiebreaker_points": 168.61,
+                "auto_fuel": 51.0,
+                "auto_tower": -0.42,
+                "transition_fuel": 13.17,
+                "first_shift_fuel": 48.35,
+                "second_shift_fuel": 32.22,
+                "teleop_fuel": 93.74,
+                "endgame_fuel": 23.48,
+                "endgame_tower": 0.81,
+                "total_fuel": 168.22,
+                "total_tower": 0.39,
+                "rp_1": 0.5503,
+                "rp_2": -0.0355,
+                "rp_3": -0.3361
+            },
+            "stats": {
+                "start": 140.01,
+                "pre_elim": 168.61,
+                "mean": 162.96,
+                "max": 168.61
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0,
+                "rps": 9,
+                "rps_per_match": 4.5,
+                "rank": 1,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 3173,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "IgKnighters",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": false,
+        "epa": {
+            "total_points": {
+                "mean": 87.86,
+                "sd": 18.6
+            },
+            "unitless": 1617.0,
+            "norm": 1659.0,
+            "conf": [
+                -1.18,
+                0.89
+            ],
+            "breakdown": {
+                "total_points": 87.86,
+                "auto_points": 16.09,
+                "teleop_points": 56.69,
+                "endgame_points": 15.08,
+                "energized_rp": 0.4633,
+                "supercharged_rp": -0.2238,
+                "traversal_rp": -0.3361,
+                "tiebreaker_points": 87.86,
+                "auto_fuel": 15.31,
+                "auto_tower": 0.77,
+                "transition_fuel": 4.9,
+                "first_shift_fuel": 28.37,
+                "second_shift_fuel": 23.42,
+                "teleop_fuel": 56.69,
+                "endgame_fuel": 13.92,
+                "endgame_tower": 1.16,
+                "total_fuel": 85.92,
+                "total_tower": 1.94,
+                "rp_1": 0.4633,
+                "rp_2": -0.2238,
+                "rp_3": -0.3361
+            },
+            "stats": {
+                "start": 92.82,
+                "pre_elim": 87.86,
+                "mean": 87.87,
+                "max": 92.82
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 4,
+                "rps_per_match": 2.0,
+                "rank": 24,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 3260,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "SHARP",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 40.49,
+                "sd": 8.19
+            },
+            "unitless": 1491.0,
+            "norm": 1524.0,
+            "conf": [
+                -1.34,
+                1.19
+            ],
+            "breakdown": {
+                "total_points": 40.49,
+                "auto_points": 8.87,
+                "teleop_points": 20.8,
+                "endgame_points": 10.83,
+                "energized_rp": 0.2081,
+                "supercharged_rp": -0.2195,
+                "traversal_rp": -0.3342,
+                "tiebreaker_points": 40.49,
+                "auto_fuel": 7.1,
+                "auto_tower": 1.77,
+                "transition_fuel": 1.06,
+                "first_shift_fuel": 8.96,
+                "second_shift_fuel": 10.78,
+                "teleop_fuel": 20.8,
+                "endgame_fuel": 10.93,
+                "endgame_tower": -0.1,
+                "total_fuel": 38.82,
+                "total_tower": 1.67,
+                "rp_1": 0.2081,
+                "rp_2": -0.2195,
+                "rp_3": -0.3342
+            },
+            "stats": {
+                "start": 42.52,
+                "pre_elim": 40.49,
+                "mean": 41.44,
+                "max": 45.0
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 2,
+                "ties": 0,
+                "count": 3,
+                "winrate": 0.3333,
+                "rps": 5,
+                "rps_per_match": 1.6667,
+                "rank": 34,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 2,
+                "ties": 0,
+                "count": 3,
+                "winrate": 0.3333
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 3324,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "The Metrobots",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 32.34,
+                "sd": 8.01
+            },
+            "unitless": 1469.0,
+            "norm": 1497.0,
+            "conf": [
+                -1.43,
+                1.09
+            ],
+            "breakdown": {
+                "total_points": 32.34,
+                "auto_points": 5.77,
+                "teleop_points": 18.91,
+                "endgame_points": 7.66,
+                "energized_rp": 0.1355,
+                "supercharged_rp": -0.2197,
+                "traversal_rp": -0.3341,
+                "tiebreaker_points": 32.34,
+                "auto_fuel": 5.58,
+                "auto_tower": 0.19,
+                "transition_fuel": 0.58,
+                "first_shift_fuel": 8.74,
+                "second_shift_fuel": 9.58,
+                "teleop_fuel": 18.91,
+                "endgame_fuel": 7.56,
+                "endgame_tower": 0.1,
+                "total_fuel": 32.05,
+                "total_tower": 0.3,
+                "rp_1": 0.1355,
+                "rp_2": -0.2197,
+                "rp_3": -0.3341
+            },
+            "stats": {
+                "start": 39.21,
+                "pre_elim": 32.34,
+                "mean": 33.16,
+                "max": 39.21
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 0,
+                "losses": 3,
+                "ties": 0,
+                "count": 3,
+                "winrate": 0.0,
+                "rps": 1,
+                "rps_per_match": 0.3333,
+                "rank": 40,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 0,
+                "losses": 3,
+                "ties": 0,
+                "count": 3,
+                "winrate": 0.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 3484,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Short Circuit",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 37.97,
+                "sd": 6.85
+            },
+            "unitless": 1484.0,
+            "norm": 1516.0,
+            "conf": [
+                -1.19,
+                1.51
+            ],
+            "breakdown": {
+                "total_points": 37.97,
+                "auto_points": 9.53,
+                "teleop_points": 18.88,
+                "endgame_points": 9.56,
+                "energized_rp": 0.0928,
+                "supercharged_rp": -0.219,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 37.97,
+                "auto_fuel": 9.35,
+                "auto_tower": 0.18,
+                "transition_fuel": 1.46,
+                "first_shift_fuel": 8.8,
+                "second_shift_fuel": 8.62,
+                "teleop_fuel": 18.88,
+                "endgame_fuel": 8.34,
+                "endgame_tower": 1.22,
+                "total_fuel": 36.57,
+                "total_tower": 1.41,
+                "rp_1": 0.0928,
+                "rp_2": -0.219,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 34.93,
+                "pre_elim": 37.97,
+                "mean": 37.78,
+                "max": 39.53
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0,
+                "rps": 7,
+                "rps_per_match": 3.5,
+                "rank": 10,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 3504,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Girls of Steel",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 52.59,
+                "sd": 6.61
+            },
+            "unitless": 1523.0,
+            "norm": 1562.0,
+            "conf": [
+                -1.13,
+                1.55
+            ],
+            "breakdown": {
+                "total_points": 52.59,
+                "auto_points": 7.84,
+                "teleop_points": 27.96,
+                "endgame_points": 16.79,
+                "energized_rp": 0.2676,
+                "supercharged_rp": -0.2182,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 52.59,
+                "auto_fuel": 7.69,
+                "auto_tower": 0.15,
+                "transition_fuel": 0.66,
+                "first_shift_fuel": 9.93,
+                "second_shift_fuel": 17.37,
+                "teleop_fuel": 27.96,
+                "endgame_fuel": 15.41,
+                "endgame_tower": 1.38,
+                "total_fuel": 51.06,
+                "total_tower": 1.53,
+                "rp_1": 0.2676,
+                "rp_2": -0.2182,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 46.5,
+                "pre_elim": 52.59,
+                "mean": 51.5,
+                "max": 52.59
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 5,
+                "rps_per_match": 2.5,
+                "rank": 20,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 3990,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Tech for Kids",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": false,
+        "epa": {
+            "total_points": {
+                "mean": 146.8,
+                "sd": 20.24
+            },
+            "unitless": 1774.0,
+            "norm": 1784.0,
+            "conf": [
+                -0.81,
+                1.17
+            ],
+            "breakdown": {
+                "total_points": 146.8,
+                "auto_points": 37.13,
+                "teleop_points": 79.4,
+                "endgame_points": 30.27,
+                "energized_rp": 0.5965,
+                "supercharged_rp": -0.1188,
+                "traversal_rp": -0.3363,
+                "tiebreaker_points": 146.8,
+                "auto_fuel": 35.1,
+                "auto_tower": 2.03,
+                "transition_fuel": 2.73,
+                "first_shift_fuel": 39.13,
+                "second_shift_fuel": 37.55,
+                "teleop_fuel": 79.4,
+                "endgame_fuel": 29.68,
+                "endgame_tower": 0.59,
+                "total_fuel": 144.19,
+                "total_tower": 2.62,
+                "rp_1": 0.5965,
+                "rp_2": -0.1188,
+                "rp_3": -0.3363
+            },
+            "stats": {
+                "start": 137.23,
+                "pre_elim": 146.8,
+                "mean": 144.64,
+                "max": 146.8
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 5,
+                "rps_per_match": 2.5,
+                "rank": 16,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 4027,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Centre Punch",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 46.55,
+                "sd": 11.37
+            },
+            "unitless": 1507.0,
+            "norm": 1543.0,
+            "conf": [
+                -1.54,
+                1.14
+            ],
+            "breakdown": {
+                "total_points": 46.55,
+                "auto_points": 8.92,
+                "teleop_points": 22.96,
+                "endgame_points": 14.67,
+                "energized_rp": 0.1901,
+                "supercharged_rp": -0.2177,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 46.55,
+                "auto_fuel": 8.67,
+                "auto_tower": 0.24,
+                "transition_fuel": 1.54,
+                "first_shift_fuel": 9.11,
+                "second_shift_fuel": 12.31,
+                "teleop_fuel": 22.96,
+                "endgame_fuel": 13.13,
+                "endgame_tower": 1.55,
+                "total_fuel": 44.76,
+                "total_tower": 1.79,
+                "rp_1": 0.1901,
+                "rp_2": -0.2177,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 52.64,
+                "pre_elim": 46.55,
+                "mean": 46.98,
+                "max": 52.64
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 4,
+                "rps_per_match": 2.0,
+                "rank": 31,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 4028,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "The Beak Squad",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 126.14,
+                "sd": 36.88
+            },
+            "unitless": 1719.0,
+            "norm": 1739.0,
+            "conf": [
+                -0.92,
+                1.64
+            ],
+            "breakdown": {
+                "total_points": 126.14,
+                "auto_points": 26.71,
+                "teleop_points": 69.51,
+                "endgame_points": 29.91,
+                "energized_rp": 0.3439,
+                "supercharged_rp": -0.1043,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 126.14,
+                "auto_fuel": 26.16,
+                "auto_tower": 0.56,
+                "transition_fuel": 10.1,
+                "first_shift_fuel": 32.54,
+                "second_shift_fuel": 26.87,
+                "teleop_fuel": 69.51,
+                "endgame_fuel": 29.16,
+                "endgame_tower": 0.75,
+                "total_fuel": 124.83,
+                "total_tower": 1.31,
+                "rp_1": 0.3439,
+                "rp_2": -0.1043,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 87.93,
+                "pre_elim": 126.14,
+                "mean": 118.54,
+                "max": 126.14
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0,
+                "rps": 9,
+                "rps_per_match": 4.5,
+                "rank": 2,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 4050,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Biohazard",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 24.05,
+                "sd": 7.14
+            },
+            "unitless": 1447.0,
+            "norm": 1465.0,
+            "conf": [
+                -1.44,
+                1.26
+            ],
+            "breakdown": {
+                "total_points": 24.05,
+                "auto_points": 3.3,
+                "teleop_points": 11.25,
+                "endgame_points": 9.5,
+                "energized_rp": 0.1111,
+                "supercharged_rp": -0.2198,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 24.05,
+                "auto_fuel": 3.23,
+                "auto_tower": 0.06,
+                "transition_fuel": 0.25,
+                "first_shift_fuel": 3.57,
+                "second_shift_fuel": 7.43,
+                "teleop_fuel": 11.25,
+                "endgame_fuel": 8.25,
+                "endgame_tower": 1.24,
+                "total_fuel": 22.74,
+                "total_tower": 1.31,
+                "rp_1": 0.1111,
+                "rp_2": -0.2198,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 25.59,
+                "pre_elim": 24.05,
+                "mean": 23.91,
+                "max": 25.59
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 4,
+                "rps_per_match": 2.0,
+                "rank": 30,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 4150,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "FRobotics",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 37.01,
+                "sd": 7.86
+            },
+            "unitless": 1481.0,
+            "norm": 1513.0,
+            "conf": [
+                -1.02,
+                1.61
+            ],
+            "breakdown": {
+                "total_points": 37.01,
+                "auto_points": 6.18,
+                "teleop_points": 20.53,
+                "endgame_points": 10.3,
+                "energized_rp": 0.1313,
+                "supercharged_rp": -0.2191,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 37.01,
+                "auto_fuel": 6.02,
+                "auto_tower": 0.16,
+                "transition_fuel": 0.6,
+                "first_shift_fuel": 10.02,
+                "second_shift_fuel": 9.91,
+                "teleop_fuel": 20.53,
+                "endgame_fuel": 9.04,
+                "endgame_tower": 1.26,
+                "total_fuel": 35.59,
+                "total_tower": 1.42,
+                "rp_1": 0.1313,
+                "rp_2": -0.2191,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 33.67,
+                "pre_elim": 37.01,
+                "mean": 36.0,
+                "max": 37.01
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 4,
+                "rps_per_match": 2.0,
+                "rank": 26,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 4269,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "CardinalBots",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 38.08,
+                "sd": 4.67
+            },
+            "unitless": 1484.0,
+            "norm": 1517.0,
+            "conf": [
+                -1.42,
+                1.29
+            ],
+            "breakdown": {
+                "total_points": 38.08,
+                "auto_points": 9.53,
+                "teleop_points": 19.5,
+                "endgame_points": 9.05,
+                "energized_rp": 0.1663,
+                "supercharged_rp": -0.2185,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 38.08,
+                "auto_fuel": 8.07,
+                "auto_tower": 1.46,
+                "transition_fuel": 2.22,
+                "first_shift_fuel": 8.69,
+                "second_shift_fuel": 8.59,
+                "teleop_fuel": 19.5,
+                "endgame_fuel": 6.66,
+                "endgame_tower": 2.39,
+                "total_fuel": 34.23,
+                "total_tower": 3.85,
+                "rp_1": 0.1663,
+                "rp_2": -0.2185,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 41.23,
+                "pre_elim": 38.08,
+                "mean": 38.63,
+                "max": 41.23
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0,
+                "rps": 7,
+                "rps_per_match": 3.5,
+                "rank": 12,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 4467,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Titanium Titans",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 66.65,
+                "sd": 6.31
+            },
+            "unitless": 1560.0,
+            "norm": 1604.0,
+            "conf": [
+                -1.16,
+                1.53
+            ],
+            "breakdown": {
+                "total_points": 66.65,
+                "auto_points": 11.9,
+                "teleop_points": 38.26,
+                "endgame_points": 16.49,
+                "energized_rp": 0.3142,
+                "supercharged_rp": -0.217,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 66.65,
+                "auto_fuel": 11.58,
+                "auto_tower": 0.32,
+                "transition_fuel": 1.12,
+                "first_shift_fuel": 17.07,
+                "second_shift_fuel": 20.06,
+                "teleop_fuel": 38.26,
+                "endgame_fuel": 16.02,
+                "endgame_tower": 0.47,
+                "total_fuel": 65.86,
+                "total_tower": 0.79,
+                "rp_1": 0.3142,
+                "rp_2": -0.217,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 60.95,
+                "pre_elim": 66.65,
+                "mean": 65.66,
+                "max": 66.65
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0,
+                "rps": 2,
+                "rps_per_match": 1.0,
+                "rank": 37,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 4991,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Horsepower",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 28.61,
+                "sd": 14.24
+            },
+            "unitless": 1459.0,
+            "norm": 1483.0,
+            "conf": [
+                -1.45,
+                1.06
+            ],
+            "breakdown": {
+                "total_points": 28.61,
+                "auto_points": 7.03,
+                "teleop_points": 16.58,
+                "endgame_points": 4.99,
+                "energized_rp": 0.0305,
+                "supercharged_rp": -0.2196,
+                "traversal_rp": -0.3342,
+                "tiebreaker_points": 28.61,
+                "auto_fuel": 6.9,
+                "auto_tower": 0.13,
+                "transition_fuel": 2.12,
+                "first_shift_fuel": 6.99,
+                "second_shift_fuel": 7.48,
+                "teleop_fuel": 16.58,
+                "endgame_fuel": 4.93,
+                "endgame_tower": 0.06,
+                "total_fuel": 28.42,
+                "total_tower": 0.19,
+                "rp_1": 0.0305,
+                "rp_2": -0.2196,
+                "rp_3": -0.3342
+            },
+            "stats": {
+                "start": 41.57,
+                "pre_elim": 28.61,
+                "mean": 30.67,
+                "max": 41.57
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0,
+                "rps": 0,
+                "rps_per_match": 0.0,
+                "rank": 46,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 5667,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "The Digital Eagles",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 31.72,
+                "sd": 5.67
+            },
+            "unitless": 1467.0,
+            "norm": 1495.0,
+            "conf": [
+                -1.2,
+                1.33
+            ],
+            "breakdown": {
+                "total_points": 31.72,
+                "auto_points": 5.34,
+                "teleop_points": 22.21,
+                "endgame_points": 4.17,
+                "energized_rp": 0.09,
+                "supercharged_rp": -0.2202,
+                "traversal_rp": -0.3342,
+                "tiebreaker_points": 31.72,
+                "auto_fuel": 5.21,
+                "auto_tower": 0.13,
+                "transition_fuel": 1.59,
+                "first_shift_fuel": 9.31,
+                "second_shift_fuel": 11.31,
+                "teleop_fuel": 22.21,
+                "endgame_fuel": 4.46,
+                "endgame_tower": -0.29,
+                "total_fuel": 31.88,
+                "total_tower": -0.16,
+                "rp_1": 0.09,
+                "rp_2": -0.2202,
+                "rp_3": -0.3342
+            },
+            "stats": {
+                "start": 33.06,
+                "pre_elim": 31.72,
+                "mean": 31.41,
+                "max": 33.06
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 3,
+                "losses": 0,
+                "ties": 0,
+                "count": 3,
+                "winrate": 1.0,
+                "rps": 10,
+                "rps_per_match": 3.3333,
+                "rank": 13,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 3,
+                "losses": 0,
+                "ties": 0,
+                "count": 3,
+                "winrate": 1.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 5740,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Trojanators",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 58.85,
+                "sd": 7.88
+            },
+            "unitless": 1540.0,
+            "norm": 1580.0,
+            "conf": [
+                -0.87,
+                1.53
+            ],
+            "breakdown": {
+                "total_points": 58.85,
+                "auto_points": 12.78,
+                "teleop_points": 36.06,
+                "endgame_points": 10.0,
+                "energized_rp": 0.317,
+                "supercharged_rp": -0.2193,
+                "traversal_rp": -0.3342,
+                "tiebreaker_points": 58.85,
+                "auto_fuel": 12.95,
+                "auto_tower": -0.16,
+                "transition_fuel": 3.0,
+                "first_shift_fuel": 15.97,
+                "second_shift_fuel": 17.09,
+                "teleop_fuel": 36.06,
+                "endgame_fuel": 10.08,
+                "endgame_tower": -0.07,
+                "total_fuel": 59.08,
+                "total_tower": -0.24,
+                "rp_1": 0.317,
+                "rp_2": -0.2193,
+                "rp_3": -0.3342
+            },
+            "stats": {
+                "start": 52.87,
+                "pre_elim": 58.85,
+                "mean": 57.07,
+                "max": 58.85
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 3,
+                "losses": 0,
+                "ties": 0,
+                "count": 3,
+                "winrate": 1.0,
+                "rps": 12,
+                "rps_per_match": 4.0,
+                "rank": 7,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 3,
+                "losses": 0,
+                "ties": 0,
+                "count": 3,
+                "winrate": 1.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 6032,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Pirate Robotics",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 24.42,
+                "sd": 9.63
+            },
+            "unitless": 1448.0,
+            "norm": 1467.0,
+            "conf": [
+                -1.64,
+                0.93
+            ],
+            "breakdown": {
+                "total_points": 24.42,
+                "auto_points": 4.76,
+                "teleop_points": 13.23,
+                "endgame_points": 6.43,
+                "energized_rp": 0.0365,
+                "supercharged_rp": -0.2193,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 24.42,
+                "auto_fuel": 4.65,
+                "auto_tower": 0.11,
+                "transition_fuel": 0.89,
+                "first_shift_fuel": 7.68,
+                "second_shift_fuel": 4.66,
+                "teleop_fuel": 13.23,
+                "endgame_fuel": 5.24,
+                "endgame_tower": 1.18,
+                "total_fuel": 23.13,
+                "total_tower": 1.29,
+                "rp_1": 0.0365,
+                "rp_2": -0.2193,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 32.0,
+                "pre_elim": 24.42,
+                "mean": 26.14,
+                "max": 32.0
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0,
+                "rps": 0,
+                "rps_per_match": 0.0,
+                "rank": 42,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 7274,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Brashear Bulls Robotics",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 24.95,
+                "sd": 14.58
+            },
+            "unitless": 1449.0,
+            "norm": 1469.0,
+            "conf": [
+                -1.44,
+                1.27
+            ],
+            "breakdown": {
+                "total_points": 24.95,
+                "auto_points": 6.27,
+                "teleop_points": 13.95,
+                "endgame_points": 4.73,
+                "energized_rp": 0.1128,
+                "supercharged_rp": -0.2196,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 24.95,
+                "auto_fuel": 6.23,
+                "auto_tower": 0.04,
+                "transition_fuel": 0.8,
+                "first_shift_fuel": 6.65,
+                "second_shift_fuel": 6.51,
+                "teleop_fuel": 13.95,
+                "endgame_fuel": 4.8,
+                "endgame_tower": -0.07,
+                "total_fuel": 24.98,
+                "total_tower": -0.03,
+                "rp_1": 0.1128,
+                "rp_2": -0.2196,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 27.37,
+                "pre_elim": 24.95,
+                "mean": 24.42,
+                "max": 27.37
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 4,
+                "rps_per_match": 2.0,
+                "rank": 28,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 7515,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Dark Side Robotics",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 30.64,
+                "sd": 11.13
+            },
+            "unitless": 1464.0,
+            "norm": 1491.0,
+            "conf": [
+                -1.64,
+                0.93
+            ],
+            "breakdown": {
+                "total_points": 30.64,
+                "auto_points": 7.89,
+                "teleop_points": 14.37,
+                "endgame_points": 8.37,
+                "energized_rp": 0.0481,
+                "supercharged_rp": -0.2186,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 30.64,
+                "auto_fuel": 6.46,
+                "auto_tower": 1.44,
+                "transition_fuel": 0.79,
+                "first_shift_fuel": 6.08,
+                "second_shift_fuel": 7.49,
+                "teleop_fuel": 14.37,
+                "endgame_fuel": 5.96,
+                "endgame_tower": 2.41,
+                "total_fuel": 26.78,
+                "total_tower": 3.85,
+                "rp_1": 0.0481,
+                "rp_2": -0.2186,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 39.77,
+                "pre_elim": 30.64,
+                "mean": 32.69,
+                "max": 39.77
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0,
+                "rps": 6,
+                "rps_per_match": 3.0,
+                "rank": 14,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 8705,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Sci Tech FRC",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 17.08,
+                "sd": 4.61
+            },
+            "unitless": 1428.0,
+            "norm": 1433.0,
+            "conf": [
+                -1.42,
+                1.28
+            ],
+            "breakdown": {
+                "total_points": 17.08,
+                "auto_points": 2.34,
+                "teleop_points": 7.24,
+                "endgame_points": 7.49,
+                "energized_rp": -0.0008,
+                "supercharged_rp": -0.2202,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 17.08,
+                "auto_fuel": 2.33,
+                "auto_tower": 0.02,
+                "transition_fuel": 0.66,
+                "first_shift_fuel": 3.22,
+                "second_shift_fuel": 3.36,
+                "teleop_fuel": 7.24,
+                "endgame_fuel": 4.34,
+                "endgame_tower": 3.15,
+                "total_fuel": 13.91,
+                "total_tower": 3.17,
+                "rp_1": -0.0008,
+                "rp_2": -0.2202,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 20.03,
+                "pre_elim": 17.08,
+                "mean": 17.64,
+                "max": 20.03
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0,
+                "rps": 0,
+                "rps_per_match": 0.0,
+                "rank": 41,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 9022,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "MC Robotics",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 37.49,
+                "sd": 10.69
+            },
+            "unitless": 1483.0,
+            "norm": 1515.0,
+            "conf": [
+                -1.05,
+                1.59
+            ],
+            "breakdown": {
+                "total_points": 37.49,
+                "auto_points": 5.34,
+                "teleop_points": 20.3,
+                "endgame_points": 11.85,
+                "energized_rp": 0.1757,
+                "supercharged_rp": -0.2197,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 37.49,
+                "auto_fuel": 5.32,
+                "auto_tower": 0.02,
+                "transition_fuel": 1.02,
+                "first_shift_fuel": 9.16,
+                "second_shift_fuel": 10.13,
+                "teleop_fuel": 20.3,
+                "endgame_fuel": 11.75,
+                "endgame_tower": 0.1,
+                "total_fuel": 37.37,
+                "total_tower": 0.12,
+                "rp_1": 0.1757,
+                "rp_2": -0.2197,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 26.44,
+                "pre_elim": 37.49,
+                "mean": 35.67,
+                "max": 37.49
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 5,
+                "rps_per_match": 2.5,
+                "rank": 18,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 9406,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "TechJunior",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": false,
+        "epa": {
+            "total_points": {
+                "mean": 97.94,
+                "sd": 11.51
+            },
+            "unitless": 1644.0,
+            "norm": 1677.0,
+            "conf": [
+                -0.9,
+                1.1
+            ],
+            "breakdown": {
+                "total_points": 97.94,
+                "auto_points": 18.67,
+                "teleop_points": 59.71,
+                "endgame_points": 19.56,
+                "energized_rp": 0.5841,
+                "supercharged_rp": -0.228,
+                "traversal_rp": -0.3363,
+                "tiebreaker_points": 97.94,
+                "auto_fuel": 19.12,
+                "auto_tower": -0.45,
+                "transition_fuel": 7.88,
+                "first_shift_fuel": 23.51,
+                "second_shift_fuel": 28.32,
+                "teleop_fuel": 59.71,
+                "endgame_fuel": 18.52,
+                "endgame_tower": 1.04,
+                "total_fuel": 97.35,
+                "total_tower": 0.6,
+                "rp_1": 0.5841,
+                "rp_2": -0.228,
+                "rp_3": -0.3363
+            },
+            "stats": {
+                "start": 93.58,
+                "pre_elim": 97.94,
+                "mean": 97.27,
+                "max": 97.94
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0,
+                "rps": 8,
+                "rps_per_match": 4.0,
+                "rank": 6,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 9415,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Westinghouse Robotics",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 20.64,
+                "sd": 6.95
+            },
+            "unitless": 1438.0,
+            "norm": 1450.0,
+            "conf": [
+                -1.32,
+                1.21
+            ],
+            "breakdown": {
+                "total_points": 20.64,
+                "auto_points": 2.97,
+                "teleop_points": 12.68,
+                "endgame_points": 4.99,
+                "energized_rp": -0.0034,
+                "supercharged_rp": -0.2209,
+                "traversal_rp": -0.3342,
+                "tiebreaker_points": 20.64,
+                "auto_fuel": 2.93,
+                "auto_tower": 0.05,
+                "transition_fuel": 1.71,
+                "first_shift_fuel": 4.63,
+                "second_shift_fuel": 6.35,
+                "teleop_fuel": 12.68,
+                "endgame_fuel": 3.23,
+                "endgame_tower": 1.76,
+                "total_fuel": 18.84,
+                "total_tower": 1.8,
+                "rp_1": -0.0034,
+                "rp_2": -0.2209,
+                "rp_3": -0.3342
+            },
+            "stats": {
+                "start": 24.44,
+                "pre_elim": 20.64,
+                "mean": 20.64,
+                "max": 24.44
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 2,
+                "ties": 0,
+                "count": 3,
+                "winrate": 0.3333,
+                "rps": 3,
+                "rps_per_match": 1.0,
+                "rank": 38,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 2,
+                "ties": 0,
+                "count": 3,
+                "winrate": 0.3333
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 9475,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Mon Valley Mammoths",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 37.87,
+                "sd": 15.93
+            },
+            "unitless": 1484.0,
+            "norm": 1516.0,
+            "conf": [
+                -1.16,
+                1.37
+            ],
+            "breakdown": {
+                "total_points": 37.87,
+                "auto_points": 7.2,
+                "teleop_points": 22.17,
+                "endgame_points": 8.5,
+                "energized_rp": 0.0842,
+                "supercharged_rp": -0.2213,
+                "traversal_rp": -0.3341,
+                "tiebreaker_points": 37.87,
+                "auto_fuel": 5.4,
+                "auto_tower": 1.8,
+                "transition_fuel": 3.61,
+                "first_shift_fuel": 9.58,
+                "second_shift_fuel": 8.98,
+                "teleop_fuel": 22.17,
+                "endgame_fuel": 8.94,
+                "endgame_tower": -0.44,
+                "total_fuel": 36.51,
+                "total_tower": 1.36,
+                "rp_1": 0.0842,
+                "rp_2": -0.2213,
+                "rp_3": -0.3341
+            },
+            "stats": {
+                "start": 25.86,
+                "pre_elim": 37.87,
+                "mean": 37.31,
+                "max": 42.38
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 2,
+                "losses": 1,
+                "ties": 0,
+                "count": 3,
+                "winrate": 0.6667,
+                "rps": 8,
+                "rps_per_match": 2.6667,
+                "rank": 15,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 2,
+                "losses": 1,
+                "ties": 0,
+                "count": 3,
+                "winrate": 0.6667
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 9642,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "I.N.T. Robotics",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 51.77,
+                "sd": 18.15
+            },
+            "unitless": 1521.0,
+            "norm": 1559.0,
+            "conf": [
+                -1.43,
+                1.27
+            ],
+            "breakdown": {
+                "total_points": 51.77,
+                "auto_points": 10.73,
+                "teleop_points": 27.0,
+                "endgame_points": 14.04,
+                "energized_rp": 0.1513,
+                "supercharged_rp": -0.2174,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 51.77,
+                "auto_fuel": 10.51,
+                "auto_tower": 0.22,
+                "transition_fuel": 2.14,
+                "first_shift_fuel": 13.02,
+                "second_shift_fuel": 11.84,
+                "teleop_fuel": 27.0,
+                "endgame_fuel": 13.59,
+                "endgame_tower": 0.46,
+                "total_fuel": 51.1,
+                "total_tower": 0.68,
+                "rp_1": 0.1513,
+                "rp_2": -0.2174,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 55.16,
+                "pre_elim": 51.77,
+                "mean": 53.56,
+                "max": 62.72
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 4,
+                "rps_per_match": 2.0,
+                "rank": 23,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 9653,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "O.V.R.T (Ohio Valley Robotics Team)",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 11.54,
+                "sd": 7.08
+            },
+            "unitless": 1413.0,
+            "norm": 1404.0,
+            "conf": [
+                -1.61,
+                1.01
+            ],
+            "breakdown": {
+                "total_points": 11.54,
+                "auto_points": 2.13,
+                "teleop_points": 6.67,
+                "endgame_points": 2.74,
+                "energized_rp": 0.0884,
+                "supercharged_rp": -0.2205,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 11.54,
+                "auto_fuel": 2.16,
+                "auto_tower": -0.02,
+                "transition_fuel": 0.89,
+                "first_shift_fuel": 2.61,
+                "second_shift_fuel": 3.17,
+                "teleop_fuel": 6.67,
+                "endgame_fuel": 2.76,
+                "endgame_tower": -0.02,
+                "total_fuel": 11.59,
+                "total_tower": -0.05,
+                "rp_1": 0.0884,
+                "rp_2": -0.2205,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 16.72,
+                "pre_elim": 11.54,
+                "mean": 12.71,
+                "max": 16.72
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 4,
+                "rps_per_match": 2.0,
+                "rank": 33,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 1,
+                "losses": 1,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.5
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 10300,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Obama FRC",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 8.5,
+                "sd": 14.14
+            },
+            "unitless": 1405.0,
+            "norm": 1387.0,
+            "conf": [
+                -1.64,
+                0.93
+            ],
+            "breakdown": {
+                "total_points": 8.5,
+                "auto_points": 3.64,
+                "teleop_points": 4.42,
+                "endgame_points": 0.44,
+                "energized_rp": 0.0078,
+                "supercharged_rp": -0.2199,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 8.5,
+                "auto_fuel": 3.61,
+                "auto_tower": 0.03,
+                "transition_fuel": 0.08,
+                "first_shift_fuel": 3.73,
+                "second_shift_fuel": 0.6,
+                "teleop_fuel": 4.42,
+                "endgame_fuel": 0.51,
+                "endgame_tower": -0.07,
+                "total_fuel": 8.54,
+                "total_tower": -0.04,
+                "rp_1": 0.0078,
+                "rp_2": -0.2199,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 23.74,
+                "pre_elim": 8.5,
+                "mean": 11.18,
+                "max": 23.74
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 0,
+                "losses": 1,
+                "ties": 0,
+                "count": 1,
+                "winrate": 0.0,
+                "rps": 0,
+                "rps_per_match": 0.0,
+                "rank": 48,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 0,
+                "losses": 1,
+                "ties": 0,
+                "count": 1,
+                "winrate": 0.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 10512,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Beyond Grad Greyhounds",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 34.94,
+                "sd": 21.08
+            },
+            "unitless": 1476.0,
+            "norm": 1506.0,
+            "conf": [
+                -1.19,
+                1.51
+            ],
+            "breakdown": {
+                "total_points": 34.94,
+                "auto_points": 5.88,
+                "teleop_points": 23.79,
+                "endgame_points": 5.27,
+                "energized_rp": 0.1152,
+                "supercharged_rp": -0.2197,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 34.94,
+                "auto_fuel": 5.96,
+                "auto_tower": -0.08,
+                "transition_fuel": 4.17,
+                "first_shift_fuel": 10.54,
+                "second_shift_fuel": 9.08,
+                "teleop_fuel": 23.79,
+                "endgame_fuel": 5.47,
+                "endgame_tower": -0.2,
+                "total_fuel": 35.22,
+                "total_tower": -0.28,
+                "rp_1": 0.1152,
+                "rp_2": -0.2197,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 26.58,
+                "pre_elim": 34.94,
+                "mean": 34.8,
+                "max": 42.2
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0,
+                "rps": 7,
+                "rps_per_match": 3.5,
+                "rank": 9,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 10513,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Team Humanity Robo Falcons",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 41.64,
+                "sd": 18.98
+            },
+            "unitless": 1494.0,
+            "norm": 1528.0,
+            "conf": [
+                -1.09,
+                1.57
+            ],
+            "breakdown": {
+                "total_points": 41.64,
+                "auto_points": 5.2,
+                "teleop_points": 26.93,
+                "endgame_points": 9.5,
+                "energized_rp": 0.1663,
+                "supercharged_rp": -0.2206,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 41.64,
+                "auto_fuel": 5.05,
+                "auto_tower": 0.15,
+                "transition_fuel": 3.67,
+                "first_shift_fuel": 11.07,
+                "second_shift_fuel": 12.19,
+                "teleop_fuel": 26.93,
+                "endgame_fuel": 9.59,
+                "endgame_tower": -0.08,
+                "total_fuel": 41.57,
+                "total_tower": 0.06,
+                "rp_1": 0.1663,
+                "rp_2": -0.2206,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 21.85,
+                "pre_elim": 41.64,
+                "mean": 38.57,
+                "max": 41.64
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0,
+                "rps": 8,
+                "rps_per_match": 4.0,
+                "rank": 5,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 10515,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Aluminum Tethys",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 5.96,
+                "sd": 18.84
+            },
+            "unitless": 1399.0,
+            "norm": 1372.0,
+            "conf": [
+                -1.64,
+                0.93
+            ],
+            "breakdown": {
+                "total_points": 5.96,
+                "auto_points": 3.17,
+                "teleop_points": 2.56,
+                "endgame_points": 0.23,
+                "energized_rp": 0.0041,
+                "supercharged_rp": -0.2198,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 5.96,
+                "auto_fuel": 3.14,
+                "auto_tower": 0.04,
+                "transition_fuel": 0.81,
+                "first_shift_fuel": 1.18,
+                "second_shift_fuel": 0.57,
+                "teleop_fuel": 2.56,
+                "endgame_fuel": 0.17,
+                "endgame_tower": 0.06,
+                "total_fuel": 5.86,
+                "total_tower": 0.1,
+                "rp_1": 0.0041,
+                "rp_2": -0.2198,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 25.63,
+                "pre_elim": 5.96,
+                "mean": 9.79,
+                "max": 25.63
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0,
+                "rps": 0,
+                "rps_per_match": 0.0,
+                "rank": 49,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 10516,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Code Red",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 7.72,
+                "sd": 7.58
+            },
+            "unitless": 1403.0,
+            "norm": 1382.0,
+            "conf": [
+                -1.57,
+                1.09
+            ],
+            "breakdown": {
+                "total_points": 7.72,
+                "auto_points": 1.66,
+                "teleop_points": 2.77,
+                "endgame_points": 3.29,
+                "energized_rp": -0.022,
+                "supercharged_rp": -0.2206,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 7.72,
+                "auto_fuel": 1.68,
+                "auto_tower": -0.02,
+                "transition_fuel": -0.25,
+                "first_shift_fuel": 1.39,
+                "second_shift_fuel": 1.63,
+                "teleop_fuel": 2.77,
+                "endgame_fuel": 3.32,
+                "endgame_tower": -0.03,
+                "total_fuel": 7.77,
+                "total_tower": -0.05,
+                "rp_1": -0.022,
+                "rp_2": -0.2206,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 15.08,
+                "pre_elim": 7.72,
+                "mean": 8.97,
+                "max": 15.08
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0,
+                "rps": 0,
+                "rps_per_match": 0.0,
+                "rank": 44,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 10517,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "Ctrl Alt Defeat",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 17.98,
+                "sd": 11.06
+            },
+            "unitless": 1431.0,
+            "norm": 1438.0,
+            "conf": [
+                -1.64,
+                0.93
+            ],
+            "breakdown": {
+                "total_points": 17.98,
+                "auto_points": 4.85,
+                "teleop_points": 9.29,
+                "endgame_points": 3.84,
+                "energized_rp": 0.06,
+                "supercharged_rp": -0.2199,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 17.98,
+                "auto_fuel": 4.88,
+                "auto_tower": -0.03,
+                "transition_fuel": 0.18,
+                "first_shift_fuel": 4.06,
+                "second_shift_fuel": 5.05,
+                "teleop_fuel": 9.29,
+                "endgame_fuel": 4.03,
+                "endgame_tower": -0.19,
+                "total_fuel": 18.2,
+                "total_tower": -0.22,
+                "rp_1": 0.06,
+                "rp_2": -0.2199,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 23.74,
+                "pre_elim": 17.98,
+                "mean": 19.61,
+                "max": 25.23
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0,
+                "rps": 7,
+                "rps_per_match": 3.5,
+                "rank": 11,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 2,
+                "losses": 0,
+                "ties": 0,
+                "count": 2,
+                "winrate": 1.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 10582,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "The Technochauns",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 6.46,
+                "sd": 12.94
+            },
+            "unitless": 1400.0,
+            "norm": 1375.0,
+            "conf": [
+                -1.62,
+                0.99
+            ],
+            "breakdown": {
+                "total_points": 6.46,
+                "auto_points": 2.67,
+                "teleop_points": 2.83,
+                "endgame_points": 0.96,
+                "energized_rp": 0.0012,
+                "supercharged_rp": -0.2202,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 6.46,
+                "auto_fuel": 2.61,
+                "auto_tower": 0.06,
+                "transition_fuel": 0.57,
+                "first_shift_fuel": 1.4,
+                "second_shift_fuel": 0.85,
+                "teleop_fuel": 2.83,
+                "endgame_fuel": 0.89,
+                "endgame_tower": 0.07,
+                "total_fuel": 6.32,
+                "total_tower": 0.14,
+                "rp_1": 0.0012,
+                "rp_2": -0.2202,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 20.28,
+                "pre_elim": 6.46,
+                "mean": 8.82,
+                "max": 20.28
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0,
+                "rps": 0,
+                "rps_per_match": 0.0,
+                "rank": 50,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0
+            }
+        },
+        "district_points": null
+    },
+    {
+        "team": 11456,
+        "year": 2026,
+        "event": "2026paca",
+        "time": 1773792000,
+        "team_name": "UMWACC Ruff Creek RoboMiners",
+        "event_name": "Greater Pittsburgh Regional",
+        "country": "USA",
+        "state": "PA",
+        "district": null,
+        "type": "regional",
+        "week": 3,
+        "status": "Ongoing",
+        "first_event": true,
+        "epa": {
+            "total_points": {
+                "mean": 13.32,
+                "sd": 10.18
+            },
+            "unitless": 1418.0,
+            "norm": 1414.0,
+            "conf": [
+                -1.64,
+                0.93
+            ],
+            "breakdown": {
+                "total_points": 13.32,
+                "auto_points": 4.02,
+                "teleop_points": 5.97,
+                "endgame_points": 3.33,
+                "energized_rp": 0.014,
+                "supercharged_rp": -0.2199,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 13.32,
+                "auto_fuel": 3.92,
+                "auto_tower": 0.1,
+                "transition_fuel": 0.85,
+                "first_shift_fuel": 2.36,
+                "second_shift_fuel": 2.76,
+                "teleop_fuel": 5.97,
+                "endgame_fuel": 3.2,
+                "endgame_tower": 0.14,
+                "total_fuel": 13.08,
+                "total_tower": 0.24,
+                "rp_1": 0.014,
+                "rp_2": -0.2199,
+                "rp_3": -0.3339
+            },
+            "stats": {
+                "start": 23.74,
+                "pre_elim": 13.32,
+                "mean": 15.26,
+                "max": 23.74
+            }
+        },
+        "record": {
+            "qual": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0,
+                "rps": 0,
+                "rps_per_match": 0.0,
+                "rank": 45,
+                "num_teams": 50
+            },
+            "elim": {
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "alliance": null,
+                "is_captain": null
+            },
+            "total": {
+                "wins": 0,
+                "losses": 2,
+                "ties": 0,
+                "count": 2,
+                "winrate": 0.0
+            }
+        },
+        "district_points": null
+    }
+]
