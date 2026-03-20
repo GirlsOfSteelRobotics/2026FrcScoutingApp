@@ -111,6 +111,9 @@ def pit_overview_tab_server(input, output, session):
     def under_trench():
         team = input.team_select()
         row = get_team_row(team)
+        print("UNDER TRENCH")
+        print(team)
+        print(row)
         if row is None:
             return "N/A"
         trench = row.get("Under Trench?", "N/A")
@@ -184,6 +187,56 @@ def pit_overview_tab_server(input, output, session):
         defense = "" if pd.isna(defense) else str(defense).strip()
         return defense if defense else "N/A"
 
+    @render.text
+    def program_language():
+        team = input.team_select()
+        row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        program_language = row.get("Programming Language", "")
+        program_language = "" if pd.isna(program_language) else str(program_language).strip()
+        return program_language if program_language else "N/A"
+
+    def drivetrain_quality():
+        team = input.team_select()
+        row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        drivetrain_quality = row.get("Drivetrain Quality", "")
+        drivetrain_quality = "" if pd.isna(drivetrain_quality) else str(drivetrain_quality).strip()
+        return drivetrain_quality if drivetrain_quality else "N/A"
+
+
+
+    @render.text
+    def elec_wiring_quality():
+        team = input.team_select()
+        row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        elec_wiring_quality = row.get("Electrical Wiring Quality", "")
+        elec_wiring_quality = "" if pd.isna(elec_wiring_quality) else str(elec_wiring_quality).strip()
+        return elec_wiring_quality if elec_wiring_quality else "N/A"
+
+    @render.text
+    def mechanical_quality():
+        team = input.team_select()
+        row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        mech_quality = row.get ("Mechanical Quality", "")
+        mech_quality = "" if pd.isna(mech_quality) else str(mech_quality).strip()
+        return mech_quality if mech_quality else "N/A"
+
+    @render.text
+    def elec_wiring_quality():
+        team = input.team_select()
+        row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        elec_wiring_quality = row.get("Electrical Wiring Quality", "")
+        elec_wiring_quality = "" if pd.isna(elec_wiring_quality) else str(elec_wiring_quality).strip()
+        return elec_wiring_quality if elec_wiring_quality else "N/A"
 
     @render_widget
     def team_trend_graph():
