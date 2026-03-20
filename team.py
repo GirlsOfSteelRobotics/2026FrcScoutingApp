@@ -174,8 +174,15 @@ def pit_overview_tab_server(input, output, session):
         row = get_team_row(team)
         if row is None:
             return "N/A"
-        start = row.get ("Auto Start", "Other/Varies")
-        return start if start else "N/A"
+        positions = []
+        for col, label in [("StartHumanPlayer", "Human Player"), ("StartCenter", "Center"), ("StartDepot", "Depot")]:
+            val = row.get(col, 0)
+            try:
+                if int(float(str(val))) == 1:
+                    positions.append(label)
+            except:
+                pass
+        return ", ".join(positions) if positions else "None specified"
 
     @render.text
     def defensive_skill():
