@@ -141,6 +141,8 @@ def general_match_server(input, output, session):
         fig = px.scatter(new_df,
                          x="All Teleop",
                          y="Auto and Endgame",
+                         color="Total",
+                         color_continuous_scale="Viridis",
                          title="Teleop vs. Auto + Endgame Points",
                          hover_name="Team Number",
                          hover_data={
@@ -155,14 +157,19 @@ def general_match_server(input, output, session):
                              "Team Number": "Team",
                              "Total": "Total Points"
                          },
-                         **get_box_plot_colors()
                          )
 
         fig.update_traces(
+            marker=dict(size=12),
             hovertemplate="<b>Team %{hovertext}</b><br><br>" +
                           "Teleop: %{x:.1f}<br>" +
                           "Auto+Endgame: %{y:.1f}<br>" +
+                          "Total: %{marker.color:.1f}<br>" +
                           "<extra></extra>"
+        )
+
+        fig.update_layout(
+            coloraxis_colorbar=dict(title="Total Points")
         )
 
         return fig
