@@ -136,13 +136,15 @@ def general_match_server(input, output, session):
     @render_widget
     def teleop_vs_auto_scatter():
         new_df = get_teams_in_match_data().copy()
+
+        # Keep only one entry per team (in case of duplicate scouting)
+        new_df = new_df.drop_duplicates(subset=["Team Number"], keep="first")
+
         new_df['Total'] = new_df["All Teleop"] + new_df["Auto and Endgame"]
 
         fig = px.scatter(new_df,
                          x="All Teleop",
                          y="Auto and Endgame",
-                         color="Total",
-                         color_continuous_scale="Viridis",
                          title="Teleop vs. Auto + Endgame Points",
                          hover_name="Team Number",
                          hover_data={
@@ -157,23 +159,17 @@ def general_match_server(input, output, session):
                              "Team Number": "Team",
                              "Total": "Total Points"
                          },
+                         **get_box_plot_colors()
                          )
 
         fig.update_traces(
-            marker=dict(size=12),
+            marker=dict(size=8),
             hovertemplate="<b>Team %{hovertext}</b><br><br>" +
                           "Teleop: %{x:.1f}<br>" +
                           "Auto+Endgame: %{y:.1f}<br>" +
-                          "Total: %{marker.color:.1f}<br>" +
                           "<extra></extra>"
         )
-
-        fig.update_layout(
-            coloraxis_colorbar=dict(title="Total Points")
-        )
-
         return fig
-
     @render.ui
     def red_statbotics_prediction():
         match_num = int(input.match_select())
