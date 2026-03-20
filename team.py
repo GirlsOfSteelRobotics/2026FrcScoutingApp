@@ -14,7 +14,7 @@ match_df = load_scouted_data().copy()
 def pit_overview_tab_ui():
     print(match_df)
     teams = sorted(
-        [x for x in match_df["Team Number"].unique().tolist() if x is not None and str(x) != '<NA>'],
+        [x for x in pit_df["Team Number"].unique().tolist() if x is not None and str(x) != '<NA>'],
         key=lambda x: int(x)
     )
     return ui.page_fluid(
