@@ -133,7 +133,12 @@ def pit_overview_tab_server(input, output, session):
         if row is None:
             return "N/A"
         trench = row.get("Under Trench?", "N/A")
-        return trench
+        if trench == 0:
+            return False
+        elif trench == 1:
+            return True
+        else:
+            return "N/A"
 
 
     @render.text
@@ -143,7 +148,12 @@ def pit_overview_tab_server(input, output, session):
         if row is None:
             return "N/A"
         bump = row.get("Over Bump?", "N/A")
-        return bump
+        if bump == 0:
+            return False
+        elif bump == 1:
+            return True
+        else:
+            return "N/A"
 
     @render.text
     def climb_type():
@@ -220,6 +230,7 @@ def pit_overview_tab_server(input, output, session):
         program_language = "" if pd.isna(program_language) else str(program_language).strip()
         return program_language if program_language else "N/A"
 
+    @render.text
     def drivetrain_quality():
         team = input.team_select()
         row = get_team_row(team)
@@ -227,7 +238,7 @@ def pit_overview_tab_server(input, output, session):
             return "N/A"
         drivetrain_quality = row.get("Drivetrain Quality", "")
         drivetrain_quality = "" if pd.isna(drivetrain_quality) else str(drivetrain_quality).strip()
-        return drivetrain_quality if drivetrain_quality else "N/A"
+        return drivetrain_quality
 
 
 
