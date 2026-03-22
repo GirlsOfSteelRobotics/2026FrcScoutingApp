@@ -1,4 +1,5 @@
 import json
+import logging
 from pathlib import Path
 import pandas as pd
 from typing import Dict, Any
@@ -11,9 +12,10 @@ from typing import Dict, Any
 def download_statbotics_matches(event: str, output_path: Path, quals_only=True):
     import requests
     url = f"https://api.statbotics.io/v3/matches?event={event}"
+    logging.info(f"Downloading from {url}")
     response = requests.get(url)
     if response.status_code == 500:
-        print("Server rejected request", url)
+        logging.error(f"Server rejected request for {url}")
         return
     data = response.json()
     if quals_only:
@@ -28,7 +30,7 @@ def load_statbotics_matches(filename: Path) -> pd.DataFrame:
     :return: The data in the form of a dataframe
     """
     if not filename.exists():
-        print("Statbotics match file does not exist!")
+        logging.warning("Statbotics match file does not exist!")
         return pd.DataFrame()
     with open(filename, "r") as f:
         json_data = json.load(f)
@@ -55,9 +57,10 @@ def download_statbotics_event_teams(event: str, output_path: Path):
     """
     import requests
     url = f"https://api.statbotics.io/v3/team_events?event={event}"
+    logging.info(f"Downloading from {url}")
     response = requests.get(url)
     if response.status_code == 500:
-        print("Server rejected request", url)
+        logging.error(f"Server rejected request for {url}")
         return
     with open(output_path, "w") as f:
         as_json = response.json()

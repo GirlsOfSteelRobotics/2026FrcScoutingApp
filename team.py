@@ -12,7 +12,6 @@ match_df = load_scouted_data().copy()
 
 @module.ui
 def pit_overview_tab_ui():
-    print(match_df)
     teams = sorted(
         [x for x in pit_df["Team Number"].unique().tolist() if x is not None and str(x) != '<NA>'],
         key=lambda x: int(x)
@@ -127,9 +126,6 @@ def pit_overview_tab_server(input, output, session):
     def under_trench():
         team = input.team_select()
         row = get_team_row(team)
-        print("UNDER TRENCH")
-        print(team)
-        print(row)
         if row is None:
             return "N/A"
         trench = row.get("Under Trench?", "N/A")

@@ -4,6 +4,7 @@ from pathlib import Path
 import pandas as pd
 from typing import Dict, Any
 import requests
+import logging
 
 
 def __get_api_key():
@@ -26,7 +27,14 @@ def __get_api_key():
 def __make_request(url):
     headers = {"X-TBA-Auth-Key": __get_api_key()}
     response = requests.get(url, headers=headers)
-    return response.json()
+    logging.info(f"Downloading from {url}")
+    as_json = response.json()
+    if isinstance(as_json, dict):
+        if "Error" in as_json:
+            logging.error(f"Encountered error downloading {url}:\n{as_json}")
+            return None
+
+    return as_json
 
 
 # matches
@@ -37,8 +45,9 @@ def request_event_matches(event_key: str) -> Dict[str, Any]:
 
 def download_tba_event_matches(event_key: str, output_file: Path):
     json_data = request_event_matches(event_key)
-    with open(output_file, "w") as f:
-        json.dump(json_data, f, indent=4)
+    if json_data is not None:
+        with open(output_file, "w") as f:
+            json.dump(json_data, f, indent=4)
 
 
 def load_event_matches(json_file: Path) -> pd.DataFrame:
@@ -50,7 +59,7 @@ def load_event_matches(json_file: Path) -> pd.DataFrame:
 def event_matches_json_to_dataframe(json_data: Dict[str, Any]) -> pd.DataFrame:
     raw_df = pd.json_normalize(json_data)
     if raw_df.empty:
-        print("TBA Events DF is empty!")
+        logging.warning("TBA Events DF is empty!")
         return pd.DataFrame()
     # Filter out elims matches for our purposes
     raw_df = raw_df[raw_df["comp_level"] == "qm"]
@@ -75,8 +84,9 @@ def request_event_teams(event_key: str) -> Dict[str, Any]:
 
 def download_tba_event_teams(event_key: str, output_file: Path):
     json_data = request_event_teams(event_key)
-    with open(output_file, "w") as f:
-        json.dump(json_data, f, indent=4)
+    if json_data is not None:
+        with open(output_file, "w") as f:
+            json.dump(json_data, f, indent=4)
 
 
 def load_event_teams(json_file: Path) -> pd.DataFrame:
@@ -88,6 +98,6 @@ def load_event_teams(json_file: Path) -> pd.DataFrame:
 def event_teams_json_to_dataframe(json_data: Dict[str, Any]) -> pd.DataFrame:
     raw_df = pd.json_normalize(json_data)
     if raw_df.empty:
-        print("TBA Teams DF is empty!")
+        logging.warning("TBA Teams DF is empty!")
         return pd.DataFrame()
     return raw_df

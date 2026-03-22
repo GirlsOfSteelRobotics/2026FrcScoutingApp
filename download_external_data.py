@@ -1,4 +1,5 @@
 import pathlib
+import logging
 from metadata import SCOUT_RADIOZ_ORG, CURRENT_EVENT
 
 from utils.statbotics_utils import (
@@ -38,5 +39,7 @@ def download_external_data(event):
 
 
 if __name__ == "__main__":
-        # python3 -m download_external_data
-        download_external_data("2026paca")
+    logging.basicConfig(level=logging.INFO)
+
+    # python3 -m download_external_data
+    download_external_data(CURRENT_EVENT)
