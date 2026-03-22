@@ -9,7 +9,7 @@ from typing import Dict, Any
 # Statbotics Matches
 ############################################
 
-def download_statbotics_matches(event: str, output_path: Path, quals_only=True):
+def download_statbotics_matches(event: str, output_path: Path):
     import requests
     url = f"https://api.statbotics.io/v3/matches?event={event}"
     logging.info(f"Downloading from {url}")
@@ -18,8 +18,6 @@ def download_statbotics_matches(event: str, output_path: Path, quals_only=True):
         logging.error(f"Server rejected request for {url}")
         return
     data = response.json()
-    if quals_only:
-        data = [m for m in data if m.get("comp_level") == "qm"]
     with open(output_path, "w") as f:
         json.dump(data, f, indent=4)
 

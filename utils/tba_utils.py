@@ -88,6 +88,23 @@ def download_tba_event_teams(event_key: str, output_file: Path):
         with open(output_file, "w") as f:
             json.dump(json_data, f, indent=4)
 
+def download_tba_event_media(event_key: str, output_file: Path, allowed_types=None):
+    if allowed_types is None:
+        allowed_types = ["imgur"]
+    url = f"https://www.thebluealliance.com/api/v3/event/{event_key}/team_media"
+    json_data = __make_request(url)
+    if json_data is None:
+        return
+
+    # Keep only the types of media we want to display
+    filtered_media = []
+    for media_json in json_data:
+        if media_json["type"] in allowed_types:
+            filtered_media.append(media_json)
+
+    with open(output_file, "w") as f:
+        json.dump(filtered_media, f, indent=4)
+
 
 def load_event_teams(json_file: Path) -> pd.DataFrame:
     with open(json_file, "r") as f:
