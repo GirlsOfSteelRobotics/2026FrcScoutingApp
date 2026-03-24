@@ -4,14 +4,12 @@ import plotly.express as px
 from shiny import reactive, render, module
 from shiny import App, ui
 from shinywidgets import output_widget, render_widget
-from data_container import load_scouted_data, load_tba_matches, load_tba_team_numbers, load_statbotics_matches
+from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match, load_match_numbers, \
+    load_statbotics_matches, custom_colors
 
 df = load_scouted_data()
-tba_matches = load_tba_matches()
-statbotics_matches = load_statbotics_matches()
-
-team_numbers = load_tba_team_numbers()
-match_numbers = list(tba_matches.keys())
+match_numbers = load_match_numbers()
+all_teams = sorted(df["Team Number"].unique().tolist())
 
 @module.ui
 def general_match_ui():
@@ -57,7 +55,6 @@ def general_match_ui():
             )
         )
     )
-
 @module.server
 def general_match_server(input, output, session):
 
@@ -158,19 +155,33 @@ def general_match_server(input, output, session):
 
     @render.ui
     def red_statbotics_prediction():
-        statbotics_match = statbotics_matches[input.match_select()]
-        if statbotics_match is None:
+        if input.selection_mode() != "Match Number":
             return ui.value_box(title="Prediction RED", value="N/A")
+
+        match = input.match_select()
+        if match is None or match not in statbotics_matches:
+            return ui.value_box(title="Prediction RED", value="N/A")
+
+        statbotics_match = statbotics_matches[match]
+
         return ui.value_box(
             title="Prediction RED",
             value=str(statbotics_match["pred_red_score"]) if statbotics_match["pred_red_score"] is not None else "N/A"
         )
+        if statbotics_match is None:
+            return ui.value_box(title="Prediction RED", value="N/A")
 
     @render.ui
     def blue_statbotics_prediction():
-        statbotics_match = statbotics_matches[input.match_select()]
-        if statbotics_match is None:
+        if input.selection_mode() != "Match Number":
             return ui.value_box(title="Prediction BLUE", value="N/A")
+
+        match = input.match_select()
+        if match is None or match not in statbotics_matches:
+            return ui.value_box(title="Prediction BLUE", value="N/A")
+
+        statbotics_match = statbotics_matches[match]
+
         return ui.value_box(
             title="Prediction BLUE",
             value=str(statbotics_match["pred_blue_score"]) if statbotics_match["pred_blue_score"] is not None else "N/A"

@@ -1,7 +1,7 @@
 import pandas as pd
 from shiny import module, ui, render
 from shinywidgets import output_widget, render_widget
-import plotly.express as pxgit pu
+import plotly.express as px
 from data_container import load_pit_data, load_scouted_data
 
 pd.set_option("display.max_columns", None)
@@ -12,10 +12,12 @@ match_df = load_scouted_data().copy()
 
 @module.ui
 def pit_overview_tab_ui():
+    print(match_df)
     teams = sorted(
-        [x for x in pit_df["Team Number"].unique().tolist() if x is not None and str(x) != '<NA>'],
+        [t for t in pit_df["Team Number"].dropna().astype(str).str.strip().unique().tolist()],
         key=lambda x: int(x)
     )
+
     return ui.page_fluid(
         ui.input_select(
             "team_select",
@@ -49,22 +51,6 @@ def pit_overview_tab_ui():
                 ui.output_text("preload_number"),
             ),
             ui.card(
-                ui.card_header("Mechanical Quality"),
-                ui.output_text("mechanical_quality"),
-            ),
-            ui.card(
-                ui.card_header("Electrical Wiring Quality"),
-                ui.output_text("elec_wiring_quality"),
-            ),
-            ui.card(
-                ui.card_header("Drivetrain Quality"),
-                ui.output_text("drivetrain_quality"),
-            ),
-            ui.card(
-                ui.card_header("Programming Language"),
-                ui.output_text("program_language"),
-            ),
-            ui.card(
                 ui.card_header("Carrying Capacity"),
                 ui.output_text("carrying_capacity"),
             ),
@@ -95,9 +81,9 @@ def pit_overview_tab_ui():
 #Pit Scouting Cards
 @module.server
 def pit_overview_tab_server(input, output, session):
-
     def get_team_row(team_str: str):
-        rows = pit_df[pit_df["Team Number"] == str(team_str)]
+        cleaned = pit_df["Team Number"].astype(str).str.strip()
+        rows = pit_df[cleaned == str(team_str).strip()]
         return None if rows.empty else rows.iloc[0]
 
     @render.text
@@ -129,12 +115,7 @@ def pit_overview_tab_server(input, output, session):
         if row is None:
             return "N/A"
         trench = row.get("Under Trench?", "N/A")
-        if trench == 0:
-            return False
-        elif trench == 1:
-            return True
-        else:
-            return "N/A"
+        return trench
 
 
     @render.text
@@ -144,12 +125,7 @@ def pit_overview_tab_server(input, output, session):
         if row is None:
             return "N/A"
         bump = row.get("Over Bump?", "N/A")
-        if bump == 0:
-            return False
-        elif bump == 1:
-            return True
-        else:
-            return "N/A"
+        return bump
 
     @render.text
     def climb_type():
@@ -196,15 +172,8 @@ def pit_overview_tab_server(input, output, session):
         row = get_team_row(team)
         if row is None:
             return "N/A"
-        positions = []
-        for col, label in [("StartHumanPlayer", "Human Player"), ("StartCenter", "Center"), ("StartDepot", "Depot")]:
-            val = row.get(col, 0)
-            try:
-                if int(float(str(val))) == 1:
-                    positions.append(label)
-            except:
-                pass
-        return ", ".join(positions) if positions else "None specified"
+        start = row.get ("Auto Start", "Other/Varies")
+        return start if start else "N/A"
 
     @render.text
     def defensive_skill():
@@ -216,54 +185,13 @@ def pit_overview_tab_server(input, output, session):
         defense = "" if pd.isna(defense) else str(defense).strip()
         return defense if defense else "N/A"
 
-    @render.text
-    def program_language():
-        team = input.team_select()
-        row = get_team_row(team)
-        if row is None:
-            return "N/A"
-        program_language = row.get("Programming Language", "")
-        program_language = "" if pd.isna(program_language) else str(program_language).strip()
-        return program_language if program_language else "N/A"
-
-    @render.text
-    def drivetrain_quality():
-        team = input.team_select()
-        row = get_team_row(team)
-        if row is None:
-            return "N/A"
-        drivetrain_quality = row.get("Drivetrain Quality", "")
-        drivetrain_quality = "" if pd.isna(drivetrain_quality) else str(drivetrain_quality).strip()
-        return drivetrain_quality
-
-
-
-    @render.text
-    def elec_wiring_quality():
-        team = input.team_select()
-        row = get_team_row(team)
-        if row is None:
-            return "N/A"
-        elec_wiring_quality = row.get("Electrical Wiring Quality", "")
-        elec_wiring_quality = "" if pd.isna(elec_wiring_quality) else str(elec_wiring_quality).strip()
-        return elec_wiring_quality if elec_wiring_quality else "N/A"
-
-    @render.text
-    def mechanical_quality():
-        team = input.team_select()
-        row = get_team_row(team)
-        if row is None:
-            return "N/A"
-        mech_quality = row.get ("Mechanical Quality", "")
-        mech_quality = "" if pd.isna(mech_quality) else str(mech_quality).strip()
-        return mech_quality if mech_quality else "N/A"
 
     @render_widget
     def team_trend_graph():
         team = str(input.team_select())
         y_axis = str(input.y_axis_select())
 
-        team_df = match_df[match_df["Team Number"] == team].copy()
+        team_df = match_df[match_df["Team Number"].astype(str) == team].copy()
 
         if team_df.empty:
             fig = px.scatter(title=f"No match data for Team {team}")
@@ -285,7 +213,7 @@ def pit_overview_tab_server(input, output, session):
         team_df["Average Fuel"] = team_df["Total Fuel"].expanding().mean()
 
         fig = px.scatter(team_df, x="Match Number", y=y_axis,
-                         title=f"Team {team}: {y_axis} by Match", color_discrete_sequence=["#BFAEDC"])
+                         title=f"Team {team}: {y_axis} by Match")
         fig.update_traces(mode="markers+lines")
         fig.update_layout(xaxis_title="Match", yaxis_title=y_axis, showlegend=False)
         return fig
