@@ -4,12 +4,14 @@ import plotly.express as px
 from shiny import reactive, render, module
 from shiny import App, ui
 from shinywidgets import output_widget, render_widget
-from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match, load_match_numbers, \
-    load_statbotics_matches, custom_colors
+from data_container import load_scouted_data, load_tba_matches, load_tba_team_numbers, load_statbotics_matches
 
 df = load_scouted_data()
-match_numbers = load_match_numbers()
-all_teams = sorted(df["Team Number"].unique().tolist())
+tba_matches = load_tba_matches()
+statbotics_matches = load_statbotics_matches()
+
+team_numbers = load_tba_team_numbers()
+match_numbers = list(tba_matches.keys())
 
 @module.ui
 def general_match_ui():

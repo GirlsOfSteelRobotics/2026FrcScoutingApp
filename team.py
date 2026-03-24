@@ -12,7 +12,6 @@ match_df = load_scouted_data().copy()
 
 @module.ui
 def pit_overview_tab_ui():
-    print(match_df)
     teams = sorted(
         [t for t in pit_df["Team Number"].dropna().astype(str).str.strip().unique().tolist()],
         key=lambda x: int(x)
