@@ -5,6 +5,7 @@ from shiny import reactive, render, module
 from shiny import App, ui
 from shinywidgets import output_widget, render_widget
 from data_container import load_scouted_data, load_tba_matches, load_tba_team_numbers, load_statbotics_matches
+from metadata import OUR_TEAM_NUMBER
 
 df = load_scouted_data()
 tba_matches = load_tba_matches()
@@ -101,12 +102,12 @@ def general_match_server(input, output, session):
             )
         else:
             return ui.div(
-                ui.input_select("team1", "Team 1:", choices=team_numbers),
-                ui.input_select("team2", "Team 2:", choices=team_numbers),
-                ui.input_select("team3", "Team 3:", choices=team_numbers),
-                ui.input_select("team4", "Team 4:", choices=team_numbers),
-                ui.input_select("team5", "Team 5:", choices=team_numbers),
-                ui.input_select("team6", "Team 6:", choices=team_numbers),
+                ui.input_select("team1", "Team 1:", choices=team_numbers, selected=str(OUR_TEAM_NUMBER)),
+                ui.input_select("team2", "Team 2:", choices=team_numbers, selected=team_numbers[0]),
+                ui.input_select("team3", "Team 3:", choices=team_numbers, selected=team_numbers[1]),
+                ui.input_select("team4", "Team 4:", choices=team_numbers, selected=team_numbers[2]),
+                ui.input_select("team5", "Team 5:", choices=team_numbers, selected=team_numbers[3]),
+                ui.input_select("team6", "Team 6:", choices=team_numbers, selected=team_numbers[4]),
             )
 
     def get_box_plot_colors():
@@ -124,13 +125,14 @@ def general_match_server(input, output, session):
     @render_widget
     def teleop_vs_auto_scatter():
         new_df = get_teams_in_match_data().copy()
-        new_df = new_df.drop_duplicates(subset=["Team Number"], keep="first")
         new_df['Total'] = new_df["All Teleop"] + new_df["Auto and Endgame"]
+        new_df = new_df.groupby("Team Number")[["All Teleop", "Auto and Endgame", "Total"]].mean().reset_index()
 
         fig = px.scatter(new_df,
                          x="All Teleop",
                          y="Auto and Endgame",
                          title="Teleop vs. Auto + Endgame Points",
+                         text="Team Number",
                          hover_name="Team Number",
                          hover_data={
                              "All Teleop": ":.1f",
@@ -151,7 +153,8 @@ def general_match_server(input, output, session):
             hovertemplate="<b>Team %{hovertext}</b><br><br>" +
                           "Teleop: %{x:.1f}<br>" +
                           "Auto+Endgame: %{y:.1f}<br>" +
-                          "<extra></extra>"
+                          "<extra></extra>",
+            textposition="top center"
         )
         return fig
 
@@ -269,7 +272,7 @@ def general_match_server(input, output, session):
                 auto_climbing_status_df[True] + auto_climbing_status_df[False])
 
         fig = px.bar(auto_climbing_status_df, x="Team Number", y=["Climb Freq", "No Climb Freq"],
-                     title="Auto Climbing Frequency", **get_box_plot_colors())
+                     title="Auto Climbing Frequency")
         return fig
 
     # TELEOP
