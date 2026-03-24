@@ -5,6 +5,7 @@ from shiny import reactive, render, module
 from shiny import App, ui
 from shinywidgets import output_widget, render_widget
 from data_container import load_scouted_data, load_tba_matches, load_tba_team_numbers, load_statbotics_matches
+from metadata import OUR_TEAM_NUMBER
 
 df = load_scouted_data()
 tba_matches = load_tba_matches()
@@ -101,12 +102,12 @@ def general_match_server(input, output, session):
             )
         else:
             return ui.div(
-                ui.input_select("team1", "Team 1:", choices=team_numbers),
-                ui.input_select("team2", "Team 2:", choices=team_numbers),
-                ui.input_select("team3", "Team 3:", choices=team_numbers),
-                ui.input_select("team4", "Team 4:", choices=team_numbers),
-                ui.input_select("team5", "Team 5:", choices=team_numbers),
-                ui.input_select("team6", "Team 6:", choices=team_numbers),
+                ui.input_select("team1", "Team 1:", choices=team_numbers, selected=str(OUR_TEAM_NUMBER)),
+                ui.input_select("team2", "Team 2:", choices=team_numbers, selected=team_numbers[0]),
+                ui.input_select("team3", "Team 3:", choices=team_numbers, selected=team_numbers[1]),
+                ui.input_select("team4", "Team 4:", choices=team_numbers, selected=team_numbers[2]),
+                ui.input_select("team5", "Team 5:", choices=team_numbers, selected=team_numbers[3]),
+                ui.input_select("team6", "Team 6:", choices=team_numbers, selected=team_numbers[4]),
             )
 
     def get_box_plot_colors():
