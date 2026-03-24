@@ -46,6 +46,7 @@ def overview_tab_server(input, output, session):
                          color="Total",
                          color_continuous_scale="Plasma",
                          title="Teleop vs. Auto + Endgame Points",
+                         text="Team Number",
                          hover_name="Team Number",
                          hover_data={
                              "All Teleop": ":.1f",
@@ -67,7 +68,8 @@ def overview_tab_server(input, output, session):
                           "Teleop: %{x:.1f}<br>" +
                           "Auto+Endgame: %{y:.1f}<br>" +
                           "Total: %{marker.color:.1f}<br>" +
-                          "<extra></extra>"
+                          "<extra></extra>",
+            textposition='top center'
         )
 
         fig.update_layout(
@@ -105,7 +107,7 @@ def overview_tab_server(input, output, session):
             x = sorted_df["Team Number"],
             y = y_axis,
             title=f"{y_axis} (Averages) by Team",
-            color_discrete_sequence=["#BFAEDC"]
+            color_discrete_sequence=["#BFAEDC"],
         )
         fig.update_traces(
             hovertemplate=(
