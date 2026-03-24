@@ -1,7 +1,7 @@
 import os
 from shinywidgets import output_widget, render_widget
 from shiny import module, ui
-from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match
+from data_container import load_scouted_data
 import pandas as pd
 import plotly.express as px
 import numpy as np
@@ -28,11 +28,54 @@ def overview_tab_ui():
         ),
         #ui.card(output_widget("auto_climbing_frequency")),
         ui.card(output_widget("teleop_vs_auto_endgame")),
+        ui.card(output_widget("teleop_vs_auto_scatter_all")),
     )
 
 
 @module.server
 def overview_tab_server(input, output, session):
+    @render_widget
+    def teleop_vs_auto_scatter_all():
+        new_df = df.copy()
+        new_df['Total'] = new_df["All Teleop"] + new_df["Auto and Endgame"]
+        new_df = new_df.groupby("Team Number")[["All Teleop", "Auto and Endgame", "Total"]].mean().reset_index()
+
+        fig = px.scatter(new_df,
+                         x="All Teleop",
+                         y="Auto and Endgame",
+                         color="Total",
+                         color_continuous_scale="Plasma",
+                         title="Teleop vs. Auto + Endgame Points",
+                         hover_name="Team Number",
+                         hover_data={
+                             "All Teleop": ":.1f",
+                             "Auto and Endgame": ":.1f",
+                             "Total": ":.1f",
+                             "Team Number": False
+                         },
+                         labels={
+                             "All Teleop": "Teleop Points",
+                             "Auto and Endgame": "Auto + Endgame Points",
+                             "Team Number": "Team",
+                             "Total": "Total Points"
+                         },
+                         )
+
+        fig.update_traces(
+            marker=dict(size=8),
+            hovertemplate="<b>Team %{hovertext}</b><br><br>" +
+                          "Teleop: %{x:.1f}<br>" +
+                          "Auto+Endgame: %{y:.1f}<br>" +
+                          "Total: %{marker.color:.1f}<br>" +
+                          "<extra></extra>"
+        )
+
+        fig.update_layout(
+            coloraxis_colorbar=dict(title="Total Points")
+        )
+
+        return fig
+
 
     @render_widget
     def teleop_vs_auto_endgame():
@@ -62,6 +105,7 @@ def overview_tab_server(input, output, session):
             x = sorted_df["Team Number"],
             y = y_axis,
             title=f"{y_axis} (Averages) by Team",
+            color_discrete_sequence=["#BFAEDC"]
         )
         fig.update_traces(
             hovertemplate=(
@@ -78,3 +122,4 @@ def overview_tab_server(input, output, session):
             showlegend=False
         )
         return fig
+

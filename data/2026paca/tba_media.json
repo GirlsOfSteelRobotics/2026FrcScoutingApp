@@ -1,0 +1,35 @@
+[
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/ASzeksg.jpeg",
+        "foreign_key": "ASzeksg",
+        "preferred": true,
+        "team_keys": [
+            "frc3173"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/ASzeksg"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/vu8fhnB.jpeg",
+        "foreign_key": "vu8fhnB",
+        "preferred": true,
+        "team_keys": [
+            "frc3990"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/vu8fhnB"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/mILlcbP.jpeg",
+        "foreign_key": "mILlcbP",
+        "preferred": true,
+        "team_keys": [
+            "frc9406"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/mILlcbP"
+    }
+]

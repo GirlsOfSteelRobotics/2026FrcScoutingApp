@@ -8,3 +8,6 @@ shiny run app.py --reload
 
 ## Hosted Website
 https://girlsofsteelrobotics.github.io/2026FrcScoutingApp/
+
+## Downloading External Data
+python3 download_external_data.py
