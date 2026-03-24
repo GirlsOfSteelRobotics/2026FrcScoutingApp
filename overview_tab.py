@@ -1,7 +1,7 @@
 import os
 from shinywidgets import output_widget, render_widget
 from shiny import module, ui
-from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match
+from data_container import load_scouted_data
 import pandas as pd
 import plotly.express as px
 import numpy as np

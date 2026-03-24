@@ -55,14 +55,13 @@ def general_match_ui():
             )
         )
     )
-
 @module.server
 def general_match_server(input, output, session):
 
     def get_teams_in_match():
         if input.selection_mode() == "Match Number":
             match_number = str(input.match_select())
-            teams = get_Teams_in_Match(match_number)
+            teams = tba_matches[match_number]["all_teams"]
         else:
             teams = [
                 str(input.team1()), str(input.team2()), str(input.team3()),
@@ -77,7 +76,7 @@ def general_match_server(input, output, session):
     def blue_df():
         if input.selection_mode() == "Match Number":
             match_number = str(input.match_select())
-            teams = get_Teams_in_Match(match_number)[:3]
+            teams = tba_matches[match_number]["blue_teams"]
         else:
             teams = [str(input.team1()), str(input.team2()), str(input.team3())]
         return df.loc[df["Team Number"].isin(teams)]
@@ -85,7 +84,7 @@ def general_match_server(input, output, session):
     def red_df():
         if input.selection_mode() == "Match Number":
             match_number = str(input.match_select())
-            teams = get_Teams_in_Match(match_number)[3:]
+            teams = tba_matches[match_number]["red_teams"]
         else:
             teams = [str(input.team4()), str(input.team5()), str(input.team6())]
         return df.loc[df["Team Number"].isin(teams)]
@@ -100,12 +99,12 @@ def general_match_server(input, output, session):
             )
         else:
             return ui.div(
-                ui.input_select("team1", "Team 1:", choices=all_teams),
-                ui.input_select("team2", "Team 2:", choices=all_teams),
-                ui.input_select("team3", "Team 3:", choices=all_teams),
-                ui.input_select("team4", "Team 4:", choices=all_teams),
-                ui.input_select("team5", "Team 5:", choices=all_teams),
-                ui.input_select("team6", "Team 6:", choices=all_teams),
+                ui.input_select("team1", "Team 1:", choices=team_numbers),
+                ui.input_select("team2", "Team 2:", choices=team_numbers),
+                ui.input_select("team3", "Team 3:", choices=team_numbers),
+                ui.input_select("team4", "Team 4:", choices=team_numbers),
+                ui.input_select("team5", "Team 5:", choices=team_numbers),
+                ui.input_select("team6", "Team 6:", choices=team_numbers),
             )
 
     def get_box_plot_colors():
@@ -156,24 +155,36 @@ def general_match_server(input, output, session):
 
     @render.ui
     def red_statbotics_prediction():
-        match_num = int(input.match_select())
-        statbotics_matches = load_statbotics_matches(match_num)
-        if statbotics_matches is None:
+        if input.selection_mode() != "Match Number":
             return ui.value_box(title="Prediction RED", value="N/A")
+
+        match = input.match_select()
+        if match is None or match not in statbotics_matches:
+            return ui.value_box(title="Prediction RED", value="N/A")
+
+        statbotics_match = statbotics_matches[match]
+
         return ui.value_box(
             title="Prediction RED",
-            value=str(statbotics_matches["pred_red_score"]) if statbotics_matches["pred_red_score"] is not None else "N/A"
+            value=str(statbotics_match["pred_red_score"]) if statbotics_match["pred_red_score"] is not None else "N/A"
         )
+        if statbotics_match is None:
+            return ui.value_box(title="Prediction RED", value="N/A")
 
     @render.ui
     def blue_statbotics_prediction():
-        match_num = int(input.match_select())
-        statbotics_matches = load_statbotics_matches(match_num)
-        if statbotics_matches is None:
+        if input.selection_mode() != "Match Number":
             return ui.value_box(title="Prediction BLUE", value="N/A")
+
+        match = input.match_select()
+        if match is None or match not in statbotics_matches:
+            return ui.value_box(title="Prediction BLUE", value="N/A")
+
+        statbotics_match = statbotics_matches[match]
+
         return ui.value_box(
             title="Prediction BLUE",
-            value=str(statbotics_matches["pred_blue_score"]) if statbotics_matches["pred_blue_score"] is not None else "N/A"
+            value=str(statbotics_match["pred_blue_score"]) if statbotics_match["pred_blue_score"] is not None else "N/A"
         )
 
     @render.ui

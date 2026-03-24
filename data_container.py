@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import json
 from metadata import CURRENT_EVENT
+from typing import Any, Dict, List
 
 EVENT_KEY = CURRENT_EVENT
 
@@ -98,39 +99,65 @@ def load_pit_data():
     return pit_data
 
 
-def get_Teams_in_Match(match_number):
+def strip_event_key_prefix(to_strip):
+    return to_strip.replace(EVENT_KEY + "_", "")
+
+
+def sort_match_key_by_number(matches_dict):
+    return dict(sorted(matches_dict.items(), key=lambda x: (x[1]["comp_level"], x[1]["set_number"], x[1]["match_number"])))
+
+
+def load_tba_matches() -> Dict[str, Dict]:
+    tba_matches = {}
+
     with open(script_directory / f'data/{EVENT_KEY}/tba_matches.json', 'r') as f:
         matches_json = json.load(f)
-        for match in matches_json:
-            if str(match["match_number"]) == str(match_number):
-                teams = []
-                for team_key in match["alliances"]["blue"]["team_keys"]:
-                    teams.append(team_key.replace("frc", ""))
-                for team_key in match["alliances"]["red"]["team_keys"]:
-                    teams.append(team_key.replace("frc", ""))
-                return teams
-    return []
+        for match_json in matches_json:
+            red_teams = [t.replace("frc", "") for t in match_json["alliances"]["red"]["team_keys"]]
+            blue_teams = [t.replace("frc", "") for t in match_json["alliances"]["blue"]["team_keys"]]
+            match_key = strip_event_key_prefix(match_json["key"])
+            tba_matches[match_key] = {
+                "match_number": match_json["match_number"],
+                "comp_level": match_json["comp_level"],
+                "set_number": match_json["set_number"],
+                "red_teams": red_teams,
+                "blue_teams": blue_teams,
+                "all_teams": blue_teams + red_teams,
+            }
+
+    # Sort by match number
+    tba_matches = sort_match_key_by_number(tba_matches)
+
+    return tba_matches
 
 
-def load_match_numbers():
-    with open(script_directory / f'data/{EVENT_KEY}/tba_matches.json', 'r') as f:
-        matches_json = json.load(f)
-        match_numbers = sorted(set(str(m["match_number"]) for m in matches_json), key=lambda x: int(x))
-    return match_numbers
+def load_tba_team_numbers():
+    team_numbers = []
+
+    with open(script_directory / f'data/{EVENT_KEY}/tba_teams.json', 'r') as f:
+        teams_json = json.load(f)
+
+    return team_numbers
 
 
-def load_statbotics_matches(match_number):
+def load_statbotics_matches() -> Dict[str, Dict]:
+    statbotics_matches = {}
     with open(script_directory / f'data/{EVENT_KEY}/statbotics_matches.json', 'r') as f:
         matches_json = json.load(f)
         for match in matches_json:
-            if str(match["match_number"]) == str(match_number):
-                red_teams = [str(t) for t in match["alliances"]["red"]["team_keys"]]
-                blue_teams = [str(t) for t in match["alliances"]["blue"]["team_keys"]]
-                return {
-                    "match_number": match["match_number"],
-                    "red_teams": red_teams,
-                    "blue_teams": blue_teams,
-                    "pred_red_score": match.get("pred_red_score"),
-                    "pred_blue_score": match.get("pred_blue_score"),
-                }
-    return None
+            red_teams = [str(t) for t in match["alliances"]["red"]["team_keys"]]
+            blue_teams = [str(t) for t in match["alliances"]["blue"]["team_keys"]]
+            match_key = strip_event_key_prefix(match["key"])
+            statbotics_matches[match_key] = {
+                "match_number": match["match_number"],
+                "comp_level": match["comp_level"],
+                "set_number": match["set_number"],
+                "red_teams": red_teams,
+                "blue_teams": blue_teams,
+                "pred_red_win_prob": match["pred"]["red_win_prob"],
+                "pred_blue_win_prob": 1 - match["pred"]["red_win_prob"],
+                "pred_red_score": match["pred"]["red_score"],
+                "pred_blue_score": match["pred"]["blue_score"],
+            }
+    statbotics_matches = sort_match_key_by_number(statbotics_matches)
+    return statbotics_matches
