@@ -115,12 +115,7 @@ def get_Teams_in_Match(match_number):
 def load_match_numbers():
     with open(script_directory / f'data/{EVENT_KEY}/tba_matches.json', 'r') as f:
         matches_json = json.load(f)
-        if isinstance(matches_json, dict):
-            matches_json = matches_json.get("matches", [])  # adjust key as needed
-        match_numbers = sorted(
-            set(str(m["match_number"]) for m in matches_json),
-            key=lambda x: int(x)
-        )
+        match_numbers = sorted(set(str(m["match_number"]) for m in matches_json), key=lambda x: int(x))
     return match_numbers
 
 
