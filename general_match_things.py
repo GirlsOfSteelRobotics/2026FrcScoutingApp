@@ -124,10 +124,9 @@ def general_match_server(input, output, session):
     @render_widget
     def teleop_vs_auto_scatter():
         new_df = get_teams_in_match_data().copy()
-        new_df = new_df.drop_duplicates(subset=["Team Number"], keep="first")
         new_df['Total'] = new_df["All Teleop"] + new_df["Auto and Endgame"]
-
-        fig = px.scatter(new_df,
+        avg_df = new_df.groupby("Team Number").mean.reset_index()
+        fig = px.scatter(avg_df,
                          x="All Teleop",
                          y="Auto and Endgame",
                          title="Teleop vs. Auto + Endgame Points",
@@ -269,7 +268,7 @@ def general_match_server(input, output, session):
                 auto_climbing_status_df[True] + auto_climbing_status_df[False])
 
         fig = px.bar(auto_climbing_status_df, x="Team Number", y=["Climb Freq", "No Climb Freq"],
-                     title="Auto Climbing Frequency", **get_box_plot_colors())
+                     title="Auto Climbing Frequency")
         return fig
 
     # TELEOP
