@@ -136,8 +136,10 @@ def load_tba_team_numbers():
 
     with open(script_directory / f'data/{EVENT_KEY}/tba_teams.json', 'r') as f:
         teams_json = json.load(f)
+        for team_json in teams_json:
+            team_numbers.append(team_json["team_number"])
 
-    return team_numbers
+    return [str(x) for x in sorted(team_numbers)]
 
 
 def load_statbotics_matches() -> Dict[str, Dict]:

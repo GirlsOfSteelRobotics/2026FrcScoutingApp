@@ -69,7 +69,7 @@ def overview_tab_server(input, output, session):
                           "Auto+Endgame: %{y:.1f}<br>" +
                           "Total: %{marker.color:.1f}<br>" +
                           "<extra></extra>",
-            textposition = "middle left",
+            textposition='top center'
         )
 
         fig.update_layout(
