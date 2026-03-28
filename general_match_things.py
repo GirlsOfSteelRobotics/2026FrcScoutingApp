@@ -195,8 +195,8 @@ def general_match_server(input, output, session):
 
     @render.ui
     def rp_climbing():
-        red = red_df().copy()
-        blue = blue_df().copy()
+        red = red_df().copy()  # call once
+        blue = blue_df().copy()  # call once
 
         def calc_climbing_points(alliance_df):
             alliance_df["Auto Climbing Status"] = alliance_df["Auto Climbing Status"].fillna(False)
@@ -210,8 +210,10 @@ def general_match_server(input, output, session):
             return f"{total:.0f} pts - {status}"
 
         return ui.div(
-            ui.value_box(title="RED Climbing RP Prediction", value=climb_status(red_climb), height="200px", showcase=None),
-            ui.value_box(title="BLUE Climbing RP Prediction", value=climb_status(blue_climb), height="200px", showcase=None),
+            ui.value_box(title="RED Climbing RP Prediction", value=climb_status(red_climb), height="200px",
+                         showcase=None),
+            ui.value_box(title="BLUE Climbing RP Prediction", value=climb_status(blue_climb), height="200px",
+                         showcase=None),
         )
 
     @render.ui
@@ -219,25 +221,32 @@ def general_match_server(input, output, session):
         red = red_df().copy()
         blue = blue_df().copy()
 
-        red_avg_fuel = (red["Auto Fuel"] + red["Teleop Fuel"]).mean() * 3
-        blue_avg_fuel = (blue["Auto Fuel"] + blue["Teleop Fuel"]).mean() * 3
+        def calc_fuel_points(alliance_df):
+            alliance_df["Total Fuel"] = alliance_df["Auto Fuel"] + alliance_df["Teleop Fuel"]
+            return alliance_df.groupby("Team Number")["Total Fuel"].mean().sum()
+
+        red_avg_fuel = calc_fuel_points(red)
+        blue_avg_fuel = calc_fuel_points(blue)
 
         def energized_status(avg):
             status = "Energized RP Likely" if avg >= 100 else "Energized RP Unlikely"
             return f"{avg:.0f} fuel - {status}"
 
         return ui.div(
-            ui.value_box(title="RED Energized RP Prediction", value=energized_status(red_avg_fuel), height="200px", showcase=None),
-            ui.value_box(title="BLUE Energized RP Prediction", value=energized_status(blue_avg_fuel), height="200px", showcase=None),
+            ui.value_box(title="RED Energized RP Prediction", value=energized_status(red_avg_fuel), height="200px",
+                         showcase=None),
+            ui.value_box(title="BLUE Energized RP Prediction", value=energized_status(blue_avg_fuel), height="200px",
+                         showcase=None),
         )
+
 
     @render.ui
     def rp_supercharged():
         red = red_df().copy()
         blue = blue_df().copy()
 
-        red_avg_fuel = (red["Auto Fuel"] + red["Teleop Fuel"]).mean() * 3
-        blue_avg_fuel = (blue["Auto Fuel"] + blue["Teleop Fuel"]).mean() * 3
+        red_avg_fuel = (red["Auto Fuel"] + red["Teleop Fuel"]).mean()
+        blue_avg_fuel = (blue["Auto Fuel"] + blue["Teleop Fuel"]).mean()
 
         def supercharged_status(avg):
             status = "Supercharged RP Likely" if avg >= 360 else "Supercharged RP Unlikely"
@@ -252,6 +261,7 @@ def general_match_server(input, output, session):
     @render_widget
     def auto_fuel_in_hub():
         teams_data = get_teams_in_match_data()
+
         fig = px.box(teams_data, x="Team Number", y="Auto Fuel", title="Fuel in Hub (Auto) per Robot", **get_box_plot_colors())
         return fig
 
