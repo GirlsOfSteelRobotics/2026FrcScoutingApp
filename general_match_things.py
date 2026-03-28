@@ -4,12 +4,15 @@ import plotly.express as px
 from shiny import reactive, render, module
 from shiny import App, ui
 from shinywidgets import output_widget, render_widget
-from data_container import load_scouted_data, load_pit_data, get_Teams_in_Match, load_match_numbers, \
-    load_statbotics_matches, custom_colors
+from data_container import load_scouted_data, load_tba_matches, load_tba_team_numbers, load_statbotics_matches
+from metadata import OUR_TEAM_NUMBER
 
 df = load_scouted_data()
-match_numbers = load_match_numbers()
-all_teams = sorted(df["Team Number"].unique().tolist())
+tba_matches = load_tba_matches()
+statbotics_matches = load_statbotics_matches()
+
+team_numbers = load_tba_team_numbers()
+match_numbers = list(tba_matches.keys())
 
 @module.ui
 def general_match_ui():
@@ -55,14 +58,13 @@ def general_match_ui():
             )
         )
     )
-
 @module.server
 def general_match_server(input, output, session):
 
     def get_teams_in_match():
         if input.selection_mode() == "Match Number":
             match_number = str(input.match_select())
-            teams = get_Teams_in_Match(match_number)
+            teams = tba_matches[match_number]["all_teams"]
         else:
             teams = [
                 str(input.team1()), str(input.team2()), str(input.team3()),
@@ -77,7 +79,7 @@ def general_match_server(input, output, session):
     def blue_df():
         if input.selection_mode() == "Match Number":
             match_number = str(input.match_select())
-            teams = get_Teams_in_Match(match_number)[:3]
+            teams = tba_matches[match_number]["blue_teams"]
         else:
             teams = [str(input.team1()), str(input.team2()), str(input.team3())]
         return df.loc[df["Team Number"].isin(teams)]
@@ -85,7 +87,7 @@ def general_match_server(input, output, session):
     def red_df():
         if input.selection_mode() == "Match Number":
             match_number = str(input.match_select())
-            teams = get_Teams_in_Match(match_number)[3:]
+            teams = tba_matches[match_number]["red_teams"]
         else:
             teams = [str(input.team4()), str(input.team5()), str(input.team6())]
         return df.loc[df["Team Number"].isin(teams)]
@@ -100,12 +102,12 @@ def general_match_server(input, output, session):
             )
         else:
             return ui.div(
-                ui.input_select("team1", "Team 1:", choices=all_teams),
-                ui.input_select("team2", "Team 2:", choices=all_teams),
-                ui.input_select("team3", "Team 3:", choices=all_teams),
-                ui.input_select("team4", "Team 4:", choices=all_teams),
-                ui.input_select("team5", "Team 5:", choices=all_teams),
-                ui.input_select("team6", "Team 6:", choices=all_teams),
+                ui.input_select("team1", "Team 1:", choices=team_numbers, selected=str(OUR_TEAM_NUMBER)),
+                ui.input_select("team2", "Team 2:", choices=team_numbers, selected=team_numbers[0]),
+                ui.input_select("team3", "Team 3:", choices=team_numbers, selected=team_numbers[1]),
+                ui.input_select("team4", "Team 4:", choices=team_numbers, selected=team_numbers[2]),
+                ui.input_select("team5", "Team 5:", choices=team_numbers, selected=team_numbers[3]),
+                ui.input_select("team6", "Team 6:", choices=team_numbers, selected=team_numbers[4]),
             )
 
     def get_box_plot_colors():
@@ -123,13 +125,14 @@ def general_match_server(input, output, session):
     @render_widget
     def teleop_vs_auto_scatter():
         new_df = get_teams_in_match_data().copy()
-        new_df = new_df.drop_duplicates(subset=["Team Number"], keep="first")
         new_df['Total'] = new_df["All Teleop"] + new_df["Auto and Endgame"]
+        new_df = new_df.groupby("Team Number")[["All Teleop", "Auto and Endgame", "Total"]].mean().reset_index()
 
         fig = px.scatter(new_df,
                          x="All Teleop",
                          y="Auto and Endgame",
                          title="Teleop vs. Auto + Endgame Points",
+                         text="Team Number",
                          hover_name="Team Number",
                          hover_data={
                              "All Teleop": ":.1f",
@@ -150,30 +153,43 @@ def general_match_server(input, output, session):
             hovertemplate="<b>Team %{hovertext}</b><br><br>" +
                           "Teleop: %{x:.1f}<br>" +
                           "Auto+Endgame: %{y:.1f}<br>" +
-                          "<extra></extra>"
+                          "<extra></extra>",
+            textposition="top center"
         )
         return fig
 
     @render.ui
     def red_statbotics_prediction():
-        match_num = int(input.match_select())
-        statbotics_matches = load_statbotics_matches(match_num)
-        if statbotics_matches is None:
+        if input.selection_mode() != "Match Number":
             return ui.value_box(title="Prediction RED", value="N/A")
+
+        match = input.match_select()
+        if match is None or match not in statbotics_matches:
+            return ui.value_box(title="Prediction RED", value="N/A")
+
+        statbotics_match = statbotics_matches[match]
+
         return ui.value_box(
             title="Prediction RED",
-            value=str(statbotics_matches["pred_red_score"]) if statbotics_matches["pred_red_score"] is not None else "N/A"
+            value=str(statbotics_match["pred_red_score"]) if statbotics_match["pred_red_score"] is not None else "N/A"
         )
+        if statbotics_match is None:
+            return ui.value_box(title="Prediction RED", value="N/A")
 
     @render.ui
     def blue_statbotics_prediction():
-        match_num = int(input.match_select())
-        statbotics_matches = load_statbotics_matches(match_num)
-        if statbotics_matches is None:
+        if input.selection_mode() != "Match Number":
             return ui.value_box(title="Prediction BLUE", value="N/A")
+
+        match = input.match_select()
+        if match is None or match not in statbotics_matches:
+            return ui.value_box(title="Prediction BLUE", value="N/A")
+
+        statbotics_match = statbotics_matches[match]
+
         return ui.value_box(
             title="Prediction BLUE",
-            value=str(statbotics_matches["pred_blue_score"]) if statbotics_matches["pred_blue_score"] is not None else "N/A"
+            value=str(statbotics_match["pred_blue_score"]) if statbotics_match["pred_blue_score"] is not None else "N/A"
         )
 
     @render.ui
@@ -257,7 +273,7 @@ def general_match_server(input, output, session):
                 auto_climbing_status_df[True] + auto_climbing_status_df[False])
 
         fig = px.bar(auto_climbing_status_df, x="Team Number", y=["Climb Freq", "No Climb Freq"],
-                     title="Auto Climbing Frequency", **get_box_plot_colors())
+                     title="Auto Climbing Frequency")
         return fig
 
     # TELEOP

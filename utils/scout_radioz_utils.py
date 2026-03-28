@@ -1,4 +1,5 @@
 import requests
+import logging
 
 
 def __make_request(url: str, org_key: str, event_key: str) -> bytes:
@@ -10,7 +11,7 @@ def __make_request(url: str, org_key: str, event_key: str) -> bytes:
         "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7",
     }
     response = requests.get(url, cookies=cookies, headers=headers)
-    print(url)
+    logging.info(f"Downloading from {url}")
     return response.content
 
 
