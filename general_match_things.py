@@ -235,6 +235,7 @@ def general_match_server(input, output, session):
     @render_widget
     def auto_fuel_in_hub():
         teams_data = get_teams_in_match_data()
+
         fig = px.box(teams_data, x="Team Number", y="Auto Fuel", title="Fuel in Hub (Auto) per Robot", **get_box_plot_colors())
         return fig
 
