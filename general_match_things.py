@@ -258,21 +258,26 @@ def general_match_server(input, output, session):
     def auto_climbing_frequency():
         new_df = get_teams_in_match_data().copy()
 
-        auto_climbing_status_df = new_df.groupby("Team Number")["Auto Climbing Status"].value_counts().unstack(
+        new_df["Auto Climbing"] = new_df["Auto Climbing Status"].astype(int)
+
+        auto_climbing_status_df = new_df.groupby("Team Number")["Auto Climbing"].value_counts().unstack(
             fill_value=0).reset_index()
+        #
+        # # Ensure both True and False columns exist
+        # for col in [True, False]:
+        #     if col not in auto_climbing_status_df.columns:
+        #         auto_climbing_status_df[col] = 0
+        #
+        # auto_climbing_status_df["Climb Freq"] = auto_climbing_status_df[True] / (
+        #         auto_climbing_status_df[True] + auto_climbing_status_df[False])
+        # auto_climbing_status_df["No Climb Freq"] = auto_climbing_status_df[False] / (
+        #         auto_climbing_status_df[True] + auto_climbing_status_df[False])
 
-        # Ensure both True and False columns exist
-        for col in [True, False]:
-            if col not in auto_climbing_status_df.columns:
-                auto_climbing_status_df[col] = 0
-
-        auto_climbing_status_df["Climb Freq"] = auto_climbing_status_df[True] / (
-                auto_climbing_status_df[True] + auto_climbing_status_df[False])
-        auto_climbing_status_df["No Climb Freq"] = auto_climbing_status_df[False] / (
-                auto_climbing_status_df[True] + auto_climbing_status_df[False])
-
-        fig = px.bar(auto_climbing_status_df, x="Team Number", y=["Climb Freq", "No Climb Freq"],
+        fig = px.bar(new_df, x="Team Number", y= "Auto Climbing",
                      title="Auto Climbing Frequency")
+
+ #       fig.update_layout(yaxis=dict(tickvals=[0, 1], ticktext=["No", "Yes"]))
+
         return fig
 
     # TELEOP
