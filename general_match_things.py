@@ -76,6 +76,7 @@ def general_match_server(input, output, session):
         teams = get_teams_in_match()
         return df.loc[df["Team Number"].isin(teams)]
 
+
     def blue_df():
         if input.selection_mode() == "Match Number":
             match_number = str(input.match_select())
@@ -256,28 +257,17 @@ def general_match_server(input, output, session):
 
     @render_widget
     def auto_climbing_frequency():
-        new_df = get_teams_in_match_data().copy()
+        new_df = get_teams_in_match_data()
+        auto_climbing_status_df = new_df.groupby("Team Number")["Auto Climbing Status"].value_counts().unstack(
+            fill_value=0).reindex(columns=[False, True], fill_value=0).reset_index()
 
-        new_df["Auto Climbing"] = new_df["Auto Climbing Status"].astype(int)
-
-        auto_climbing_status_df = new_df.groupby("Team Number")["Auto Climbing"].value_counts().unstack(
-            fill_value=0).reset_index()
-        #
-        # # Ensure both True and False columns exist
-        # for col in [True, False]:
-        #     if col not in auto_climbing_status_df.columns:
-        #         auto_climbing_status_df[col] = 0
-        #
-        # auto_climbing_status_df["Climb Freq"] = auto_climbing_status_df[True] / (
-        #         auto_climbing_status_df[True] + auto_climbing_status_df[False])
-        # auto_climbing_status_df["No Climb Freq"] = auto_climbing_status_df[False] / (
-        #         auto_climbing_status_df[True] + auto_climbing_status_df[False])
-
-        fig = px.bar(new_df, x="Team Number", y= "Auto Climbing",
-                     title="Auto Climbing Frequency")
-
- #       fig.update_layout(yaxis=dict(tickvals=[0, 1], ticktext=["No", "Yes"]))
-
+        auto_climbing_status_df["Climb Freq"] = auto_climbing_status_df[True] / (
+                auto_climbing_status_df[True] + auto_climbing_status_df[False])
+        auto_climbing_status_df["No Climb Freq"] = auto_climbing_status_df[False] / (
+                auto_climbing_status_df[True] + auto_climbing_status_df[False])
+        custom_colors = ["#A07761", "#6C4E3E", "#D6BFA6"]
+        fig = px.bar(auto_climbing_status_df, x="Team Number", y=["Climb Freq", "No Climb Freq"],
+                     title="Auto Climbing Frequency", color_discrete_sequence=custom_colors)
         return fig
 
     # TELEOP
@@ -333,6 +323,19 @@ def general_match_server(input, output, session):
                 red_colors[i] if str(t) in [str(x) for x in red_teams] else blue_colors[i]
                 for t in endgame_df["Team Number"]
             ]
+
+        # Fix legend names and colors
+        level_names = ["L3", "L2", "L1"]
+        for i, trace in enumerate(fig.data):
+            trace.name = level_names[i]
+            trace.legendgrouptitle = None
+
+        fig.update_layout(
+            legend_title_text="Climb Level",
+            legend=dict(
+                itemsizing="constant",
+            )
+        )
         return fig
 
     @render_widget
