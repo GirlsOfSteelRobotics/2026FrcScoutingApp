@@ -6,6 +6,8 @@ from shiny import App, ui
 from shinywidgets import output_widget, render_widget
 from data_container import load_scouted_data, load_tba_matches, load_tba_team_numbers, load_statbotics_matches
 from metadata import OUR_TEAM_NUMBER
+import plotly.graph_objects as go
+
 
 df = load_scouted_data()
 tba_matches = load_tba_matches()
@@ -245,8 +247,12 @@ def general_match_server(input, output, session):
         red = red_df().copy()
         blue = blue_df().copy()
 
-        red_avg_fuel = (red["Auto Fuel"] + red["Teleop Fuel"]).mean()
-        blue_avg_fuel = (blue["Auto Fuel"] + blue["Teleop Fuel"]).mean()
+        def calc_fuel_points(alliance_df):
+            alliance_df["Total Fuel"] = alliance_df["Auto Fuel"] + alliance_df["Teleop Fuel"]
+            return alliance_df.groupby("Team Number")["Total Fuel"].mean().sum()
+
+        red_avg_fuel = calc_fuel_points(red)
+        blue_avg_fuel = calc_fuel_points(blue)
 
         def supercharged_status(avg):
             status = "Supercharged RP Likely" if avg >= 360 else "Supercharged RP Unlikely"
@@ -261,29 +267,86 @@ def general_match_server(input, output, session):
     @render_widget
     def auto_fuel_in_hub():
         teams_data = get_teams_in_match_data()
-
+        teams = get_teams_in_match()
+        blue_teams = teams[0:3]
+        red_teams = teams[3:6]
+        ordered_teams = blue_teams + red_teams
+        teams_data["Team Number"] = pd.Categorical(
+            teams_data["Team Number"],
+            categories=ordered_teams,
+            ordered=True
+        )
+        teams_data = teams_data.sort_values("Team Number")
         fig = px.box(teams_data, x="Team Number", y="Auto Fuel", title="Fuel in Hub (Auto) per Robot", **get_box_plot_colors())
         return fig
 
     @render_widget
     def auto_climbing_frequency():
         new_df = get_teams_in_match_data()
+        teams = get_teams_in_match()
         auto_climbing_status_df = new_df.groupby("Team Number")["Auto Climbing Status"].value_counts().unstack(
             fill_value=0).reindex(columns=[False, True], fill_value=0).reset_index()
+
+        blue_teams = teams[0:3]
+        red_teams = teams[3:6]
+        ordered_teams = blue_teams + red_teams
+        auto_climbing_status_df["Team Number"] = pd.Categorical(
+            auto_climbing_status_df["Team Number"],
+            categories=ordered_teams,
+            ordered=True
+        )
+        auto_climbing_status_df = auto_climbing_status_df.sort_values("Team Number")
 
         auto_climbing_status_df["Climb Freq"] = auto_climbing_status_df[True] / (
                 auto_climbing_status_df[True] + auto_climbing_status_df[False])
         auto_climbing_status_df["No Climb Freq"] = auto_climbing_status_df[False] / (
                 auto_climbing_status_df[True] + auto_climbing_status_df[False])
-        custom_colors = ["#A07761", "#6C4E3E", "#D6BFA6"]
+
+        blue_colors = ["#0C5794", "#46A2E0", "#A6DCF5"]
+        red_colors = ["#C71712", "#F54C3B", "#FF7054"]
+
         fig = px.bar(auto_climbing_status_df, x="Team Number", y=["Climb Freq", "No Climb Freq"],
-                     title="Auto Climbing Frequency", color_discrete_sequence=custom_colors)
+                     title="Auto Climbing Frequency", color_discrete_sequence=blue_colors)
+
+        for i, trace in enumerate(fig.data):
+            fig.data[i].marker.color = [
+                red_colors[i] if str(t) in [str(x) for x in red_teams] else blue_colors[i]
+                for t in auto_climbing_status_df["Team Number"]
+            ]
+
+        fig.data[0].name = "Climbed"
+        fig.data[1].name = "Did Not Climb"
+        fig.data[0].showlegend = False
+        fig.data[1].showlegend = False
+
+
+        fig.add_trace(go.Bar(x=[None], y=[None], name="Blue Alliance (Climbed)",
+                             marker=dict(color="#0C5794"), showlegend=True))
+        fig.add_trace(go.Bar(x=[None], y=[None], name="Blue Alliance (Did Not Climb)",
+                             marker=dict(color="#46A2E0"), showlegend=True))
+
+        fig.add_trace(go.Bar(x=[None], y=[None], name="Red Alliance (Climbed)",
+                             marker=dict(color="#C71712"), showlegend=True))
+        fig.add_trace(go.Bar(x=[None], y=[None], name="Red Alliance (Did Not Climb)",
+                             marker=dict(color="#F54C3B"), showlegend=True))
+        fig.update_layout(legend_title_text="Legend")
         return fig
 
     # TELEOP
     @render_widget
     def teleop_fuel_in_hub():
         new_df = get_teams_in_match_data()
+        teams = get_teams_in_match()
+        blue_teams = teams[0:3]
+        red_teams = teams[3:6]
+        ordered_teams = blue_teams + red_teams
+        new_df["Team Number"] = pd.Categorical(
+            new_df["Team Number"],
+            categories=ordered_teams,
+            ordered=True
+        )
+        new_df = new_df.sort_values("Team Number")
+
         fig = px.box(new_df, x="Team Number", y="Teleop Fuel", title="Average Fuel in Hub (Teleop) per Robot",
                      **get_box_plot_colors())
         return fig
@@ -291,6 +354,16 @@ def general_match_server(input, output, session):
     @render_widget
     def teleop_fuel_passed_avg():
         new_df = get_teams_in_match_data()
+        teams = get_teams_in_match()
+        blue_teams = teams[0:3]
+        red_teams = teams[3:6]
+        ordered_teams = blue_teams + red_teams
+        new_df["Team Number"] = pd.Categorical(
+            new_df["Team Number"],
+            categories=ordered_teams,
+            ordered=True
+        )
+        new_df = new_df.sort_values("Team Number")
         fig = px.box(new_df, x="Team Number", y="Teleop Fuel Passed",
                      title="Average Teleop Fuel Passed",
                      **get_box_plot_colors())
@@ -304,6 +377,12 @@ def general_match_server(input, output, session):
         blue_teams = teams[0:3]
         red_teams = teams[3:6]
         ordered_teams = blue_teams + red_teams
+        new_df["Team Number"] = pd.Categorical(
+            new_df["Team Number"],
+            categories=ordered_teams,
+            ordered=True
+        )
+        new_df = new_df.sort_values("Team Number")
 
         endgame_df = new_df.groupby("Team Number")["Endgame Climbing Level"].value_counts().unstack(
             fill_value=0).reset_index()
@@ -334,11 +413,29 @@ def general_match_server(input, output, session):
                 for t in endgame_df["Team Number"]
             ]
 
-        # Fix legend names and colors
-        level_names = ["L3", "L2", "L1"]
-        for i, trace in enumerate(fig.data):
-            trace.name = level_names[i]
-            trace.legendgrouptitle = None
+        fig.add_trace(go.Bar(x=[None], y=[None], name="L1 BLUE",
+                             marker=dict(color="#0C5794"), showlegend=True))
+        fig.add_trace(go.Bar(x=[None], y=[None], name="L2 BLUE",
+                             marker=dict(color="#46A2E0"), showlegend=True))
+        fig.add_trace(go.Bar(x=[None], y=[None], name="L3 BLUE",
+                             marker=dict(color="#A6DCF5"), showlegend=True))
+
+        fig.add_trace(go.Bar(x=[None], y=[None], name="L1 RED",
+                             marker=dict(color="#C71712"), showlegend=True))
+        fig.add_trace(go.Bar(x=[None], y=[None], name="L2 RED",
+                             marker=dict(color="#F54C3B"), showlegend=True))
+        fig.add_trace(go.Bar(x=[None], y=[None], name="L3 RED",
+                             marker=dict(color="#FF7054"), showlegend=True))
+
+        fig.data[0].showlegend = False
+        fig.data[1].showlegend = False
+        fig.data[2].showlegend = False
+
+        # # Fix legend names and colors
+        # level_names = ["L3", "L2", "L1"]
+        # for i, trace in enumerate(fig.data):
+        #     trace.name = level_names[i]
+        #     trace.legendgrouptitle = None
 
         fig.update_layout(
             legend_title_text="Climb Level",
@@ -355,6 +452,12 @@ def general_match_server(input, output, session):
         blue_teams = teams[0:3]
         red_teams = teams[3:6]
         ordered_teams = blue_teams + red_teams
+        new_df["Team Number"] = pd.Categorical(
+            new_df["Team Number"],
+            categories=ordered_teams,
+            ordered=True
+        )
+        new_df = new_df.sort_values("Team Number")
 
         endgame_df = new_df.groupby("Team Number")["Endgame Climbing Level"].value_counts().unstack(
             fill_value=0).reset_index()
@@ -379,7 +482,7 @@ def general_match_server(input, output, session):
         blue_colors = ["#0C5794", "#46A2E0", "#A6DCF5"]
         red_colors = ["#C71712", "#F54C3B", "#FF7054"]
 
-        fig = px.bar(endgame_df, x="Team Number", y=["L3 Points", "L2 Points", "L1 Points"],
+        fig = px.bar(endgame_df, x="Team Number", y=["L1 Points", "L2 Points", "L3 Points"],
                      title="Points Earned per Climb Level by Team",
                      color_discrete_sequence=blue_colors)
 
@@ -388,12 +491,40 @@ def general_match_server(input, output, session):
                 red_colors[i] if str(t) in [str(x) for x in red_teams] else blue_colors[i]
                 for t in endgame_df["Team Number"]
             ]
+
+        fig.add_trace(go.Bar(x=[None], y=[None], name="L1 BLUE",
+                             marker=dict(color="#0C5794"), showlegend=True))
+        fig.add_trace(go.Bar(x=[None], y=[None], name="L2 BLUE",
+                             marker=dict(color="#46A2E0"), showlegend=True))
+        fig.add_trace(go.Bar(x=[None], y=[None], name="L3 BLUE",
+                             marker=dict(color="#A6DCF5"), showlegend=True))
+
+        fig.add_trace(go.Bar(x=[None], y=[None], name="L1 RED",
+                             marker=dict(color="#C71712"), showlegend=True))
+        fig.add_trace(go.Bar(x=[None], y=[None], name="L2 RED",
+                             marker=dict(color="#F54C3B"), showlegend=True))
+        fig.add_trace(go.Bar(x=[None], y=[None], name="L3 RED",
+                             marker=dict(color="#FF7054"), showlegend=True))
+
+        fig.data[0].showlegend = False
+        fig.data[1].showlegend = False
+        fig.data[2].showlegend = False
         return fig
 
     @render_widget
     def total_climbing_points():
         new_df = get_teams_in_match_data().copy()
         new_df["Total Climb Points"] = pd.to_numeric(new_df["Total Climb Points"], errors="coerce").fillna(0)
+        teams = get_teams_in_match()
+        blue_teams = teams[0:3]
+        red_teams = teams[3:6]
+        ordered_teams = blue_teams + red_teams
+        new_df["Team Number"] = pd.Categorical(
+            new_df["Team Number"],
+            categories=ordered_teams,
+            ordered=True
+        )
+        new_df = new_df.sort_values("Team Number")
 
         if new_df.empty or new_df["Total Climb Points"].isna().all():
             fig = px.box(title="No climb data available yet")
@@ -410,7 +541,12 @@ def general_match_server(input, output, session):
         blue_teams = teams[0:3]
         red_teams = teams[3:6]
         ordered_teams = blue_teams + red_teams
-
+        new_df["Team Number"] = pd.Categorical(
+            new_df["Team Number"],
+            categories=ordered_teams,
+            ordered=True
+        )
+        new_df = new_df.sort_values("Team Number")
         avg_df = new_df.groupby("Team Number")["Total Climb Points"].mean().reset_index()
         avg_df["Team Number"] = pd.Categorical(avg_df["Team Number"], categories=ordered_teams, ordered=True)
         avg_df = avg_df.sort_values("Team Number")
