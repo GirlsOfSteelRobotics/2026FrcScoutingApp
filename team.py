@@ -2,7 +2,7 @@ import pandas as pd
 from shiny import module, ui, render
 from shinywidgets import output_widget, render_widget
 import plotly.express as px
-from data_container import load_pit_data, load_scouted_data
+from data_container import load_pit_data, load_scouted_data, load_tba_matches
 
 pd.set_option("display.max_columns", None)
 
@@ -26,14 +26,6 @@ def pit_overview_tab_ui():
         ),
         ui.layout_columns(
             ui.card(
-                ui.card_header("Intake"),
-                ui.output_text("intake_value"),
-            ),
-            ui.card(
-                ui.card_header("Climbing Levels"),
-                ui.output_text("climb_value"),
-            ),
-            ui.card(
                 ui.card_header("Go Under Trench?"),
                 ui.output_text("under_trench"),
             ),
@@ -42,24 +34,20 @@ def pit_overview_tab_ui():
                 ui.output_text("over_bump"),
             ),
             ui.card(
-                ui.card_header("Climbing Type (In/Out)"),
-                ui.output_text("climb_type"),
-            ),
-            ui.card(
-                ui.card_header("Preload Number"),
-                ui.output_text("preload_number"),
-            ),
-            ui.card(
                 ui.card_header("Carrying Capacity"),
                 ui.output_text("carrying_capacity"),
             ),
             ui.card(
-                ui.card_header("__-Piece Auto"),
-                ui.output_text("piece_auto"),
+                ui.card_header("Programming Language"),
+                ui.output_text("programming_language"),
             ),
             ui.card(
                 ui.card_header("Auto Start Position"),
                 ui.output_text("auto_start"),
+            ),
+            ui.card(
+                ui.card_header("Auto Description"),
+                ui.output_text("auto_description"),
             ),
             ui.card(
                 ui.card_header("Defensive Skill (0-5)"),
@@ -85,27 +73,32 @@ def pit_overview_tab_server(input, output, session):
         rows = pit_df[cleaned == str(team_str).strip()]
         return None if rows.empty else rows.iloc[0]
 
-    @render.text
-    def intake_value():
-        team = input.team_select()
-        row = get_team_row(team)
-        if row is None:
-            return "N/A"
-        val = row.get("Intake", "")
-        val = "" if pd.isna(val) else str(val).strip()
-        return val if val else "N/A"
+    def get_team_row_scout(team_str: str):
+        cleaned = match_df["Team Number"].astype(str).str.strip()
+        rows = match_df[cleaned == str(team_str).strip()]
+        return None if rows.empty else rows.iloc[0]
 
-    @render.text
-    def climb_value():
-        team = input.team_select()
-        row = get_team_row(team)
-        if row is None:
-            return "N/A"
-        auto = row.get("Climbing Level (Auto)", None)
-        endg = row.get("Climbing Level (Endgame)", None)
-        auto = "N/A" if pd.isna(auto) else str(auto).strip()
-        endg = "N/A" if pd.isna(endg) else str(endg).strip()
-        return f"Auto: {auto} | Endgame: {endg}"
+    # @render.text
+    # def intake_value():
+    #     team = input.team_select()
+    #     row = get_team_row(team)
+    #     if row is None:
+    #         return "N/A"
+    #     val = row.get("Intake", "")
+    #     val = "" if pd.isna(val) else str(val).strip()
+    #     return val if val else "N/A"
+
+    # @render.text
+    # def climb_value():
+    #     team = input.team_select()
+    #     row = get_team_row(team)
+    #     if row is None:
+    #         return "N/A"
+    #     auto = row.get("Climbing Level (Auto)", None)
+    #     endg = row.get("Climbing Level (Endgame)", None)
+    #     auto = "N/A" if pd.isna(auto) else str(auto).strip()
+    #     endg = "N/A" if pd.isna(endg) else str(endg).strip()
+    #     return f"Auto: {auto} | Endgame: {endg}"
 
     @render.text
     def under_trench():
@@ -126,24 +119,24 @@ def pit_overview_tab_server(input, output, session):
         bump = row.get("Over Bump?", "N/A")
         return bump
 
-    @render.text
-    def climb_type():
-        team = input.team_select()
-        row = get_team_row(team)
-        if row is None:
-            return "N/A"
-        type = row.get ("Climb type", "N/A")
-        return type
+    # @render.text
+    # def climb_type():
+    #     team = input.team_select()
+    #     row = get_team_row(team)
+    #     if row is None:
+    #         return "N/A"
+    #     type = row.get ("Climb type", "N/A")
+    #     return type
 
-    @render.text
-    def preload_number():
-        team = input.team_select()
-        row = get_team_row(team)
-        if row is None:
-            return "N/A"
-        preload = row.get ("Preload Number", "")
-        preload = "" if pd.isna(preload) else str(preload).strip()
-        return preload if preload else "N/A"
+    # @render.text
+    # def preload_number():
+    #     team = input.team_select()
+    #     row = get_team_row(team)
+    #     if row is None:
+    #         return "N/A"
+    #     preload = row.get ("Preload Number", "")
+    #     preload = "" if pd.isna(preload) else str(preload).strip()
+    #     return preload if preload else "N/A"
 
     @render.text
     def carrying_capacity():
@@ -156,14 +149,24 @@ def pit_overview_tab_server(input, output, session):
         return capacity if capacity else "N/A"
 
     @render.text
-    def piece_auto():
+    def auto_description():
         team = input.team_select()
         row = get_team_row(team)
         if row is None:
             return "N/A"
-        piece = row.get ("Piece Auto", "")
-        piece = "" if pd.isna(piece) else str(piece).strip()
-        return piece if piece else "N/A"
+        auto_describe = row.get("Auto Description", "")
+        auto_describe = "" if pd.isna(auto_describe) else str(auto_describe).strip()
+        return auto_describe if auto_describe else "N/A"
+
+    # @render.text
+    # def piece_auto():
+    #     team = input.team_select()
+    #     row = get_team_row(team)
+    #     if row is None:
+    #         return "N/A"
+    #     piece = row.get ("Piece Auto", "")
+    #     piece = "" if pd.isna(piece) else str(piece).strip()
+    #     return piece if piece else "N/A"
 
     @render.text
     def auto_start():
@@ -175,14 +178,26 @@ def pit_overview_tab_server(input, output, session):
         return start if start else "N/A"
 
     @render.text
-    def defensive_skill():
+    def programming_language():
         team = input.team_select()
         row = get_team_row(team)
+        if row is None:
+            return "N/A"
+        program_language = row.get("Programming Language", "")
+        program_language = "" if pd.isna(program_language) else str(program_language).strip()
+        return program_language if program_language else "N/A"
+
+
+    @render.text
+    def defensive_skill():
+        team = input.team_select()
+        row = get_team_row_scout(team)
         if row is None:
             return "N/A"
         defense = row.get ("Defense Skill (0-5)", "")
         defense = "" if pd.isna(defense) else str(defense).strip()
         return defense if defense else "N/A"
+
 
 
     @render_widget
