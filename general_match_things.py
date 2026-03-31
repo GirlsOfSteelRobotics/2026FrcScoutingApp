@@ -32,7 +32,8 @@ def general_match_ui():
                              ui.card(output_widget("teleop_vs_auto_scatter")),
                              ui.layout_column_wrap(
                                  ui.card(ui.output_ui("red_statbotics_prediction")),
-                                 ui.card(ui.output_ui("blue_statbotics_prediction"))
+                                 ui.card(ui.output_ui("blue_statbotics_prediction")),
+                                 ui.card(ui.output_ui("statbotics_win_prediction")),
                              ),
                              ui.layout_column_wrap(
                                  ui.card(ui.output_ui("rp_energized"), height="490px"),
@@ -192,6 +193,29 @@ def general_match_server(input, output, session):
             title="Prediction BLUE",
             value=str(statbotics_match["pred_blue_score"]) if statbotics_match["pred_blue_score"] is not None else "N/A"
         )
+
+    @render.ui
+    def statbotics_win_prediction():
+        if input.selection_mode() != "Match Number":
+            return ui.value_box(title="Prediction BLUE", value="N/A")
+
+        match = input.match_select()
+        if match is None or match not in statbotics_matches:
+            return ui.value_box(title="Prediction BLUE", value="N/A")
+
+        statbotics_match = statbotics_matches[match]
+
+        red_prob = statbotics_match["pred_red_win_prob"]
+        blue_prob = statbotics_match["pred_blue_win_prob"]
+
+        if red_prob > blue_prob:
+            return ui.value_box(
+                title="Prediction WINNER",
+                value=f"RED - {red_prob * 100:.2f}%")
+        else:
+            return ui.value_box(
+                title="Prediction WINNER",
+                value=f"BLUE - {blue_prob * 100:.2f}%")
 
     @render.ui
     def rp_climbing():
