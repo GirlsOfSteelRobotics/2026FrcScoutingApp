@@ -51,7 +51,7 @@ def load_scouted_data():
     # Fix Auto Climbing Status to be a proper boolean
     if "Auto Climbing Status" in scouted_data.columns:
         scouted_data["Auto Climbing Status"] = scouted_data["Auto Climbing Status"].astype(str).str.lower().isin(
-            ['true', '1', 'yes']
+            ["l1"]
         )
 
     # Fix Endgame Climbing Level — convert to points safely
