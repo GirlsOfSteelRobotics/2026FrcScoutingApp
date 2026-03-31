@@ -11,6 +11,7 @@ custom_colors = ["#A07761", "#6C4E3E", "#D6BFA6"]
 
 script_directory = pathlib.Path(__file__).resolve().parent
 
+
 def load_scouted_data():
     scouted_data = pd.read_csv(script_directory / f'data/{EVENT_KEY}/scouted_data.csv')
     scouted_data.columns = scouted_data.columns.str.strip()
@@ -32,7 +33,8 @@ def load_scouted_data():
             "totalEndgamePoints": "Endgame Points",
             "contributedPoints": "Contributed Points",
             "AutoClimb": "Auto Climbing Status",
-            "Climb": "Endgame Climbing Level"
+            "Climb": "Endgame Climbing Level",
+            "Defense": "Defense Skill (0-5)",
         }, inplace=True)
 
     # Ensure Team Number and Match Number are strings
@@ -93,6 +95,7 @@ def load_pit_data():
         "electricalWiring": "Electrical Wiring Quality",
         "ProgrammingLanguage": "Programming Language",
         "DrivetrainQuality": "Drivetrain Quality",
+        "describeAuto": "Auto Description",
                              },
                 inplace=True)
     pit_data['Team Number'] = pit_data['Team Number'].astype("string")
