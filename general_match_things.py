@@ -118,7 +118,7 @@ def general_match_server(input, output, session):
         teams = get_teams_in_match()
         blue_teams = teams[0:3]
         red_teams = teams[3:6]
-        color_map = {str(team): "#46A2E0" for team in blue_teams}
+        color_map = {str(team): "#337dfc" for team in blue_teams}
         color_map.update({str(team): "#F54C3B" for team in red_teams})
         return dict(
             color="Team Number",
@@ -176,7 +176,7 @@ def general_match_server(input, output, session):
         return ui.value_box(
             title="Prediction RED",
             value=str(statbotics_match["pred_red_score"]) if statbotics_match["pred_red_score"] is not None else "N/A",
-            theme=ui.value_box_theme(bg="#C71712", fg="#FFFFFF"),
+            theme=ui.value_box_theme(bg="#f7041a", fg="#FFFFFF"),
         )
         if statbotics_match is None:
             return ui.value_box(title="Prediction RED", value="N/A")
@@ -195,7 +195,7 @@ def general_match_server(input, output, session):
         return ui.value_box(
             title="Prediction BLUE",
             value=str(statbotics_match["pred_blue_score"]) if statbotics_match["pred_blue_score"] is not None else "N/A",
-            theme=ui.value_box_theme(bg="#0C5794", fg="#FFFFFF"),
+            theme=ui.value_box_theme(bg="#337dfc", fg="#FFFFFF"),
 
         )
 
@@ -217,12 +217,12 @@ def general_match_server(input, output, session):
             return ui.value_box(
                 title="Prediction WINNER",
                 value=f"RED - {red_prob * 100:.2f}%",
-            theme=ui.value_box_theme(bg="#C71712", fg="#FFFFFF"),)
+            theme=ui.value_box_theme(bg="#f7041a", fg="#FFFFFF"),)
         else:
             return ui.value_box(
                 title="Prediction WINNER",
                 value=f"BLUE - {blue_prob * 100:.2f}%",
-                theme=ui.value_box_theme(bg="#0C5794", fg="#FFFFFF"),)
+                theme=ui.value_box_theme(bg="#337dfc", fg="#FFFFFF"),)
 
     @render.ui
     def rp_climbing():
@@ -242,9 +242,9 @@ def general_match_server(input, output, session):
 
         return ui.div(
             ui.value_box(title="RED Climbing RP Prediction", value=climb_status(red_climb), height="200px",
-                         showcase=None, theme=ui.value_box_theme(bg="#C71712", fg="#FFFFFF"),),
+                         showcase=None, theme=ui.value_box_theme(bg="#f7041a", fg="#FFFFFF"),),
             ui.value_box(title="BLUE Climbing RP Prediction", value=climb_status(blue_climb), height="200px",
-                         showcase=None, theme=ui.value_box_theme(bg="#0C5794", fg="#FFFFFF"),),
+                         showcase=None, theme=ui.value_box_theme(bg="#337dfc", fg="#FFFFFF"),),
         )
 
     @render.ui
@@ -265,9 +265,9 @@ def general_match_server(input, output, session):
 
         return ui.div(
             ui.value_box(title="RED Energized RP Prediction", value=energized_status(red_avg_fuel), height="200px",
-                         showcase=None, theme=ui.value_box_theme(bg="#C71712", fg="#FFFFFF"),),
+                         showcase=None, theme=ui.value_box_theme(bg="#f7041a", fg="#FFFFFF"),),
             ui.value_box(title="BLUE Energized RP Prediction", value=energized_status(blue_avg_fuel), height="200px",
-                         showcase=None, theme=ui.value_box_theme(bg="#0C5794", fg="#FFFFFF"),),
+                         showcase=None, theme=ui.value_box_theme(bg="#337dfc", fg="#FFFFFF"),),
         )
 
 
@@ -288,8 +288,8 @@ def general_match_server(input, output, session):
             return f"{avg:.0f} fuel - {status}"
 
         return ui.div(
-            ui.value_box(title="RED Supercharged RP Prediction", value=supercharged_status(red_avg_fuel), height="200px", showcase=None, theme=ui.value_box_theme(bg="#C71712", fg="#FFFFFF"),),
-            ui.value_box(title="BLUE Supercharged RP Prediction", value=supercharged_status(blue_avg_fuel), height="200px", showcase=None, theme=ui.value_box_theme(bg="#0C5794", fg="#FFFFFF"),),
+            ui.value_box(title="RED Supercharged RP Prediction", value=supercharged_status(red_avg_fuel), height="200px", showcase=None, theme=ui.value_box_theme(bg="#f7041a", fg="#FFFFFF"),),
+            ui.value_box(title="BLUE Supercharged RP Prediction", value=supercharged_status(blue_avg_fuel), height="200px", showcase=None, theme=ui.value_box_theme(bg="#337dfc", fg="#FFFFFF"),),
         )
 
     # AUTO
@@ -331,8 +331,8 @@ def general_match_server(input, output, session):
         auto_climbing_status_df["No Climb Freq"] = auto_climbing_status_df[False] / (
                 auto_climbing_status_df[True] + auto_climbing_status_df[False])
 
-        blue_colors = ["#0C5794", "#46A2E0", "#A6DCF5"]
-        red_colors = ["#C71712", "#F54C3B", "#FF7054"]
+        blue_colors = ["#337dfc", "#b4cadb"]
+        red_colors = ["#F54C3B", "#e6c8c5"]
 
         fig = px.bar(auto_climbing_status_df, x="Team Number", y=["Climb Freq", "No Climb Freq"],
                      title="Auto Climbing Frequency", color_discrete_sequence=blue_colors)
@@ -350,14 +350,14 @@ def general_match_server(input, output, session):
 
 
         fig.add_trace(go.Bar(x=[None], y=[None], name="Blue Alliance (Climbed)",
-                             marker=dict(color="#0C5794"), showlegend=True))
+                             marker=dict(color="#337dfc"), showlegend=True))
         fig.add_trace(go.Bar(x=[None], y=[None], name="Blue Alliance (Did Not Climb)",
-                             marker=dict(color="#46A2E0"), showlegend=True))
-
+                             marker=dict(color="#b4cadb"), showlegend=True))
+        # #ecf4f4
         fig.add_trace(go.Bar(x=[None], y=[None], name="Red Alliance (Climbed)",
-                             marker=dict(color="#C71712"), showlegend=True))
-        fig.add_trace(go.Bar(x=[None], y=[None], name="Red Alliance (Did Not Climb)",
                              marker=dict(color="#F54C3B"), showlegend=True))
+        fig.add_trace(go.Bar(x=[None], y=[None], name="Red Alliance (Did Not Climb)",
+                             marker=dict(color="#e6c8c5"), showlegend=True))
         fig.update_layout(legend_title_text="Legend")
         return fig
 
@@ -429,8 +429,8 @@ def general_match_server(input, output, session):
         endgame_df["Team Number"] = pd.Categorical(endgame_df["Team Number"], categories=ordered_teams, ordered=True)
         endgame_df = endgame_df.sort_values("Team Number")
 
-        blue_colors = ["#0C5794", "#46A2E0", "#A6DCF5"]
-        red_colors = ["#C71712", "#F54C3B", "#FF7054"]
+        blue_colors = ["#337dfc", "#78a8fa", "#A6DCF5"]
+        red_colors = ["#f7041a", "#F54C3B", "#FF7054"]
 
         fig = px.bar(endgame_df, x="Team Number", y=["L1", "L2", "L3"],
                      title="Endgame Climb Level Distribution by Team",
@@ -443,14 +443,14 @@ def general_match_server(input, output, session):
             ]
 
         fig.add_trace(go.Bar(x=[None], y=[None], name="L1 BLUE",
-                             marker=dict(color="#0C5794"), showlegend=True))
+                             marker=dict(color="#337dfc"), showlegend=True))
         fig.add_trace(go.Bar(x=[None], y=[None], name="L2 BLUE",
-                             marker=dict(color="#46A2E0"), showlegend=True))
+                             marker=dict(color="#78a8fa"), showlegend=True))
         fig.add_trace(go.Bar(x=[None], y=[None], name="L3 BLUE",
                              marker=dict(color="#A6DCF5"), showlegend=True))
 
         fig.add_trace(go.Bar(x=[None], y=[None], name="L1 RED",
-                             marker=dict(color="#C71712"), showlegend=True))
+                             marker=dict(color="#f7041a"), showlegend=True))
         fig.add_trace(go.Bar(x=[None], y=[None], name="L2 RED",
                              marker=dict(color="#F54C3B"), showlegend=True))
         fig.add_trace(go.Bar(x=[None], y=[None], name="L3 RED",
@@ -508,8 +508,8 @@ def general_match_server(input, output, session):
         endgame_df["Team Number"] = pd.Categorical(endgame_df["Team Number"], categories=ordered_teams, ordered=True)
         endgame_df = endgame_df.sort_values("Team Number")
 
-        blue_colors = ["#0C5794", "#46A2E0", "#A6DCF5"]
-        red_colors = ["#C71712", "#F54C3B", "#FF7054"]
+        blue_colors = ["#337dfc", "#78a8fa", "#A6DCF5"]
+        red_colors = ["#f7041a", "#F54C3B", "#FF7054"]
 
         fig = px.bar(endgame_df, x="Team Number", y=["L1 Points", "L2 Points", "L3 Points"],
                      title="Points Earned per Climb Level by Team",
@@ -522,14 +522,14 @@ def general_match_server(input, output, session):
             ]
 
         fig.add_trace(go.Bar(x=[None], y=[None], name="L1 BLUE",
-                             marker=dict(color="#0C5794"), showlegend=True))
+                             marker=dict(color="#337dfc"), showlegend=True))
         fig.add_trace(go.Bar(x=[None], y=[None], name="L2 BLUE",
-                             marker=dict(color="#46A2E0"), showlegend=True))
+                             marker=dict(color="#78a8fa"), showlegend=True))
         fig.add_trace(go.Bar(x=[None], y=[None], name="L3 BLUE",
                              marker=dict(color="#A6DCF5"), showlegend=True))
 
         fig.add_trace(go.Bar(x=[None], y=[None], name="L1 RED",
-                             marker=dict(color="#C71712"), showlegend=True))
+                             marker=dict(color="#f7041a"), showlegend=True))
         fig.add_trace(go.Bar(x=[None], y=[None], name="L2 RED",
                              marker=dict(color="#F54C3B"), showlegend=True))
         fig.add_trace(go.Bar(x=[None], y=[None], name="L3 RED",
@@ -581,7 +581,7 @@ def general_match_server(input, output, session):
         avg_df = avg_df.sort_values("Team Number")
 
         color_list = [
-            "#F54C3B" if str(t) in [str(x) for x in red_teams] else "#46A2E0"
+            "#F54C3B" if str(t) in [str(x) for x in red_teams] else "#337dfc"
             for t in avg_df["Team Number"]
         ]
 
