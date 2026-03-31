@@ -33,9 +33,9 @@ def general_match_ui():
                 ui.nav_panel("Overall",
                              ui.card(output_widget("teleop_vs_auto_scatter")),
                              ui.layout_column_wrap(
-                                 ui.card(ui.output_ui("red_statbotics_prediction")),
-                                 ui.card(ui.output_ui("blue_statbotics_prediction")),
                                  ui.card(ui.output_ui("statbotics_win_prediction")),
+                                 ui.card(ui.output_ui("red_statbotics_prediction")),
+                                 ui.card(ui.output_ui("blue_statbotics_prediction"))
                              ),
                              ui.layout_column_wrap(
                                  ui.card(ui.output_ui("rp_energized"), height="490px"),
@@ -175,7 +175,8 @@ def general_match_server(input, output, session):
 
         return ui.value_box(
             title="Prediction RED",
-            value=str(statbotics_match["pred_red_score"]) if statbotics_match["pred_red_score"] is not None else "N/A"
+            value=str(statbotics_match["pred_red_score"]) if statbotics_match["pred_red_score"] is not None else "N/A",
+            theme=ui.value_box_theme(bg="#C71712", fg="#FFFFFF"),
         )
         if statbotics_match is None:
             return ui.value_box(title="Prediction RED", value="N/A")
@@ -193,7 +194,9 @@ def general_match_server(input, output, session):
 
         return ui.value_box(
             title="Prediction BLUE",
-            value=str(statbotics_match["pred_blue_score"]) if statbotics_match["pred_blue_score"] is not None else "N/A"
+            value=str(statbotics_match["pred_blue_score"]) if statbotics_match["pred_blue_score"] is not None else "N/A",
+            theme=ui.value_box_theme(bg="#0C5794", fg="#FFFFFF"),
+
         )
 
     @render.ui
@@ -213,11 +216,13 @@ def general_match_server(input, output, session):
         if red_prob > blue_prob:
             return ui.value_box(
                 title="Prediction WINNER",
-                value=f"RED - {red_prob * 100:.2f}%")
+                value=f"RED - {red_prob * 100:.2f}%",
+            theme=ui.value_box_theme(bg="#C71712", fg="#FFFFFF"),)
         else:
             return ui.value_box(
                 title="Prediction WINNER",
-                value=f"BLUE - {blue_prob * 100:.2f}%")
+                value=f"BLUE - {blue_prob * 100:.2f}%",
+                theme=ui.value_box_theme(bg="#0C5794", fg="#FFFFFF"),)
 
     @render.ui
     def rp_climbing():
@@ -237,9 +242,9 @@ def general_match_server(input, output, session):
 
         return ui.div(
             ui.value_box(title="RED Climbing RP Prediction", value=climb_status(red_climb), height="200px",
-                         showcase=None),
+                         showcase=None, theme=ui.value_box_theme(bg="#C71712", fg="#FFFFFF"),),
             ui.value_box(title="BLUE Climbing RP Prediction", value=climb_status(blue_climb), height="200px",
-                         showcase=None),
+                         showcase=None, theme=ui.value_box_theme(bg="#0C5794", fg="#FFFFFF"),),
         )
 
     @render.ui
@@ -260,9 +265,9 @@ def general_match_server(input, output, session):
 
         return ui.div(
             ui.value_box(title="RED Energized RP Prediction", value=energized_status(red_avg_fuel), height="200px",
-                         showcase=None),
+                         showcase=None, theme=ui.value_box_theme(bg="#C71712", fg="#FFFFFF"),),
             ui.value_box(title="BLUE Energized RP Prediction", value=energized_status(blue_avg_fuel), height="200px",
-                         showcase=None),
+                         showcase=None, theme=ui.value_box_theme(bg="#0C5794", fg="#FFFFFF"),),
         )
 
 
@@ -283,8 +288,8 @@ def general_match_server(input, output, session):
             return f"{avg:.0f} fuel - {status}"
 
         return ui.div(
-            ui.value_box(title="RED Supercharged RP Prediction", value=supercharged_status(red_avg_fuel), height="200px", showcase=None),
-            ui.value_box(title="BLUE Supercharged RP Prediction", value=supercharged_status(blue_avg_fuel), height="200px", showcase=None),
+            ui.value_box(title="RED Supercharged RP Prediction", value=supercharged_status(red_avg_fuel), height="200px", showcase=None, theme=ui.value_box_theme(bg="#C71712", fg="#FFFFFF"),),
+            ui.value_box(title="BLUE Supercharged RP Prediction", value=supercharged_status(blue_avg_fuel), height="200px", showcase=None, theme=ui.value_box_theme(bg="#0C5794", fg="#FFFFFF"),),
         )
 
     # AUTO
