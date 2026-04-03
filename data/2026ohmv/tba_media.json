@@ -111,6 +111,17 @@
     },
     {
         "details": {},
+        "direct_url": "https://i.imgur.com/Rsxi2A0.jpeg",
+        "foreign_key": "Rsxi2A0",
+        "preferred": true,
+        "team_keys": [
+            "frc1787"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/Rsxi2A0"
+    },
+    {
+        "details": {},
         "direct_url": "https://i.imgur.com/hhDQ611.jpeg",
         "foreign_key": "hhDQ611",
         "preferred": true,
@@ -119,6 +130,17 @@
         ],
         "type": "imgur",
         "view_url": "https://imgur.com/hhDQ611"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/L8dCh3E.jpeg",
+        "foreign_key": "L8dCh3E",
+        "preferred": true,
+        "team_keys": [
+            "frc2172"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/L8dCh3E"
     },
     {
         "details": {},
@@ -240,6 +262,17 @@
         ],
         "type": "imgur",
         "view_url": "https://imgur.com/t9y37d9"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/oKSBhaI.jpeg",
+        "foreign_key": "oKSBhaI",
+        "preferred": true,
+        "team_keys": [
+            "frc3504"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/oKSBhaI"
     },
     {
         "details": {},
@@ -496,6 +529,17 @@
     },
     {
         "details": {},
+        "direct_url": "https://i.imgur.com/3s3cOt0.jpeg",
+        "foreign_key": "3s3cOt0",
+        "preferred": true,
+        "team_keys": [
+            "frc9097"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/3s3cOt0"
+    },
+    {
+        "details": {},
         "direct_url": "https://i.imgur.com/bvaf7i6.jpeg",
         "foreign_key": "bvaf7i6",
         "preferred": true,
@@ -504,5 +548,16 @@
         ],
         "type": "imgur",
         "view_url": "https://imgur.com/bvaf7i6"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/iHqFojV.jpeg",
+        "foreign_key": "iHqFojV",
+        "preferred": true,
+        "team_keys": [
+            "frc9152"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/iHqFojV"
     }
 ]
