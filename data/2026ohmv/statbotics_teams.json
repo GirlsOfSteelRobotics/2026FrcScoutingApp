@@ -149,7 +149,7 @@
                 "winrate": 0.0,
                 "rps": 1,
                 "rps_per_match": 1.0,
-                "rank": 42,
+                "rank": 40,
                 "num_teams": 50
             },
             "elim": {
@@ -187,55 +187,55 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 45.69,
-                "sd": 19.81
+                "mean": 46.42,
+                "sd": 17.27
             },
-            "unitless": 1504.0,
-            "norm": 1519.0,
+            "unitless": 1506.0,
+            "norm": 1520.0,
             "conf": [
-                -0.92,
-                1.23
+                -0.94,
+                1.16
             ],
             "breakdown": {
-                "total_points": 45.69,
-                "auto_points": 11.09,
-                "teleop_points": 21.27,
-                "endgame_points": 13.33,
-                "energized_rp": 0.1743,
-                "supercharged_rp": -0.2255,
-                "traversal_rp": -0.3359,
-                "tiebreaker_points": 45.69,
-                "auto_fuel": 11.56,
-                "auto_tower": -0.47,
-                "transition_fuel": 1.14,
-                "first_shift_fuel": 7.55,
-                "second_shift_fuel": 12.58,
-                "teleop_fuel": 21.27,
-                "endgame_fuel": 13.88,
-                "endgame_tower": -0.56,
-                "total_fuel": 46.72,
-                "total_tower": -1.03,
-                "rp_1": 0.1743,
-                "rp_2": -0.2255,
-                "rp_3": -0.3359
+                "total_points": 46.42,
+                "auto_points": 10.49,
+                "teleop_points": 20.96,
+                "endgame_points": 14.96,
+                "energized_rp": 0.2032,
+                "supercharged_rp": -0.2262,
+                "traversal_rp": -0.3361,
+                "tiebreaker_points": 46.42,
+                "auto_fuel": 10.94,
+                "auto_tower": -0.44,
+                "transition_fuel": 0.96,
+                "first_shift_fuel": 6.79,
+                "second_shift_fuel": 13.21,
+                "teleop_fuel": 20.96,
+                "endgame_fuel": 15.51,
+                "endgame_tower": -0.55,
+                "total_fuel": 47.41,
+                "total_tower": -0.99,
+                "rp_1": 0.2032,
+                "rp_2": -0.2262,
+                "rp_3": -0.3361
             },
             "stats": {
                 "start": 35.95,
-                "pre_elim": 45.69,
-                "mean": 44.61,
-                "max": 45.69
+                "pre_elim": 46.42,
+                "mean": 45.18,
+                "max": 46.42
             }
         },
         "record": {
             "qual": {
                 "wins": 1,
-                "losses": 0,
+                "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 1.0,
-                "rps": 4,
-                "rps_per_match": 4.0,
-                "rank": 10,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 5,
+                "rps_per_match": 2.5,
+                "rank": 22,
                 "num_teams": 50
             },
             "elim": {
@@ -249,10 +249,10 @@
             },
             "total": {
                 "wins": 1,
-                "losses": 0,
+                "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 1.0
+                "count": 2,
+                "winrate": 0.5
             }
         },
         "district_points": null
@@ -273,54 +273,54 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 61.37,
-                "sd": 13.08
+                "mean": 56.63,
+                "sd": 14.55
             },
-            "unitless": 1546.0,
-            "norm": 1556.0,
+            "unitless": 1534.0,
+            "norm": 1545.0,
             "conf": [
-                -0.93,
-                1.15
+                -1.03,
+                0.99
             ],
             "breakdown": {
-                "total_points": 61.37,
-                "auto_points": 8.56,
-                "teleop_points": 34.52,
-                "endgame_points": 18.29,
-                "energized_rp": 0.2505,
-                "supercharged_rp": -0.2274,
-                "traversal_rp": -0.3361,
-                "tiebreaker_points": 61.37,
-                "auto_fuel": 8.59,
-                "auto_tower": -0.03,
-                "transition_fuel": 1.04,
-                "first_shift_fuel": 14.48,
-                "second_shift_fuel": 19.0,
-                "teleop_fuel": 34.52,
-                "endgame_fuel": 18.34,
+                "total_points": 56.63,
+                "auto_points": 7.99,
+                "teleop_points": 31.42,
+                "endgame_points": 17.22,
+                "energized_rp": 0.2177,
+                "supercharged_rp": -0.2281,
+                "traversal_rp": -0.3363,
+                "tiebreaker_points": 56.63,
+                "auto_fuel": 8.12,
+                "auto_tower": -0.13,
+                "transition_fuel": 0.73,
+                "first_shift_fuel": 12.71,
+                "second_shift_fuel": 17.98,
+                "teleop_fuel": 31.42,
+                "endgame_fuel": 17.26,
                 "endgame_tower": -0.04,
-                "total_fuel": 61.44,
-                "total_tower": -0.07,
-                "rp_1": 0.2505,
-                "rp_2": -0.2274,
-                "rp_3": -0.3361
+                "total_fuel": 56.8,
+                "total_tower": -0.17,
+                "rp_1": 0.2177,
+                "rp_2": -0.2281,
+                "rp_3": -0.3363
             },
             "stats": {
                 "start": 58.95,
-                "pre_elim": 61.37,
-                "mean": 61.1,
+                "pre_elim": 56.63,
+                "mean": 57.41,
                 "max": 61.37
             }
         },
         "record": {
             "qual": {
                 "wins": 1,
-                "losses": 0,
+                "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 1.0,
+                "count": 2,
+                "winrate": 0.5,
                 "rps": 4,
-                "rps_per_match": 4.0,
+                "rps_per_match": 2.0,
                 "rank": 27,
                 "num_teams": 50
             },
@@ -335,10 +335,10 @@
             },
             "total": {
                 "wins": 1,
-                "losses": 0,
+                "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 1.0
+                "count": 2,
+                "winrate": 0.5
             }
         },
         "district_points": null
@@ -359,54 +359,54 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 47.5,
-                "sd": 20.53
+                "mean": 42.28,
+                "sd": 20.07
             },
-            "unitless": 1509.0,
-            "norm": 1523.0,
+            "unitless": 1495.0,
+            "norm": 1510.0,
             "conf": [
-                -1.02,
-                1.15
+                -1.05,
+                1.05
             ],
             "breakdown": {
-                "total_points": 47.5,
-                "auto_points": 9.77,
-                "teleop_points": 24.52,
-                "endgame_points": 13.21,
-                "energized_rp": 0.2171,
-                "supercharged_rp": -0.2285,
-                "traversal_rp": -0.3359,
-                "tiebreaker_points": 47.5,
-                "auto_fuel": 9.26,
-                "auto_tower": 0.51,
-                "transition_fuel": 3.59,
-                "first_shift_fuel": 8.74,
-                "second_shift_fuel": 12.19,
-                "teleop_fuel": 24.52,
-                "endgame_fuel": 13.48,
+                "total_points": 42.28,
+                "auto_points": 9.14,
+                "teleop_points": 21.11,
+                "endgame_points": 12.03,
+                "energized_rp": 0.181,
+                "supercharged_rp": -0.2292,
+                "traversal_rp": -0.3361,
+                "tiebreaker_points": 42.28,
+                "auto_fuel": 8.74,
+                "auto_tower": 0.4,
+                "transition_fuel": 3.25,
+                "first_shift_fuel": 6.8,
+                "second_shift_fuel": 11.07,
+                "teleop_fuel": 21.11,
+                "endgame_fuel": 12.29,
                 "endgame_tower": -0.27,
-                "total_fuel": 47.26,
-                "total_tower": 0.24,
-                "rp_1": 0.2171,
-                "rp_2": -0.2285,
-                "rp_3": -0.3359
+                "total_fuel": 42.15,
+                "total_tower": 0.13,
+                "rp_1": 0.181,
+                "rp_2": -0.2292,
+                "rp_3": -0.3361
             },
             "stats": {
                 "start": 44.4,
-                "pre_elim": 47.5,
-                "mean": 47.16,
+                "pre_elim": 42.28,
+                "mean": 43.1,
                 "max": 47.5
             }
         },
         "record": {
             "qual": {
                 "wins": 0,
-                "losses": 1,
+                "losses": 2,
                 "ties": 0,
-                "count": 1,
+                "count": 2,
                 "winrate": 0.0,
                 "rps": 1,
-                "rps_per_match": 1.0,
+                "rps_per_match": 0.5,
                 "rank": 46,
                 "num_teams": 50
             },
@@ -421,9 +421,9 @@
             },
             "total": {
                 "wins": 0,
-                "losses": 1,
+                "losses": 2,
                 "ties": 0,
-                "count": 1,
+                "count": 2,
                 "winrate": 0.0
             }
         },
@@ -493,7 +493,7 @@
                 "winrate": 1.0,
                 "rps": 4,
                 "rps_per_match": 4.0,
-                "rank": 6,
+                "rank": 5,
                 "num_teams": 50
             },
             "elim": {
@@ -579,7 +579,7 @@
                 "winrate": 1.0,
                 "rps": 4,
                 "rps_per_match": 4.0,
-                "rank": 9,
+                "rank": 10,
                 "num_teams": 50
             },
             "elim": {
@@ -617,55 +617,55 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 16.62,
-                "sd": 15.7
+                "mean": 18.26,
+                "sd": 13.94
             },
-            "unitless": 1427.0,
-            "norm": 1426.0,
+            "unitless": 1431.0,
+            "norm": 1434.0,
             "conf": [
-                -0.94,
-                1.21
+                -0.95,
+                1.15
             ],
             "breakdown": {
-                "total_points": 16.62,
-                "auto_points": 4.35,
-                "teleop_points": 5.18,
-                "endgame_points": 7.1,
-                "energized_rp": 0.1201,
-                "supercharged_rp": -0.2275,
-                "traversal_rp": -0.3359,
-                "tiebreaker_points": 16.62,
-                "auto_fuel": 3.3,
-                "auto_tower": 1.05,
-                "transition_fuel": 0.91,
-                "first_shift_fuel": 3.37,
-                "second_shift_fuel": 0.9,
-                "teleop_fuel": 5.18,
-                "endgame_fuel": 8.02,
-                "endgame_tower": -0.93,
-                "total_fuel": 16.5,
-                "total_tower": 0.12,
-                "rp_1": 0.1201,
-                "rp_2": -0.2275,
-                "rp_3": -0.3359
+                "total_points": 18.26,
+                "auto_points": 4.11,
+                "teleop_points": 6.69,
+                "endgame_points": 7.46,
+                "energized_rp": 0.0969,
+                "supercharged_rp": -0.2285,
+                "traversal_rp": -0.3361,
+                "tiebreaker_points": 18.26,
+                "auto_fuel": 3.14,
+                "auto_tower": 0.97,
+                "transition_fuel": 1.13,
+                "first_shift_fuel": 3.86,
+                "second_shift_fuel": 1.7,
+                "teleop_fuel": 6.69,
+                "endgame_fuel": 8.23,
+                "endgame_tower": -0.77,
+                "total_fuel": 18.06,
+                "total_tower": 0.21,
+                "rp_1": 0.0969,
+                "rp_2": -0.2285,
+                "rp_3": -0.3361
             },
             "stats": {
                 "start": 10.39,
-                "pre_elim": 16.62,
-                "mean": 15.93,
-                "max": 16.62
+                "pre_elim": 18.26,
+                "mean": 17.2,
+                "max": 18.26
             }
         },
         "record": {
             "qual": {
                 "wins": 1,
-                "losses": 0,
+                "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 1.0,
+                "count": 2,
+                "winrate": 0.5,
                 "rps": 4,
-                "rps_per_match": 4.0,
-                "rank": 12,
+                "rps_per_match": 2.0,
+                "rank": 28,
                 "num_teams": 50
             },
             "elim": {
@@ -679,10 +679,10 @@
             },
             "total": {
                 "wins": 1,
-                "losses": 0,
+                "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 1.0
+                "count": 2,
+                "winrate": 0.5
             }
         },
         "district_points": null
@@ -751,7 +751,7 @@
                 "winrate": 0.0,
                 "rps": 1,
                 "rps_per_match": 1.0,
-                "rank": 36,
+                "rank": 35,
                 "num_teams": 50
             },
             "elim": {
@@ -923,7 +923,7 @@
                 "winrate": 1.0,
                 "rps": 4,
                 "rps_per_match": 4.0,
-                "rank": 23,
+                "rank": 18,
                 "num_teams": 50
             },
             "elim": {
@@ -1009,7 +1009,7 @@
                 "winrate": 1.0,
                 "rps": 4,
                 "rps_per_match": 4.0,
-                "rank": 5,
+                "rank": 6,
                 "num_teams": 50
             },
             "elim": {
@@ -1047,54 +1047,54 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 36.55,
-                "sd": 11.81
+                "mean": 37.17,
+                "sd": 10.63
             },
-            "unitless": 1480.0,
-            "norm": 1495.0,
+            "unitless": 1482.0,
+            "norm": 1497.0,
             "conf": [
-                -0.99,
-                0.92
+                -0.96,
+                0.91
             ],
             "breakdown": {
-                "total_points": 36.55,
-                "auto_points": 9.37,
-                "teleop_points": 16.87,
-                "endgame_points": 10.31,
-                "energized_rp": 0.2161,
-                "supercharged_rp": -0.2387,
-                "traversal_rp": -0.3365,
-                "tiebreaker_points": 36.55,
-                "auto_fuel": 9.32,
-                "auto_tower": 0.05,
-                "transition_fuel": 0.55,
-                "first_shift_fuel": 10.08,
-                "second_shift_fuel": 6.24,
-                "teleop_fuel": 16.87,
-                "endgame_fuel": 9.74,
-                "endgame_tower": 0.56,
-                "total_fuel": 35.94,
-                "total_tower": 0.61,
-                "rp_1": 0.2161,
-                "rp_2": -0.2387,
-                "rp_3": -0.3365
+                "total_points": 37.17,
+                "auto_points": 9.59,
+                "teleop_points": 17.5,
+                "endgame_points": 10.07,
+                "energized_rp": 0.2541,
+                "supercharged_rp": -0.2393,
+                "traversal_rp": -0.3366,
+                "tiebreaker_points": 37.17,
+                "auto_fuel": 9.58,
+                "auto_tower": 0.01,
+                "transition_fuel": 0.41,
+                "first_shift_fuel": 10.92,
+                "second_shift_fuel": 6.17,
+                "teleop_fuel": 17.5,
+                "endgame_fuel": 9.59,
+                "endgame_tower": 0.49,
+                "total_fuel": 36.67,
+                "total_tower": 0.49,
+                "rp_1": 0.2541,
+                "rp_2": -0.2393,
+                "rp_3": -0.3366
             },
             "stats": {
                 "start": 37.06,
-                "pre_elim": 36.55,
-                "mean": 36.61,
-                "max": 37.06
+                "pre_elim": 37.17,
+                "mean": 37.09,
+                "max": 37.17
             }
         },
         "record": {
             "qual": {
-                "wins": 0,
+                "wins": 1,
                 "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 0.0,
-                "rps": 1,
-                "rps_per_match": 1.0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 5,
+                "rps_per_match": 2.5,
                 "rank": 26,
                 "num_teams": 50
             },
@@ -1108,11 +1108,11 @@
                 "is_captain": null
             },
             "total": {
-                "wins": 0,
+                "wins": 1,
                 "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 0.0
+                "count": 2,
+                "winrate": 0.5
             }
         },
         "district_points": null
@@ -1267,7 +1267,7 @@
                 "winrate": 1.0,
                 "rps": 5,
                 "rps_per_match": 5.0,
-                "rank": 2,
+                "rank": 3,
                 "num_teams": 50
             },
             "elim": {
@@ -1391,55 +1391,55 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 41.84,
-                "sd": 10.47
+                "mean": 50.16,
+                "sd": 19.09
             },
-            "unitless": 1494.0,
-            "norm": 1509.0,
+            "unitless": 1516.0,
+            "norm": 1529.0,
             "conf": [
-                -1.17,
-                0.81
+                -0.76,
+                1.15
             ],
             "breakdown": {
-                "total_points": 41.84,
-                "auto_points": 9.3,
-                "teleop_points": 27.94,
-                "endgame_points": 4.6,
-                "energized_rp": 0.227,
-                "supercharged_rp": -0.2323,
-                "traversal_rp": -0.3363,
-                "tiebreaker_points": 41.84,
-                "auto_fuel": 9.4,
-                "auto_tower": -0.1,
-                "transition_fuel": 3.13,
-                "first_shift_fuel": 15.7,
-                "second_shift_fuel": 9.11,
-                "teleop_fuel": 27.94,
-                "endgame_fuel": 4.37,
-                "endgame_tower": 0.23,
-                "total_fuel": 41.71,
-                "total_tower": 0.13,
-                "rp_1": 0.227,
-                "rp_2": -0.2323,
-                "rp_3": -0.3363
+                "total_points": 50.16,
+                "auto_points": 11.69,
+                "teleop_points": 32.53,
+                "endgame_points": 5.94,
+                "energized_rp": 0.2556,
+                "supercharged_rp": -0.2331,
+                "traversal_rp": -0.3365,
+                "tiebreaker_points": 50.16,
+                "auto_fuel": 10.88,
+                "auto_tower": 0.82,
+                "transition_fuel": 2.43,
+                "first_shift_fuel": 17.88,
+                "second_shift_fuel": 12.22,
+                "teleop_fuel": 32.53,
+                "endgame_fuel": 5.73,
+                "endgame_tower": 0.22,
+                "total_fuel": 49.13,
+                "total_tower": 1.03,
+                "rp_1": 0.2556,
+                "rp_2": -0.2331,
+                "rp_3": -0.3365
             },
             "stats": {
                 "start": 44.65,
-                "pre_elim": 41.84,
-                "mean": 42.15,
-                "max": 44.65
+                "pre_elim": 50.16,
+                "mean": 48.62,
+                "max": 50.16
             }
         },
         "record": {
             "qual": {
-                "wins": 0,
+                "wins": 1,
                 "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 0.0,
-                "rps": 1,
-                "rps_per_match": 1.0,
-                "rank": 33,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 5,
+                "rps_per_match": 2.5,
+                "rank": 21,
                 "num_teams": 50
             },
             "elim": {
@@ -1452,11 +1452,11 @@
                 "is_captain": null
             },
             "total": {
-                "wins": 0,
+                "wins": 1,
                 "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 0.0
+                "count": 2,
+                "winrate": 0.5
             }
         },
         "district_points": null
@@ -1525,7 +1525,7 @@
                 "winrate": 1.0,
                 "rps": 4,
                 "rps_per_match": 4.0,
-                "rank": 20,
+                "rank": 17,
                 "num_teams": 50
             },
             "elim": {
@@ -1567,7 +1567,7 @@
                 "sd": 31.26
             },
             "unitless": 1650.0,
-            "norm": 1642.0,
+            "norm": 1641.0,
             "conf": [
                 -0.68,
                 1.21
@@ -1697,7 +1697,7 @@
                 "winrate": 1.0,
                 "rps": 4,
                 "rps_per_match": 4.0,
-                "rank": 14,
+                "rank": 12,
                 "num_teams": 50
             },
             "elim": {
@@ -1735,55 +1735,55 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 90.21,
-                "sd": 17.59
+                "mean": 90.8,
+                "sd": 15.78
             },
-            "unitless": 1623.0,
-            "norm": 1621.0,
+            "unitless": 1625.0,
+            "norm": 1622.0,
             "conf": [
-                -0.96,
-                1.02
+                -0.94,
+                0.98
             ],
             "breakdown": {
-                "total_points": 90.21,
-                "auto_points": 14.43,
-                "teleop_points": 55.31,
-                "endgame_points": 20.47,
-                "energized_rp": 0.4479,
-                "supercharged_rp": -0.2291,
-                "traversal_rp": -0.3363,
-                "tiebreaker_points": 90.21,
-                "auto_fuel": 13.96,
-                "auto_tower": 0.47,
-                "transition_fuel": 1.13,
-                "first_shift_fuel": 26.39,
-                "second_shift_fuel": 27.79,
-                "teleop_fuel": 55.31,
-                "endgame_fuel": 21.11,
-                "endgame_tower": -0.64,
-                "total_fuel": 90.38,
-                "total_tower": -0.17,
-                "rp_1": 0.4479,
-                "rp_2": -0.2291,
-                "rp_3": -0.3363
+                "total_points": 90.8,
+                "auto_points": 13.94,
+                "teleop_points": 55.06,
+                "endgame_points": 21.8,
+                "energized_rp": 0.4715,
+                "supercharged_rp": -0.2296,
+                "traversal_rp": -0.3365,
+                "tiebreaker_points": 90.8,
+                "auto_fuel": 13.45,
+                "auto_tower": 0.49,
+                "transition_fuel": 0.98,
+                "first_shift_fuel": 25.77,
+                "second_shift_fuel": 28.3,
+                "teleop_fuel": 55.06,
+                "endgame_fuel": 22.44,
+                "endgame_tower": -0.63,
+                "total_fuel": 90.94,
+                "total_tower": -0.14,
+                "rp_1": 0.4715,
+                "rp_2": -0.2296,
+                "rp_3": -0.3365
             },
             "stats": {
                 "start": 84.8,
-                "pre_elim": 90.21,
-                "mean": 89.61,
-                "max": 90.21
+                "pre_elim": 90.8,
+                "mean": 90.07,
+                "max": 90.8
             }
         },
         "record": {
             "qual": {
                 "wins": 1,
-                "losses": 0,
+                "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 1.0,
-                "rps": 4,
-                "rps_per_match": 4.0,
-                "rank": 17,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 5,
+                "rps_per_match": 2.5,
+                "rank": 23,
                 "num_teams": 50
             },
             "elim": {
@@ -1797,10 +1797,10 @@
             },
             "total": {
                 "wins": 1,
-                "losses": 0,
+                "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 1.0
+                "count": 2,
+                "winrate": 0.5
             }
         },
         "district_points": null
@@ -1869,7 +1869,7 @@
                 "winrate": 1.0,
                 "rps": 5,
                 "rps_per_match": 5.0,
-                "rank": 3,
+                "rank": 2,
                 "num_teams": 50
             },
             "elim": {
@@ -1907,55 +1907,55 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 70.53,
-                "sd": 14.96
+                "mean": 81.62,
+                "sd": 22.42
             },
-            "unitless": 1571.0,
-            "norm": 1576.0,
+            "unitless": 1600.0,
+            "norm": 1601.0,
             "conf": [
-                -1.03,
-                1.16
+                -0.73,
+                1.3
             ],
             "breakdown": {
-                "total_points": 70.53,
-                "auto_points": 12.47,
-                "teleop_points": 39.6,
-                "endgame_points": 18.46,
-                "energized_rp": 0.3119,
-                "supercharged_rp": -0.224,
-                "traversal_rp": -0.3357,
-                "tiebreaker_points": 70.53,
-                "auto_fuel": 11.02,
-                "auto_tower": 1.46,
-                "transition_fuel": 3.5,
-                "first_shift_fuel": 15.69,
-                "second_shift_fuel": 20.41,
-                "teleop_fuel": 39.6,
-                "endgame_fuel": 18.63,
-                "endgame_tower": -0.17,
-                "total_fuel": 69.24,
-                "total_tower": 1.29,
-                "rp_1": 0.3119,
-                "rp_2": -0.224,
-                "rp_3": -0.3357
+                "total_points": 81.62,
+                "auto_points": 15.66,
+                "teleop_points": 45.71,
+                "endgame_points": 20.25,
+                "energized_rp": 0.3501,
+                "supercharged_rp": -0.2251,
+                "traversal_rp": -0.3359,
+                "tiebreaker_points": 81.62,
+                "auto_fuel": 12.98,
+                "auto_tower": 2.68,
+                "transition_fuel": 2.56,
+                "first_shift_fuel": 18.59,
+                "second_shift_fuel": 24.56,
+                "teleop_fuel": 45.71,
+                "endgame_fuel": 20.44,
+                "endgame_tower": -0.19,
+                "total_fuel": 79.13,
+                "total_tower": 2.49,
+                "rp_1": 0.3501,
+                "rp_2": -0.2251,
+                "rp_3": -0.3359
             },
             "stats": {
                 "start": 70.0,
-                "pre_elim": 70.53,
-                "mean": 70.47,
-                "max": 70.53
+                "pre_elim": 81.62,
+                "mean": 79.1,
+                "max": 81.62
             }
         },
         "record": {
             "qual": {
-                "wins": 1,
+                "wins": 2,
                 "losses": 0,
                 "ties": 0,
-                "count": 1,
+                "count": 2,
                 "winrate": 1.0,
-                "rps": 4,
+                "rps": 8,
                 "rps_per_match": 4.0,
-                "rank": 18,
+                "rank": 13,
                 "num_teams": 50
             },
             "elim": {
@@ -1968,10 +1968,10 @@
                 "is_captain": null
             },
             "total": {
-                "wins": 1,
+                "wins": 2,
                 "losses": 0,
                 "ties": 0,
-                "count": 1,
+                "count": 2,
                 "winrate": 1.0
             }
         },
@@ -1993,55 +1993,55 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 25.08,
-                "sd": 13.89
+                "mean": 34.51,
+                "sd": 21.47
             },
-            "unitless": 1450.0,
-            "norm": 1460.0,
+            "unitless": 1475.0,
+            "norm": 1489.0,
             "conf": [
-                -0.99,
-                1.12
+                -0.7,
+                1.23
             ],
             "breakdown": {
-                "total_points": 25.08,
-                "auto_points": 3.09,
-                "teleop_points": 9.57,
-                "endgame_points": 12.42,
-                "energized_rp": -0.0285,
-                "supercharged_rp": -0.2285,
-                "traversal_rp": -0.3361,
-                "tiebreaker_points": 25.08,
-                "auto_fuel": 3.57,
-                "auto_tower": -0.49,
-                "transition_fuel": -0.42,
-                "first_shift_fuel": 4.56,
-                "second_shift_fuel": 5.43,
-                "teleop_fuel": 9.57,
-                "endgame_fuel": 12.88,
-                "endgame_tower": -0.46,
-                "total_fuel": 26.02,
-                "total_tower": -0.94,
-                "rp_1": -0.0285,
-                "rp_2": -0.2285,
-                "rp_3": -0.3361
+                "total_points": 34.51,
+                "auto_points": 5.05,
+                "teleop_points": 16.61,
+                "endgame_points": 12.85,
+                "energized_rp": 0.0066,
+                "supercharged_rp": -0.2295,
+                "traversal_rp": -0.3363,
+                "tiebreaker_points": 34.51,
+                "auto_fuel": 5.51,
+                "auto_tower": -0.46,
+                "transition_fuel": 0.04,
+                "first_shift_fuel": 9.04,
+                "second_shift_fuel": 7.52,
+                "teleop_fuel": 16.61,
+                "endgame_fuel": 13.25,
+                "endgame_tower": -0.4,
+                "total_fuel": 35.37,
+                "total_tower": -0.87,
+                "rp_1": 0.0066,
+                "rp_2": -0.2295,
+                "rp_3": -0.3363
             },
             "stats": {
                 "start": 19.36,
-                "pre_elim": 25.08,
-                "mean": 24.44,
-                "max": 25.08
+                "pre_elim": 34.51,
+                "mean": 31.78,
+                "max": 34.51
             }
         },
         "record": {
             "qual": {
-                "wins": 1,
+                "wins": 2,
                 "losses": 0,
                 "ties": 0,
-                "count": 1,
+                "count": 2,
                 "winrate": 1.0,
-                "rps": 4,
+                "rps": 8,
                 "rps_per_match": 4.0,
-                "rank": 13,
+                "rank": 11,
                 "num_teams": 50
             },
             "elim": {
@@ -2054,10 +2054,10 @@
                 "is_captain": null
             },
             "total": {
-                "wins": 1,
+                "wins": 2,
                 "losses": 0,
                 "ties": 0,
-                "count": 1,
+                "count": 2,
                 "winrate": 1.0
             }
         },
@@ -2079,55 +2079,55 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 0.2,
-                "sd": 23.76
+                "mean": 1.99,
+                "sd": 20.56
             },
-            "unitless": 1383.0,
-            "norm": 1336.0,
+            "unitless": 1388.0,
+            "norm": 1347.0,
             "conf": [
-                -1.35,
-                0.76
+                -1.26,
+                0.88
             ],
             "breakdown": {
-                "total_points": 0.2,
-                "auto_points": -0.22,
-                "teleop_points": 0.28,
-                "endgame_points": 0.14,
-                "energized_rp": 0.0492,
-                "supercharged_rp": -0.2284,
-                "traversal_rp": -0.3357,
-                "tiebreaker_points": 0.2,
-                "auto_fuel": -0.08,
-                "auto_tower": -0.14,
-                "transition_fuel": -1.76,
-                "first_shift_fuel": 2.67,
-                "second_shift_fuel": -0.63,
-                "teleop_fuel": 0.28,
-                "endgame_fuel": -0.52,
-                "endgame_tower": 0.66,
-                "total_fuel": -0.32,
-                "total_tower": 0.51,
-                "rp_1": 0.0492,
-                "rp_2": -0.2284,
-                "rp_3": -0.3357
+                "total_points": 1.99,
+                "auto_points": -0.48,
+                "teleop_points": 1.93,
+                "endgame_points": 0.54,
+                "energized_rp": 0.024,
+                "supercharged_rp": -0.2295,
+                "traversal_rp": -0.3359,
+                "tiebreaker_points": 1.99,
+                "auto_fuel": -0.26,
+                "auto_tower": -0.23,
+                "transition_fuel": -1.51,
+                "first_shift_fuel": 3.21,
+                "second_shift_fuel": 0.23,
+                "teleop_fuel": 1.93,
+                "endgame_fuel": -0.29,
+                "endgame_tower": 0.83,
+                "total_fuel": 1.38,
+                "total_tower": 0.61,
+                "rp_1": 0.024,
+                "rp_2": -0.2295,
+                "rp_3": -0.3359
             },
             "stats": {
                 "start": 14.4,
-                "pre_elim": 0.2,
-                "mean": 1.78,
+                "pre_elim": 1.99,
+                "mean": 3.17,
                 "max": 14.4
             }
         },
         "record": {
             "qual": {
                 "wins": 0,
-                "losses": 1,
+                "losses": 2,
                 "ties": 0,
-                "count": 1,
+                "count": 2,
                 "winrate": 0.0,
                 "rps": 0,
                 "rps_per_match": 0.0,
-                "rank": 50,
+                "rank": 48,
                 "num_teams": 50
             },
             "elim": {
@@ -2141,9 +2141,9 @@
             },
             "total": {
                 "wins": 0,
-                "losses": 1,
+                "losses": 2,
                 "ties": 0,
-                "count": 1,
+                "count": 2,
                 "winrate": 0.0
             }
         },
@@ -2165,55 +2165,55 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 46.78,
-                "sd": 15.65
+                "mean": 47.67,
+                "sd": 13.27
             },
-            "unitless": 1507.0,
-            "norm": 1521.0,
+            "unitless": 1510.0,
+            "norm": 1523.0,
             "conf": [
                 -1.07,
-                1.2
+                1.15
             ],
             "breakdown": {
-                "total_points": 46.78,
-                "auto_points": 7.56,
-                "teleop_points": 24.94,
-                "endgame_points": 14.28,
-                "energized_rp": 0.1106,
-                "supercharged_rp": -0.2268,
-                "traversal_rp": -0.3355,
-                "tiebreaker_points": 46.78,
-                "auto_fuel": 7.68,
-                "auto_tower": -0.12,
-                "transition_fuel": 1.56,
-                "first_shift_fuel": 10.72,
-                "second_shift_fuel": 12.65,
-                "teleop_fuel": 24.94,
-                "endgame_fuel": 14.62,
-                "endgame_tower": -0.34,
-                "total_fuel": 47.24,
-                "total_tower": -0.46,
-                "rp_1": 0.1106,
-                "rp_2": -0.2268,
-                "rp_3": -0.3355
+                "total_points": 47.67,
+                "auto_points": 7.87,
+                "teleop_points": 25.85,
+                "endgame_points": 13.95,
+                "energized_rp": 0.1655,
+                "supercharged_rp": -0.2276,
+                "traversal_rp": -0.3357,
+                "tiebreaker_points": 47.67,
+                "auto_fuel": 8.06,
+                "auto_tower": -0.18,
+                "transition_fuel": 1.35,
+                "first_shift_fuel": 11.94,
+                "second_shift_fuel": 12.55,
+                "teleop_fuel": 25.85,
+                "endgame_fuel": 14.39,
+                "endgame_tower": -0.45,
+                "total_fuel": 48.3,
+                "total_tower": -0.63,
+                "rp_1": 0.1655,
+                "rp_2": -0.2276,
+                "rp_3": -0.3357
             },
             "stats": {
                 "start": 46.78,
-                "pre_elim": 46.78,
-                "mean": 46.78,
-                "max": 46.78
+                "pre_elim": 47.67,
+                "mean": 47.57,
+                "max": 47.67
             }
         },
         "record": {
             "qual": {
-                "wins": 0,
+                "wins": 1,
                 "losses": 0,
                 "ties": 0,
-                "count": 0,
-                "winrate": 0.0,
-                "rps": 0,
-                "rps_per_match": 0.0,
-                "rank": 24,
+                "count": 1,
+                "winrate": 1.0,
+                "rps": 4,
+                "rps_per_match": 4.0,
+                "rank": 19,
                 "num_teams": 50
             },
             "elim": {
@@ -2226,11 +2226,11 @@
                 "is_captain": null
             },
             "total": {
-                "wins": 0,
+                "wins": 1,
                 "losses": 0,
                 "ties": 0,
-                "count": 0,
-                "winrate": 0.0
+                "count": 1,
+                "winrate": 1.0
             }
         },
         "district_points": null
@@ -2337,54 +2337,54 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 25.48,
-                "sd": 8.86
+                "mean": 26.16,
+                "sd": 7.92
             },
-            "unitless": 1451.0,
-            "norm": 1462.0,
+            "unitless": 1452.0,
+            "norm": 1464.0,
             "conf": [
-                -1.18,
+                -1.11,
                 0.92
             ],
             "breakdown": {
-                "total_points": 25.48,
-                "auto_points": 4.84,
-                "teleop_points": 6.75,
-                "endgame_points": 13.88,
-                "energized_rp": 0.1027,
-                "supercharged_rp": -0.2281,
-                "traversal_rp": -0.3361,
-                "tiebreaker_points": 25.48,
-                "auto_fuel": 4.11,
-                "auto_tower": 0.73,
-                "transition_fuel": 0.07,
-                "first_shift_fuel": 5.53,
-                "second_shift_fuel": 1.15,
-                "teleop_fuel": 6.75,
-                "endgame_fuel": 12.97,
-                "endgame_tower": 0.91,
-                "total_fuel": 23.84,
-                "total_tower": 1.64,
-                "rp_1": 0.1027,
-                "rp_2": -0.2281,
-                "rp_3": -0.3361
+                "total_points": 26.16,
+                "auto_points": 5.08,
+                "teleop_points": 7.45,
+                "endgame_points": 13.62,
+                "energized_rp": 0.145,
+                "supercharged_rp": -0.2287,
+                "traversal_rp": -0.3363,
+                "tiebreaker_points": 26.16,
+                "auto_fuel": 4.4,
+                "auto_tower": 0.68,
+                "transition_fuel": -0.09,
+                "first_shift_fuel": 6.47,
+                "second_shift_fuel": 1.08,
+                "teleop_fuel": 7.45,
+                "endgame_fuel": 12.8,
+                "endgame_tower": 0.83,
+                "total_fuel": 24.65,
+                "total_tower": 1.51,
+                "rp_1": 0.145,
+                "rp_2": -0.2287,
+                "rp_3": -0.3363
             },
             "stats": {
                 "start": 28.57,
-                "pre_elim": 25.48,
-                "mean": 25.82,
+                "pre_elim": 26.16,
+                "mean": 26.35,
                 "max": 28.57
             }
         },
         "record": {
             "qual": {
-                "wins": 0,
+                "wins": 1,
                 "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 0.0,
-                "rps": 1,
-                "rps_per_match": 1.0,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 5,
+                "rps_per_match": 2.5,
                 "rank": 25,
                 "num_teams": 50
             },
@@ -2398,11 +2398,11 @@
                 "is_captain": null
             },
             "total": {
-                "wins": 0,
+                "wins": 1,
                 "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 0.0
+                "count": 2,
+                "winrate": 0.5
             }
         },
         "district_points": null
@@ -2427,7 +2427,7 @@
                 "sd": 29.68
             },
             "unitless": 1790.0,
-            "norm": 1723.0,
+            "norm": 1722.0,
             "conf": [
                 -1.21,
                 0.95
@@ -2557,7 +2557,7 @@
                 "winrate": 0.0,
                 "rps": 1,
                 "rps_per_match": 1.0,
-                "rank": 40,
+                "rank": 42,
                 "num_teams": 50
             },
             "elim": {
@@ -2643,7 +2643,7 @@
                 "winrate": 1.0,
                 "rps": 4,
                 "rps_per_match": 4.0,
-                "rank": 7,
+                "rank": 8,
                 "num_teams": 50
             },
             "elim": {
@@ -2815,7 +2815,7 @@
                 "winrate": 0.0,
                 "rps": 1,
                 "rps_per_match": 1.0,
-                "rank": 32,
+                "rank": 33,
                 "num_teams": 50
             },
             "elim": {
@@ -2853,55 +2853,55 @@
         "first_event": true,
         "epa": {
             "total_points": {
-                "mean": 36.29,
-                "sd": 8.54
+                "mean": 50.43,
+                "sd": 21.18
             },
-            "unitless": 1479.0,
-            "norm": 1494.0,
+            "unitless": 1517.0,
+            "norm": 1530.0,
             "conf": [
-                -1.13,
-                1.82
+                -0.92,
+                1.64
             ],
             "breakdown": {
-                "total_points": 36.29,
-                "auto_points": 5.48,
-                "teleop_points": 22.76,
-                "endgame_points": 8.05,
-                "energized_rp": 0.1714,
-                "supercharged_rp": -0.2181,
-                "traversal_rp": -0.3336,
-                "tiebreaker_points": 36.29,
-                "auto_fuel": 5.28,
-                "auto_tower": 0.2,
-                "transition_fuel": 1.31,
-                "first_shift_fuel": 9.74,
-                "second_shift_fuel": 11.71,
-                "teleop_fuel": 22.76,
-                "endgame_fuel": 7.98,
-                "endgame_tower": 0.07,
-                "total_fuel": 36.03,
-                "total_tower": 0.27,
-                "rp_1": 0.1714,
-                "rp_2": -0.2181,
-                "rp_3": -0.3336
+                "total_points": 50.43,
+                "auto_points": 8.42,
+                "teleop_points": 33.32,
+                "endgame_points": 8.69,
+                "energized_rp": 0.224,
+                "supercharged_rp": -0.2197,
+                "traversal_rp": -0.3339,
+                "tiebreaker_points": 50.43,
+                "auto_fuel": 8.19,
+                "auto_tower": 0.23,
+                "transition_fuel": 2.0,
+                "first_shift_fuel": 16.47,
+                "second_shift_fuel": 14.86,
+                "teleop_fuel": 33.32,
+                "endgame_fuel": 8.54,
+                "endgame_tower": 0.15,
+                "total_fuel": 50.05,
+                "total_tower": 0.39,
+                "rp_1": 0.224,
+                "rp_2": -0.2197,
+                "rp_3": -0.3339
             },
             "stats": {
                 "start": 31.19,
-                "pre_elim": 36.29,
-                "mean": 35.72,
-                "max": 36.29
+                "pre_elim": 50.43,
+                "mean": 46.72,
+                "max": 50.43
             }
         },
         "record": {
             "qual": {
-                "wins": 1,
+                "wins": 2,
                 "losses": 0,
                 "ties": 0,
-                "count": 1,
+                "count": 2,
                 "winrate": 1.0,
-                "rps": 4,
+                "rps": 8,
                 "rps_per_match": 4.0,
-                "rank": 22,
+                "rank": 14,
                 "num_teams": 50
             },
             "elim": {
@@ -2914,10 +2914,10 @@
                 "is_captain": null
             },
             "total": {
-                "wins": 1,
+                "wins": 2,
                 "losses": 0,
                 "ties": 0,
-                "count": 1,
+                "count": 2,
                 "winrate": 1.0
             }
         },
@@ -2943,7 +2943,7 @@
                 "sd": 17.26
             },
             "unitless": 1784.0,
-            "norm": 1719.0,
+            "norm": 1718.0,
             "conf": [
                 -0.9,
                 1.08
@@ -2987,7 +2987,7 @@
                 "winrate": 1.0,
                 "rps": 4,
                 "rps_per_match": 4.0,
-                "rank": 8,
+                "rank": 7,
                 "num_teams": 50
             },
             "elim": {
@@ -3159,7 +3159,7 @@
                 "winrate": 0.0,
                 "rps": 1,
                 "rps_per_match": 1.0,
-                "rank": 29,
+                "rank": 32,
                 "num_teams": 50
             },
             "elim": {
@@ -3197,55 +3197,55 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 82.37,
-                "sd": 20.98
+                "mean": 90.85,
+                "sd": 25.3
             },
-            "unitless": 1602.0,
-            "norm": 1603.0,
+            "unitless": 1625.0,
+            "norm": 1622.0,
             "conf": [
-                -0.82,
-                1.09
+                -0.65,
+                1.14
             ],
             "breakdown": {
-                "total_points": 82.37,
-                "auto_points": 6.94,
-                "teleop_points": 46.66,
-                "endgame_points": 28.77,
-                "energized_rp": 0.384,
-                "supercharged_rp": -0.1252,
-                "traversal_rp": -0.3365,
-                "tiebreaker_points": 82.37,
-                "auto_fuel": 6.96,
-                "auto_tower": -0.01,
-                "transition_fuel": -2.09,
-                "first_shift_fuel": 19.15,
-                "second_shift_fuel": 29.59,
-                "teleop_fuel": 46.66,
-                "endgame_fuel": 29.13,
-                "endgame_tower": -0.36,
-                "total_fuel": 82.74,
-                "total_tower": -0.38,
-                "rp_1": 0.384,
-                "rp_2": -0.1252,
-                "rp_3": -0.3365
+                "total_points": 90.85,
+                "auto_points": 8.71,
+                "teleop_points": 52.99,
+                "endgame_points": 29.15,
+                "energized_rp": 0.4155,
+                "supercharged_rp": -0.1261,
+                "traversal_rp": -0.3366,
+                "tiebreaker_points": 90.85,
+                "auto_fuel": 8.7,
+                "auto_tower": 0.01,
+                "transition_fuel": -1.67,
+                "first_shift_fuel": 23.19,
+                "second_shift_fuel": 31.47,
+                "teleop_fuel": 52.99,
+                "endgame_fuel": 29.46,
+                "endgame_tower": -0.31,
+                "total_fuel": 91.16,
+                "total_tower": -0.31,
+                "rp_1": 0.4155,
+                "rp_2": -0.1261,
+                "rp_3": -0.3366
             },
             "stats": {
                 "start": 75.06,
-                "pre_elim": 82.37,
-                "mean": 81.56,
-                "max": 82.37
+                "pre_elim": 90.85,
+                "mean": 88.15,
+                "max": 90.85
             }
         },
         "record": {
             "qual": {
-                "wins": 1,
+                "wins": 2,
                 "losses": 0,
                 "ties": 0,
-                "count": 1,
+                "count": 2,
                 "winrate": 1.0,
-                "rps": 4,
+                "rps": 8,
                 "rps_per_match": 4.0,
-                "rank": 11,
+                "rank": 9,
                 "num_teams": 50
             },
             "elim": {
@@ -3258,10 +3258,10 @@
                 "is_captain": null
             },
             "total": {
-                "wins": 1,
+                "wins": 2,
                 "losses": 0,
                 "ties": 0,
-                "count": 1,
+                "count": 2,
                 "winrate": 1.0
             }
         },
@@ -3331,7 +3331,7 @@
                 "winrate": 0.0,
                 "rps": 1,
                 "rps_per_match": 1.0,
-                "rank": 35,
+                "rank": 36,
                 "num_teams": 50
             },
             "elim": {
@@ -3373,7 +3373,7 @@
                 "sd": 22.59
             },
             "unitless": 1399.0,
-            "norm": 1372.0,
+            "norm": 1373.0,
             "conf": [
                 -1.19,
                 0.68
@@ -3417,7 +3417,7 @@
                 "winrate": 0.0,
                 "rps": 0,
                 "rps_per_match": 0.0,
-                "rank": 48,
+                "rank": 50,
                 "num_teams": 50
             },
             "elim": {
@@ -3455,55 +3455,55 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 30.06,
-                "sd": 12.15
+                "mean": 31.4,
+                "sd": 11.19
             },
-            "unitless": 1463.0,
-            "norm": 1476.0,
+            "unitless": 1466.0,
+            "norm": 1480.0,
             "conf": [
-                -1.02,
-                1.02
+                -0.98,
+                0.99
             ],
             "breakdown": {
-                "total_points": 30.06,
-                "auto_points": 6.79,
-                "teleop_points": 16.97,
-                "endgame_points": 6.29,
-                "energized_rp": 0.1,
-                "supercharged_rp": -0.1222,
-                "traversal_rp": -0.3363,
-                "tiebreaker_points": 30.06,
-                "auto_fuel": 6.79,
-                "auto_tower": 0.0,
-                "transition_fuel": 2.1,
-                "first_shift_fuel": 4.89,
-                "second_shift_fuel": 9.98,
-                "teleop_fuel": 16.97,
-                "endgame_fuel": 7.96,
-                "endgame_tower": -1.67,
-                "total_fuel": 31.73,
-                "total_tower": -1.67,
-                "rp_1": 0.1,
-                "rp_2": -0.1222,
-                "rp_3": -0.3363
+                "total_points": 31.4,
+                "auto_points": 6.6,
+                "teleop_points": 18.21,
+                "endgame_points": 6.59,
+                "energized_rp": 0.081,
+                "supercharged_rp": -0.1231,
+                "traversal_rp": -0.3365,
+                "tiebreaker_points": 31.4,
+                "auto_fuel": 6.66,
+                "auto_tower": -0.06,
+                "transition_fuel": 2.28,
+                "first_shift_fuel": 5.3,
+                "second_shift_fuel": 10.63,
+                "teleop_fuel": 18.21,
+                "endgame_fuel": 8.13,
+                "endgame_tower": -1.54,
+                "total_fuel": 33.0,
+                "total_tower": -1.6,
+                "rp_1": 0.081,
+                "rp_2": -0.1231,
+                "rp_3": -0.3365
             },
             "stats": {
                 "start": 29.65,
-                "pre_elim": 30.06,
-                "mean": 30.01,
-                "max": 30.06
+                "pre_elim": 31.4,
+                "mean": 31.06,
+                "max": 31.4
             }
         },
         "record": {
             "qual": {
                 "wins": 1,
-                "losses": 0,
+                "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 1.0,
+                "count": 2,
+                "winrate": 0.5,
                 "rps": 4,
-                "rps_per_match": 4.0,
-                "rank": 19,
+                "rps_per_match": 2.0,
+                "rank": 29,
                 "num_teams": 50
             },
             "elim": {
@@ -3517,10 +3517,10 @@
             },
             "total": {
                 "wins": 1,
-                "losses": 0,
+                "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 1.0
+                "count": 2,
+                "winrate": 0.5
             }
         },
         "district_points": null
@@ -3589,7 +3589,7 @@
                 "winrate": 0.0,
                 "rps": 1,
                 "rps_per_match": 1.0,
-                "rank": 28,
+                "rank": 31,
                 "num_teams": 50
             },
             "elim": {
@@ -3675,7 +3675,7 @@
                 "winrate": 0.0,
                 "rps": 1,
                 "rps_per_match": 1.0,
-                "rank": 45,
+                "rank": 44,
                 "num_teams": 50
             },
             "elim": {
@@ -3713,55 +3713,55 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 27.15,
-                "sd": 9.51
+                "mean": 27.82,
+                "sd": 8.48
             },
-            "unitless": 1455.0,
-            "norm": 1467.0,
+            "unitless": 1457.0,
+            "norm": 1469.0,
             "conf": [
-                -0.86,
-                1.22
+                -0.88,
+                1.15
             ],
             "breakdown": {
-                "total_points": 27.15,
-                "auto_points": 8.83,
-                "teleop_points": 13.18,
-                "endgame_points": 5.14,
-                "energized_rp": 0.0273,
-                "supercharged_rp": -0.2282,
-                "traversal_rp": -0.3361,
-                "tiebreaker_points": 27.15,
-                "auto_fuel": 9.16,
-                "auto_tower": -0.33,
-                "transition_fuel": -0.07,
-                "first_shift_fuel": 5.32,
-                "second_shift_fuel": 7.93,
-                "teleop_fuel": 13.18,
-                "endgame_fuel": 4.04,
+                "total_points": 27.82,
+                "auto_points": 8.28,
+                "teleop_points": 12.9,
+                "endgame_points": 6.63,
+                "energized_rp": 0.0536,
+                "supercharged_rp": -0.2289,
+                "traversal_rp": -0.3363,
+                "tiebreaker_points": 27.82,
+                "auto_fuel": 8.59,
+                "auto_tower": -0.31,
+                "transition_fuel": -0.23,
+                "first_shift_fuel": 4.64,
+                "second_shift_fuel": 8.5,
+                "teleop_fuel": 12.9,
+                "endgame_fuel": 5.52,
                 "endgame_tower": 1.11,
-                "total_fuel": 26.38,
-                "total_tower": 0.78,
-                "rp_1": 0.0273,
-                "rp_2": -0.2282,
-                "rp_3": -0.3361
+                "total_fuel": 27.01,
+                "total_tower": 0.81,
+                "rp_1": 0.0536,
+                "rp_2": -0.2289,
+                "rp_3": -0.3363
             },
             "stats": {
                 "start": 23.41,
-                "pre_elim": 27.15,
-                "mean": 26.73,
-                "max": 27.15
+                "pre_elim": 27.82,
+                "mean": 27.26,
+                "max": 27.82
             }
         },
         "record": {
             "qual": {
                 "wins": 1,
-                "losses": 0,
+                "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 1.0,
-                "rps": 4,
-                "rps_per_match": 4.0,
-                "rank": 21,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 5,
+                "rps_per_match": 2.5,
+                "rank": 24,
                 "num_teams": 50
             },
             "elim": {
@@ -3775,10 +3775,10 @@
             },
             "total": {
                 "wins": 1,
-                "losses": 0,
+                "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 1.0
+                "count": 2,
+                "winrate": 0.5
             }
         },
         "district_points": null
@@ -3885,51 +3885,51 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 15.17,
-                "sd": 12.24
+                "mean": 10.43,
+                "sd": 13.97
             },
-            "unitless": 1423.0,
-            "norm": 1420.0,
+            "unitless": 1410.0,
+            "norm": 1396.0,
             "conf": [
-                -1.03,
-                1.07
+                -1.13,
+                0.91
             ],
             "breakdown": {
-                "total_points": 15.17,
-                "auto_points": 5.38,
-                "teleop_points": 3.77,
-                "endgame_points": 6.02,
-                "energized_rp": -0.025,
-                "supercharged_rp": -0.229,
-                "traversal_rp": -0.3361,
-                "tiebreaker_points": 15.17,
-                "auto_fuel": 4.47,
-                "auto_tower": 0.91,
-                "transition_fuel": 0.54,
-                "first_shift_fuel": 3.62,
-                "second_shift_fuel": -0.39,
-                "teleop_fuel": 3.77,
-                "endgame_fuel": 5.76,
-                "endgame_tower": 0.25,
-                "total_fuel": 14.01,
-                "total_tower": 1.16,
-                "rp_1": -0.025,
-                "rp_2": -0.229,
-                "rp_3": -0.3361
+                "total_points": 10.43,
+                "auto_points": 4.81,
+                "teleop_points": 0.68,
+                "endgame_points": 4.94,
+                "energized_rp": -0.0578,
+                "supercharged_rp": -0.2297,
+                "traversal_rp": -0.3363,
+                "tiebreaker_points": 10.43,
+                "auto_fuel": 4.0,
+                "auto_tower": 0.8,
+                "transition_fuel": 0.23,
+                "first_shift_fuel": 1.85,
+                "second_shift_fuel": -1.41,
+                "teleop_fuel": 0.68,
+                "endgame_fuel": 4.68,
+                "endgame_tower": 0.26,
+                "total_fuel": 9.36,
+                "total_tower": 1.06,
+                "rp_1": -0.0578,
+                "rp_2": -0.2297,
+                "rp_3": -0.3363
             },
             "stats": {
                 "start": 15.17,
-                "pre_elim": 15.17,
-                "mean": 15.17,
+                "pre_elim": 10.43,
+                "mean": 10.96,
                 "max": 15.17
             }
         },
         "record": {
             "qual": {
                 "wins": 0,
-                "losses": 0,
+                "losses": 1,
                 "ties": 0,
-                "count": 0,
+                "count": 1,
                 "winrate": 0.0,
                 "rps": 0,
                 "rps_per_match": 0.0,
@@ -3947,9 +3947,9 @@
             },
             "total": {
                 "wins": 0,
-                "losses": 0,
+                "losses": 1,
                 "ties": 0,
-                "count": 0,
+                "count": 1,
                 "winrate": 0.0
             }
         },
@@ -3971,55 +3971,55 @@
         "first_event": false,
         "epa": {
             "total_points": {
-                "mean": 40.84,
-                "sd": 18.01
+                "mean": 49.16,
+                "sd": 23.16
             },
-            "unitless": 1492.0,
-            "norm": 1506.0,
+            "unitless": 1514.0,
+            "norm": 1527.0,
             "conf": [
-                -0.95,
-                1.06
+                -0.68,
+                1.18
             ],
             "breakdown": {
-                "total_points": 40.84,
-                "auto_points": 11.36,
-                "teleop_points": 22.65,
-                "endgame_points": 6.83,
-                "energized_rp": 0.032,
-                "supercharged_rp": -0.1365,
-                "traversal_rp": -0.3363,
-                "tiebreaker_points": 40.84,
-                "auto_fuel": 11.5,
-                "auto_tower": -0.15,
-                "transition_fuel": 3.86,
-                "first_shift_fuel": 9.91,
-                "second_shift_fuel": 8.88,
-                "teleop_fuel": 22.65,
-                "endgame_fuel": 6.63,
-                "endgame_tower": 0.2,
-                "total_fuel": 40.79,
-                "total_tower": 0.05,
-                "rp_1": 0.032,
-                "rp_2": -0.1365,
-                "rp_3": -0.3363
+                "total_points": 49.16,
+                "auto_points": 13.75,
+                "teleop_points": 27.24,
+                "endgame_points": 8.17,
+                "energized_rp": 0.0607,
+                "supercharged_rp": -0.1374,
+                "traversal_rp": -0.3365,
+                "tiebreaker_points": 49.16,
+                "auto_fuel": 12.98,
+                "auto_tower": 0.77,
+                "transition_fuel": 3.16,
+                "first_shift_fuel": 12.09,
+                "second_shift_fuel": 11.99,
+                "teleop_fuel": 27.24,
+                "endgame_fuel": 7.99,
+                "endgame_tower": 0.18,
+                "total_fuel": 48.2,
+                "total_tower": 0.95,
+                "rp_1": 0.0607,
+                "rp_2": -0.1374,
+                "rp_3": -0.3365
             },
             "stats": {
                 "start": 38.26,
-                "pre_elim": 40.84,
-                "mean": 40.55,
-                "max": 40.84
+                "pre_elim": 49.16,
+                "mean": 47.02,
+                "max": 49.16
             }
         },
         "record": {
             "qual": {
-                "wins": 0,
+                "wins": 1,
                 "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 0.0,
-                "rps": 1,
-                "rps_per_match": 1.0,
-                "rank": 31,
+                "count": 2,
+                "winrate": 0.5,
+                "rps": 5,
+                "rps_per_match": 2.5,
+                "rank": 20,
                 "num_teams": 50
             },
             "elim": {
@@ -4032,11 +4032,11 @@
                 "is_captain": null
             },
             "total": {
-                "wins": 0,
+                "wins": 1,
                 "losses": 1,
                 "ties": 0,
-                "count": 1,
-                "winrate": 0.0
+                "count": 2,
+                "winrate": 0.5
             }
         },
         "district_points": null
@@ -4105,7 +4105,7 @@
                 "winrate": 1.0,
                 "rps": 4,
                 "rps_per_match": 4.0,
-                "rank": 15,
+                "rank": 16,
                 "num_teams": 50
             },
             "elim": {
@@ -4191,7 +4191,7 @@
                 "winrate": 0.0,
                 "rps": 1,
                 "rps_per_match": 1.0,
-                "rank": 44,
+                "rank": 45,
                 "num_teams": 50
             },
             "elim": {
@@ -4277,7 +4277,7 @@
                 "winrate": 1.0,
                 "rps": 4,
                 "rps_per_match": 4.0,
-                "rank": 16,
+                "rank": 15,
                 "num_teams": 50
             },
             "elim": {
