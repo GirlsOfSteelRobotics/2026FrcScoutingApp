@@ -1,0 +1,563 @@
+[
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/CtfwBYF.jpeg",
+        "foreign_key": "CtfwBYF",
+        "preferred": false,
+        "team_keys": [
+            "frc10011"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/CtfwBYF"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/nV0bySo.jpeg",
+        "foreign_key": "nV0bySo",
+        "preferred": true,
+        "team_keys": [
+            "frc10011"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/nV0bySo"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/YqkiTb6.jpeg",
+        "foreign_key": "YqkiTb6",
+        "preferred": true,
+        "team_keys": [
+            "frc1014"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/YqkiTb6"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/k08sFRj.jpeg",
+        "foreign_key": "k08sFRj",
+        "preferred": true,
+        "team_keys": [
+            "frc10207"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/k08sFRj"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/VJHzHap.jpeg",
+        "foreign_key": "VJHzHap",
+        "preferred": true,
+        "team_keys": [
+            "frc10208"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/VJHzHap"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/L2cFp3w.jpeg",
+        "foreign_key": "L2cFp3w",
+        "preferred": true,
+        "team_keys": [
+            "frc1038"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/L2cFp3w"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/phHaoSj.jpeg",
+        "foreign_key": "phHaoSj",
+        "preferred": true,
+        "team_keys": [
+            "frc117"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/phHaoSj"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/RuZlAXR.jpeg",
+        "foreign_key": "RuZlAXR",
+        "preferred": true,
+        "team_keys": [
+            "frc144"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/RuZlAXR"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/N1FgZ0n.jpeg",
+        "foreign_key": "N1FgZ0n",
+        "preferred": true,
+        "team_keys": [
+            "frc1736"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/N1FgZ0n"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/6JRoOL8.jpeg",
+        "foreign_key": "6JRoOL8",
+        "preferred": true,
+        "team_keys": [
+            "frc1756"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/6JRoOL8"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/Rsxi2A0.jpeg",
+        "foreign_key": "Rsxi2A0",
+        "preferred": true,
+        "team_keys": [
+            "frc1787"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/Rsxi2A0"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/hhDQ611.jpeg",
+        "foreign_key": "hhDQ611",
+        "preferred": true,
+        "team_keys": [
+            "frc2010"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/hhDQ611"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/L8dCh3E.jpeg",
+        "foreign_key": "L8dCh3E",
+        "preferred": true,
+        "team_keys": [
+            "frc2172"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/L8dCh3E"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/6WdcxMK.jpeg",
+        "foreign_key": "6WdcxMK",
+        "preferred": true,
+        "team_keys": [
+            "frc2228"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/6WdcxMK"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/17Iz6Vd.jpeg",
+        "foreign_key": "17Iz6Vd",
+        "preferred": false,
+        "team_keys": [
+            "frc2252"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/17Iz6Vd"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/TYAoGKb.jpeg",
+        "foreign_key": "TYAoGKb",
+        "preferred": true,
+        "team_keys": [
+            "frc2252"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/TYAoGKb"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/inmUWZP.jpeg",
+        "foreign_key": "inmUWZP",
+        "preferred": true,
+        "team_keys": [
+            "frc2338"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/inmUWZP"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/9grFjdT.jpeg",
+        "foreign_key": "9grFjdT",
+        "preferred": true,
+        "team_keys": [
+            "frc2399"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/9grFjdT"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/ttbyr2E.jpeg",
+        "foreign_key": "ttbyr2E",
+        "preferred": true,
+        "team_keys": [
+            "frc2603"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/ttbyr2E"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/ET8SRGB.jpeg",
+        "foreign_key": "ET8SRGB",
+        "preferred": true,
+        "team_keys": [
+            "frc2614"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/ET8SRGB"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/JPNb3xX.jpeg",
+        "foreign_key": "JPNb3xX",
+        "preferred": true,
+        "team_keys": [
+            "frc3138"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/JPNb3xX"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/u3XKFg1.jpeg",
+        "foreign_key": "u3XKFg1",
+        "preferred": true,
+        "team_keys": [
+            "frc325"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/u3XKFg1"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/UVueUcX.jpeg",
+        "foreign_key": "UVueUcX",
+        "preferred": true,
+        "team_keys": [
+            "frc3324"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/UVueUcX"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/t9y37d9.jpeg",
+        "foreign_key": "t9y37d9",
+        "preferred": true,
+        "team_keys": [
+            "frc3484"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/t9y37d9"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/oKSBhaI.jpeg",
+        "foreign_key": "oKSBhaI",
+        "preferred": true,
+        "team_keys": [
+            "frc3504"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/oKSBhaI"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/nEzRcBt.jpeg",
+        "foreign_key": "nEzRcBt",
+        "preferred": true,
+        "team_keys": [
+            "frc379"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/nEzRcBt"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/CgBCjxy.jpeg",
+        "foreign_key": "CgBCjxy",
+        "preferred": true,
+        "team_keys": [
+            "frc3814"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/CgBCjxy"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/d7L0TGx.jpeg",
+        "foreign_key": "d7L0TGx",
+        "preferred": true,
+        "team_keys": [
+            "frc4028"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/d7L0TGx"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/BEqEesF.jpeg",
+        "foreign_key": "BEqEesF",
+        "preferred": true,
+        "team_keys": [
+            "frc4085"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/BEqEesF"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/TJWGnOA.jpeg",
+        "foreign_key": "TJWGnOA",
+        "preferred": true,
+        "team_keys": [
+            "frc4096"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/TJWGnOA"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/ZnncutF.jpeg",
+        "foreign_key": "ZnncutF",
+        "preferred": true,
+        "team_keys": [
+            "frc4145"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/ZnncutF"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/PV1Bz4N.jpeg",
+        "foreign_key": "PV1Bz4N",
+        "preferred": true,
+        "team_keys": [
+            "frc432"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/PV1Bz4N"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/VlQHYc9.jpeg",
+        "foreign_key": "VlQHYc9",
+        "preferred": true,
+        "team_keys": [
+            "frc4467"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/VlQHYc9"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/iZj5Sei.jpeg",
+        "foreign_key": "iZj5Sei",
+        "preferred": true,
+        "team_keys": [
+            "frc451"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/iZj5Sei"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/Ft7jTTd.jpeg",
+        "foreign_key": "Ft7jTTd",
+        "preferred": true,
+        "team_keys": [
+            "frc4601"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/Ft7jTTd"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/wsulPfK.jpeg",
+        "foreign_key": "wsulPfK",
+        "preferred": true,
+        "team_keys": [
+            "frc4611"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/wsulPfK"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/92aeVOZ.jpeg",
+        "foreign_key": "92aeVOZ",
+        "preferred": true,
+        "team_keys": [
+            "frc554"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/92aeVOZ"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/sbfTT5w.jpeg",
+        "foreign_key": "sbfTT5w",
+        "preferred": true,
+        "team_keys": [
+            "frc5667"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/sbfTT5w"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/YhxfLG2.jpeg",
+        "foreign_key": "YhxfLG2",
+        "preferred": true,
+        "team_keys": [
+            "frc578"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/YhxfLG2"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/OYT6qhK.jpeg",
+        "foreign_key": "OYT6qhK",
+        "preferred": true,
+        "team_keys": [
+            "frc5811"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/OYT6qhK"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/tcRM13X.jpeg",
+        "foreign_key": "tcRM13X",
+        "preferred": true,
+        "team_keys": [
+            "frc6237"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/tcRM13X"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/RlweZw1.jpeg",
+        "foreign_key": "RlweZw1",
+        "preferred": true,
+        "team_keys": [
+            "frc6302"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/RlweZw1"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/MRMixLL.jpeg",
+        "foreign_key": "MRMixLL",
+        "preferred": true,
+        "team_keys": [
+            "frc677"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/MRMixLL"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/vRKHnlS.jpeg",
+        "foreign_key": "vRKHnlS",
+        "preferred": true,
+        "team_keys": [
+            "frc695"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/vRKHnlS"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/Ird1hQT.jpeg",
+        "foreign_key": "Ird1hQT",
+        "preferred": true,
+        "team_keys": [
+            "frc6964"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/Ird1hQT"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/4mRqdYL.jpeg",
+        "foreign_key": "4mRqdYL",
+        "preferred": true,
+        "team_keys": [
+            "frc8145"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/4mRqdYL"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/p9WXozq.jpeg",
+        "foreign_key": "p9WXozq",
+        "preferred": true,
+        "team_keys": [
+            "frc8243"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/p9WXozq"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/iszED9d.jpeg",
+        "foreign_key": "iszED9d",
+        "preferred": true,
+        "team_keys": [
+            "frc9075"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/iszED9d"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/3s3cOt0.jpeg",
+        "foreign_key": "3s3cOt0",
+        "preferred": true,
+        "team_keys": [
+            "frc9097"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/3s3cOt0"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/bvaf7i6.jpeg",
+        "foreign_key": "bvaf7i6",
+        "preferred": true,
+        "team_keys": [
+            "frc9139"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/bvaf7i6"
+    },
+    {
+        "details": {},
+        "direct_url": "https://i.imgur.com/iHqFojV.jpeg",
+        "foreign_key": "iHqFojV",
+        "preferred": true,
+        "team_keys": [
+            "frc9152"
+        ],
+        "type": "imgur",
+        "view_url": "https://imgur.com/iHqFojV"
+    }
+]
